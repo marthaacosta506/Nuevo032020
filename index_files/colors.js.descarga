@@ -1,0 +1,11713 @@
+let jsonColors = [
+    {
+			name: 'Flor Delicada',
+			code: 'RJ001-P',
+			R: 246,
+			G: 225,
+			B: 233
+    },
+    {
+			name: 'Valentina',
+			code: 'RJ002-P',
+			R: 242,
+			G: 214,
+			B: 229
+    },
+    {
+			name: 'Beso de Princesa',
+			code: 'RJ003-P',
+			R: 239,
+			G: 199,
+			B: 219
+    },
+    {
+			name: 'Aventura Rosa',
+			code: 'RJ004-T',
+			R: 235,
+			G: 180,
+			B: 208
+    },
+    {
+			name: 'Sonrisa Floral',
+			code: 'RJ005-T',
+			R: 226,
+			G: 161,
+			B: 195
+    },
+    {
+			name: 'Primavera en Abril',
+			code: 'RJ006-D',
+			R: 219,
+			G: 132,
+			B: 171
+    },
+    {
+			name: 'Rosa Profundo',
+			code: 'RJ007-D',
+			R: 207,
+			G: 108,
+			B: 152
+    },
+    {
+			name: 'Rosa Champaña',
+			code: 'RJ008-P',
+			R: 247,
+			G: 231,
+			B: 231
+    },
+    {
+			name: 'Malva Real',
+			code: 'RJ009-P',
+			R: 240,
+			G: 208,
+			B: 217
+    },
+    {
+			name: 'Rocío Floral',
+			code: 'RJ010-P',
+			R: 240,
+			G: 197,
+			B: 212
+    },
+    {
+			name: 'Pomarrosa',
+			code: 'RJ011-T',
+			R: 231,
+			G: 178,
+			B: 198
+    },
+    {
+			name: 'Romero',
+			code: 'RJ012-T',
+			R: 225,
+			G: 159,
+			B: 185
+    },
+    {
+			name: 'Coquetería Rosa',
+			code: 'RJ013-D',
+			R: 215,
+			G: 132,
+			B: 161
+    },
+    {
+			name: 'Frambuesa',
+			code: 'RJ014-D',
+			R: 197,
+			G: 107,
+			B: 133
+    },
+    {
+			name: 'Dulce Brisa',
+			code: 'RJ015-P',
+			R: 248,
+			G: 223,
+			B: 223
+    },
+    {
+			name: 'Rosa Bombasí',
+			code: 'RJ016-P',
+			R: 240,
+			G: 203,
+			B: 209
+    },
+    {
+			name: 'Tarde Malva',
+			code: 'RJ017-P',
+			R: 231,
+			G: 192,
+			B: 200
+    },
+    {
+			name: 'Rosa Chic',
+			code: 'RJ018-T',
+			R: 218,
+			G: 172,
+			B: 185
+    },
+    {
+			name: 'Sueño Rosa',
+			code: 'RJ019-T',
+			R: 208,
+			G: 150,
+			B: 166
+    },
+    {
+			name: 'Camino de Rosas',
+			code: 'RJ020-D',
+			R: 191,
+			G: 124,
+			B: 138
+    },
+    {
+			name: 'Sonrojo',
+			code: 'RJ021-D',
+			R: 171,
+			G: 103,
+			B: 118
+    },
+    {
+			name: 'Fucsia Romántico',
+			code: 'RJ022-A',
+			R: 192,
+			G: 74,
+			B: 111
+    },
+    {
+			name: 'Vestido de Flores',
+			code: 'RJ023-A',
+			R: 187,
+			G: 74,
+			B: 118
+    },
+    {
+			name: 'Brisa de Mónaco',
+			code: 'RJ024-A',
+			R: 164,
+			G: 61,
+			B: 77
+    },
+    {
+			name: 'Rojo Carmín',
+			code: 'RJ025-A',
+			R: 137,
+			G: 67,
+			B: 71
+    },
+    {
+			name: 'Grosella ',
+			code: 'RJ026-A',
+			R: 114,
+			G: 71,
+			B: 74
+    },
+    {
+			name: 'Madera Royal',
+			code: 'RJ027-A',
+			R: 99,
+			G: 72,
+			B: 78
+    },
+    {
+			name: 'Cielo de Chocolate',
+			code: 'RJ028-A',
+			R: 93,
+			G: 70,
+			B: 65
+    },
+    {
+			name: 'Primer Amanecer',
+			code: 'RJ029-P',
+			R: 247,
+			G: 228,
+			B: 233
+    },
+    {
+			name: 'Dulce de Algodón',
+			code: 'RJ030-P',
+			R: 247,
+			G: 212,
+			B: 223
+    },
+    {
+			name: 'Rosa Pensativo',
+			code: 'RJ031-P',
+			R: 247,
+			G: 206,
+			B: 220
+    },
+    {
+			name: 'Visiones Rosa',
+			code: 'RJ032-T',
+			R: 242,
+			G: 181,
+			B: 200
+    },
+    {
+			name: 'Cuento de Hadas',
+			code: 'RJ033-T',
+			R: 233,
+			G: 161,
+			B: 184
+    },
+    {
+			name: 'Rosas de Papel',
+			code: 'RJ034-D',
+			R: 224,
+			G: 130,
+			B: 158
+    },
+    {
+			name: 'Rosas del Bosque',
+			code: 'RJ035-D',
+			R: 215,
+			G: 108,
+			B: 138
+    },
+    {
+			name: 'Bruma Fresa',
+			code: 'RJ036-P',
+			R: 251,
+			G: 226,
+			B: 229
+    },
+    {
+			name: 'Azalea Florecida',
+			code: 'RJ037-P',
+			R: 244,
+			G: 210,
+			B: 217
+    },
+    {
+			name: 'Primavera ',
+			code: 'RJ038-P',
+			R: 239,
+			G: 194,
+			B: 203
+    },
+    {
+			name: 'Cosecha de Manzanas',
+			code: 'RJ039-T',
+			R: 233,
+			G: 177,
+			B: 190
+    },
+    {
+			name: 'Cerca de Rosas',
+			code: 'RJ040-T',
+			R: 224,
+			G: 155,
+			B: 171
+    },
+    {
+			name: 'Rosa del Jardín',
+			code: 'RJ041-D',
+			R: 213,
+			G: 123,
+			B: 139
+    },
+    {
+			name: 'Palo de Rosa',
+			code: 'RJ042-D',
+			R: 198,
+			G: 103,
+			B: 118
+    },
+    {
+			name: 'Caricia de Pétalos',
+			code: 'RJ043-P',
+			R: 248,
+			G: 227,
+			B: 224
+    },
+    {
+			name: 'Río de Perla',
+			code: 'RJ044-P',
+			R: 240,
+			G: 200,
+			B: 203
+    },
+    {
+			name: 'Rosa Flamenco',
+			code: 'RJ045-P',
+			R: 232,
+			G: 183,
+			B: 187
+    },
+    {
+			name: 'Té de Moras',
+			code: 'RJ046-T',
+			R: 222,
+			G: 161,
+			B: 166
+    },
+    {
+			name: 'Fresa Frappé',
+			code: 'RJ047-T',
+			R: 213,
+			G: 142,
+			B: 148
+    },
+    {
+			name: 'Coral Natural',
+			code: 'RJ048-D',
+			R: 198,
+			G: 116,
+			B: 119
+    },
+    {
+			name: 'Rosa Campestre',
+			code: 'RJ049-D',
+			R: 179,
+			G: 98,
+			B: 101
+    },
+    {
+			name: 'Jardin Rosa',
+			code: 'RJ050-D',
+			R: 210,
+			G: 111,
+			B: 146
+    },
+    {
+			name: 'Sentimiento Rosa',
+			code: 'RJ051-A',
+			R: 194,
+			G: 73,
+			B: 100
+    },
+    {
+			name: 'Postre de Arándanos',
+			code: 'RJ052-A',
+			R: 152,
+			G: 65,
+			B: 66
+    },
+    {
+			name: 'Tomates Secos',
+			code: 'RJ053-A',
+			R: 147,
+			G: 71,
+			B: 66
+    },
+    {
+			name: 'Vino de Otoño',
+			code: 'RJ054-A',
+			R: 123,
+			G: 76,
+			B: 69
+    },
+    {
+			name: 'Fábrica de Chocolate',
+			code: 'RJ055-A',
+			R: 100,
+			G: 72,
+			B: 67
+    },
+    {
+			name: 'Príncipe Hindú',
+			code: 'RJ056-A',
+			R: 96,
+			G: 78,
+			B: 73
+    },
+    {
+			name: 'Rosa Tentación',
+			code: 'RJ057-P',
+			R: 250,
+			G: 232,
+			B: 237
+    },
+    {
+			name: 'Piel Hollywood',
+			code: 'RJ058-P',
+			R: 252,
+			G: 215,
+			B: 223
+    },
+    {
+			name: 'Moda Parisina',
+			code: 'RJ059-P',
+			R: 248,
+			G: 203,
+			B: 215
+    },
+    {
+			name: 'Rosa Natural',
+			code: 'RJ060-T',
+			R: 244,
+			G: 183,
+			B: 199
+    },
+    {
+			name: 'Señorita',
+			code: 'RJ061-T',
+			R: 236,
+			G: 160,
+			B: 181
+    },
+    {
+			name: 'Muñeca de Trapo',
+			code: 'RJ062-D',
+			R: 229,
+			G: 133,
+			B: 156
+    },
+    {
+			name: 'Chica Brillante',
+			code: 'RJ063-D',
+			R: 215,
+			G: 110,
+			B: 132
+    },
+    {
+			name: 'Rubor',
+			code: 'RJ064-P',
+			R: 250,
+			G: 220,
+			B: 218
+    },
+    {
+			name: 'Suspiro Rosa',
+			code: 'RJ065-P',
+			R: 245,
+			G: 210,
+			B: 215
+    },
+    {
+			name: 'Limonada Rosa',
+			code: 'RJ066-P',
+			R: 242,
+			G: 196,
+			B: 203
+    },
+    {
+			name: 'Amor en Rosa',
+			code: 'RJ067-T',
+			R: 235,
+			G: 176,
+			B: 187
+    },
+    {
+			name: 'Coctel de Rosas',
+			code: 'RJ068-T',
+			R: 228,
+			G: 157,
+			B: 171
+    },
+    {
+			name: 'Malva Jovial',
+			code: 'RJ069-D',
+			R: 218,
+			G: 128,
+			B: 137
+    },
+    {
+			name: 'Auge Rosa',
+			code: 'RJ070-D',
+			R: 201,
+			G: 105,
+			B: 115
+    },
+    {
+			name: 'Dulce Amanecer',
+			code: 'RJ071-P',
+			R: 247,
+			G: 218,
+			B: 210
+    },
+    {
+			name: 'Dulce Antojo',
+			code: 'RJ072-P',
+			R: 242,
+			G: 202,
+			B: 200
+    },
+    {
+			name: 'Luz del Día',
+			code: 'RJ073-P',
+			R: 234,
+			G: 186,
+			B: 185
+    },
+    {
+			name: 'Rosa de Atardecer',
+			code: 'RJ074-T',
+			R: 225,
+			G: 165,
+			B: 167
+    },
+    {
+			name: 'Ramo de Rosas',
+			code: 'RJ075-T',
+			R: 213,
+			G: 145,
+			B: 146
+    },
+    {
+			name: 'Rosa Dorada',
+			code: 'RJ076-D',
+			R: 198,
+			G: 117,
+			B: 113
+    },
+    {
+			name: 'Fusión de Arándanos',
+			code: 'RJ077-D',
+			R: 180,
+			G: 95,
+			B: 89
+    },
+    {
+			name: 'Rojo Pasión',
+			code: 'RJ078-A',
+			R: 185,
+			G: 57,
+			B: 68
+    },
+    {
+			name: 'Labios Rojos',
+			code: 'RJ079-A',
+			R: 199,
+			G: 73,
+			B: 90
+    },
+    {
+			name: 'Carmesí',
+			code: 'RJ080-A',
+			R: 160,
+			G: 65,
+			B: 58
+    },
+    {
+			name: 'Arcilla Roja',
+			code: 'RJ081-A',
+			R: 151,
+			G: 75,
+			B: 65
+    },
+    {
+			name: 'Jaspe Rojo',
+			code: 'RJ082-A',
+			R: 127,
+			G: 76,
+			B: 62
+    },
+    {
+			name: 'Café Tostado',
+			code: 'RJ083-A',
+			R: 107,
+			G: 73,
+			B: 63
+    },
+    {
+			name: 'Chocolate Azteca',
+			code: 'RJ084-A',
+			R: 87,
+			G: 62,
+			B: 55
+    },
+    {
+			name: 'Blanco Corazón',
+			code: 'RJ085-P',
+			R: 252,
+			G: 237,
+			B: 238
+    },
+    {
+			name: 'Dulce Carmesí',
+			code: 'RJ086-P',
+			R: 254,
+			G: 218,
+			B: 224
+    },
+    {
+			name: 'Campo Florecido',
+			code: 'RJ087-P',
+			R: 254,
+			G: 203,
+			B: 211
+    },
+    {
+			name: 'Poder Femenino',
+			code: 'RJ088-T',
+			R: 246,
+			G: 182,
+			B: 193
+    },
+    {
+			name: 'Elixir Rosa',
+			code: 'RJ089-T',
+			R: 243,
+			G: 161,
+			B: 175
+    },
+    {
+			name: 'Rosa juvenil',
+			code: 'RJ090-D',
+			R: 240,
+			G: 136,
+			B: 149
+    },
+    {
+			name: 'Destello Fucsia',
+			code: 'RJ091-D',
+			R: 229,
+			G: 114,
+			B: 127
+    },
+    {
+			name: 'Fresas con Crema',
+			code: 'RJ092-P',
+			R: 252,
+			G: 226,
+			B: 225
+    },
+    {
+			name: 'Simpatía Rosa',
+			code: 'RJ093-P',
+			R: 249,
+			G: 210,
+			B: 209
+    },
+    {
+			name: 'Flores al Amanecer',
+			code: 'RJ094-P',
+			R: 249,
+			G: 200,
+			B: 202
+    },
+    {
+			name: 'Visión Rosa',
+			code: 'RJ095-T',
+			R: 246,
+			G: 185,
+			B: 189
+    },
+    {
+			name: 'Explosión Coral',
+			code: 'RJ096-T',
+			R: 239,
+			G: 165,
+			B: 169
+    },
+    {
+			name: 'Isla Coral',
+			code: 'RJ097-D',
+			R: 231,
+			G: 137,
+			B: 137
+    },
+    {
+			name: 'Explosión Carmesí',
+			code: 'RJ098-D',
+			R: 220,
+			G: 115,
+			B: 114
+    },
+    {
+			name: 'Beso de Papel',
+			code: 'RJ099-P',
+			R: 249,
+			G: 220,
+			B: 211
+    },
+    {
+			name: 'Perla Real',
+			code: 'RJ100-P',
+			R: 242,
+			G: 193,
+			B: 182
+    },
+    {
+			name: 'Brillo Perla',
+			code: 'RJ101-P',
+			R: 230,
+			G: 175,
+			B: 163
+    },
+    {
+			name: 'Rosa Española',
+			code: 'RJ102-T',
+			R: 219,
+			G: 152,
+			B: 138
+    },
+    {
+			name: 'Rosa Vino',
+			code: 'RJ103-T',
+			R: 206,
+			G: 136,
+			B: 122
+    },
+    {
+			name: 'Coctel de Fresas',
+			code: 'RJ104-D',
+			R: 189,
+			G: 112,
+			B: 93
+    },
+    {
+			name: 'Cerámica Rústica',
+			code: 'RJ105-D',
+			R: 172,
+			G: 93,
+			B: 74
+    },
+    {
+			name: 'Fucsia Natural',
+			code: 'RJ106-D',
+			R: 222,
+			G: 112,
+			B: 129
+    },
+    {
+			name: 'Rojo Llamas',
+			code: 'RJ107-A',
+			R: 202,
+			G: 60,
+			B: 58
+    },
+    {
+			name: 'Bermellón',
+			code: 'RJ108-A',
+			R: 182,
+			G: 77,
+			B: 70
+    },
+    {
+			name: 'Arena Rosa',
+			code: 'RJ109-A',
+			R: 146,
+			G: 76,
+			B: 59
+    },
+    {
+			name: 'Jitomate',
+			code: 'RJ110-A',
+			R: 132,
+			G: 78,
+			B: 60
+    },
+    {
+			name: 'Merlot',
+			code: 'RJ111-A',
+			R: 113,
+			G: 77,
+			B: 64
+    },
+    {
+			name: 'Puro Cuero',
+			code: 'RJ112-A',
+			R: 96,
+			G: 71,
+			B: 60
+    },
+    {
+			name: 'Toque Femenino',
+			code: 'RJ113-P',
+			R: 250,
+			G: 229,
+			B: 223
+    },
+    {
+			name: 'Rosa Felpa',
+			code: 'RJ114-P',
+			R: 250,
+			G: 213,
+			B: 211
+    },
+    {
+			name: 'Flan de Fresas',
+			code: 'RJ115-P',
+			R: 254,
+			G: 204,
+			B: 205
+    },
+    {
+			name: 'Tarde de Pesca',
+			code: 'RJ116-T',
+			R: 250,
+			G: 181,
+			B: 184
+    },
+    {
+			name: 'Manzana Silvestre',
+			code: 'RJ117-T',
+			R: 249,
+			G: 166,
+			B: 173
+    },
+    {
+			name: 'Sandía',
+			code: 'RJ118-D',
+			R: 244,
+			G: 140,
+			B: 140
+    },
+    {
+			name: 'Ponche de Frutas',
+			code: 'RJ119-D',
+			R: 237,
+			G: 119,
+			B: 119
+    },
+    {
+			name: 'Rosa Perla',
+			code: 'RJ120-P',
+			R: 251,
+			G: 236,
+			B: 229
+    },
+    {
+			name: 'Rosa Calma',
+			code: 'RJ121-P',
+			R: 252,
+			G: 219,
+			B: 214
+    },
+    {
+			name: 'Rosa Pique',
+			code: 'RJ122-P',
+			R: 252,
+			G: 205,
+			B: 201
+    },
+    {
+			name: 'Perla Nueva',
+			code: 'RJ123-T',
+			R: 249,
+			G: 186,
+			B: 183
+    },
+    {
+			name: 'Crema de Frutillas',
+			code: 'RJ124-T',
+			R: 246,
+			G: 169,
+			B: 166
+    },
+    {
+			name: 'Durazno',
+			code: 'RJ125-D',
+			R: 240,
+			G: 141,
+			B: 133
+    },
+    {
+			name: 'Sorbete de Rosas',
+			code: 'RJ126-D',
+			R: 231,
+			G: 121,
+			B: 115
+    },
+    {
+			name: 'Brillo Delicado',
+			code: 'RJ127-P',
+			R: 250,
+			G: 230,
+			B: 217
+    },
+    {
+			name: 'Encanto Juvenil',
+			code: 'RJ128-P',
+			R: 238,
+			G: 199,
+			B: 183
+    },
+    {
+			name: 'Malteada de Melón',
+			code: 'RJ129-P',
+			R: 237,
+			G: 187,
+			B: 170
+    },
+    {
+			name: 'Tamarindo',
+			code: 'RJ130-T',
+			R: 221,
+			G: 164,
+			B: 145
+    },
+    {
+			name: 'Piel Bronceada',
+			code: 'RJ131-T',
+			R: 210,
+			G: 145,
+			B: 125
+    },
+    {
+			name: 'Cañón Rojo',
+			code: 'RJ132-D',
+			R: 196,
+			G: 117,
+			B: 94
+    },
+    {
+			name: 'Valle de Cerezos',
+			code: 'RJ133-D',
+			R: 180,
+			G: 102,
+			B: 78
+    },
+    {
+			name: 'Rojo Picante',
+			code: 'RJ134-A',
+			R: 203,
+			G: 64,
+			B: 59
+    },
+    {
+			name: 'Pasión Frambuesa',
+			code: 'RJ135-A',
+			R: 202,
+			G: 66,
+			B: 60
+    },
+    {
+			name: 'Ají',
+			code: 'RJ136-A',
+			R: 191,
+			G: 79,
+			B: 69
+    },
+    {
+			name: 'Selva Negra',
+			code: 'RJ137-A',
+			R: 153,
+			G: 79,
+			B: 57
+    },
+    {
+			name: 'Canela',
+			code: 'RJ138-A',
+			R: 142,
+			G: 85,
+			B: 62
+    },
+    {
+			name: 'Barniz Belga',
+			code: 'RJ139-A',
+			R: 114,
+			G: 79,
+			B: 67
+    },
+    {
+			name: 'Coco del Pacífico',
+			code: 'RJ140-A',
+			R: 101,
+			G: 76,
+			B: 66
+    },
+    {
+			name: 'Rosa Puro',
+			code: 'RJ141-P',
+			R: 253,
+			G: 235,
+			B: 228
+    },
+    {
+			name: 'Coral Australiano',
+			code: 'RJ142-P',
+			R: 255,
+			G: 217,
+			B: 210
+    },
+    {
+			name: 'Concha de Mar',
+			code: 'RJ143-P',
+			R: 253,
+			G: 207,
+			B: 200
+    },
+    {
+			name: 'Perla de Fantasía',
+			code: 'RJ144-T',
+			R: 253,
+			G: 187,
+			B: 178
+    },
+    {
+			name: 'Salsa Rosa',
+			code: 'RJ145-T',
+			R: 244,
+			G: 170,
+			B: 156
+    },
+    {
+			name: 'Salmón Alaska',
+			code: 'RJ146-D',
+			R: 234,
+			G: 149,
+			B: 133
+    },
+    {
+			name: 'Rosas del Paraíso',
+			code: 'RJ147-D',
+			R: 227,
+			G: 120,
+			B: 100
+    },
+    {
+			name: 'Suave y Sutil',
+			code: 'RJ148-P',
+			R: 248,
+			G: 236,
+			B: 228
+    },
+    {
+			name: 'Cielo Rosa',
+			code: 'RJ149-P',
+			R: 251,
+			G: 220,
+			B: 206
+    },
+    {
+			name: 'Suave Caramelo',
+			code: 'RJ150-P',
+			R: 252,
+			G: 206,
+			B: 193
+    },
+    {
+			name: 'Actitud Juvenil',
+			code: 'RJ151-T',
+			R: 248,
+			G: 189,
+			B: 174
+    },
+    {
+			name: 'Duraznos al Atardecer',
+			code: 'RJ152-T',
+			R: 244,
+			G: 176,
+			B: 159
+    },
+    {
+			name: 'Costa de Coral',
+			code: 'RJ153-D',
+			R: 240,
+			G: 150,
+			B: 123
+    },
+    {
+			name: 'Atardecer sobre coral',
+			code: 'RJ154-D',
+			R: 236,
+			G: 129,
+			B: 101
+    },
+    {
+			name: 'Durazno Puro',
+			code: 'RJ155-P',
+			R: 251,
+			G: 229,
+			B: 215
+    },
+    {
+			name: 'Crema Frambuesa',
+			code: 'RJ156-P',
+			R: 243,
+			G: 206,
+			B: 188
+    },
+    {
+			name: 'Primer Amor',
+			code: 'RJ157-P',
+			R: 239,
+			G: 194,
+			B: 172
+    },
+    {
+			name: 'Dulce de Curuba',
+			code: 'RJ158-T',
+			R: 225,
+			G: 171,
+			B: 146
+    },
+    {
+			name: 'Adobe',
+			code: 'RJ159-T',
+			R: 218,
+			G: 157,
+			B: 130
+    },
+    {
+			name: 'Terrazota texturizada',
+			code: 'RJ160-D',
+			R: 200,
+			G: 128,
+			B: 95
+    },
+    {
+			name: 'Cerámica Clásica',
+			code: 'RJ161-D',
+			R: 189,
+			G: 115,
+			B: 86
+    },
+    {
+			name: 'Alegría Relajada',
+			code: 'RJ162-D',
+			R: 233,
+			G: 118,
+			B: 114
+    },
+    {
+			name: 'Rojo Puro',
+			code: 'RJ163-A',
+			R: 211,
+			G: 79,
+			B: 59
+    },
+    {
+			name: 'Fuego',
+			code: 'RJ164-A',
+			R: 199,
+			G: 84,
+			B: 64
+    },
+    {
+			name: 'Siena Terracota',
+			code: 'RJ165-A',
+			R: 154,
+			G: 80,
+			B: 50
+    },
+    {
+			name: 'Rojo Volcánico',
+			code: 'RJ166-A',
+			R: 153,
+			G: 81,
+			B: 49
+    },
+    {
+			name: 'Cabello Exótico',
+			code: 'RJ167-A',
+			R: 124,
+			G: 80,
+			B: 65
+    },
+    {
+			name: 'Marrón Atardecer',
+			code: 'RJ168-A',
+			R: 93,
+			G: 71,
+			B: 64
+    },
+    {
+			name: 'Blanco Clásico',
+			code: 'RJ169-P',
+			R: 255,
+			G: 233,
+			B: 223
+    },
+    {
+			name: 'Blanco Melón',
+			code: 'RJ170-P',
+			R: 255,
+			G: 221,
+			B: 204
+    },
+    {
+			name: 'Fruta del Bosque',
+			code: 'RJ171-P',
+			R: 255,
+			G: 214,
+			B: 193
+    },
+    {
+			name: 'Bolero',
+			code: 'RJ172-T',
+			R: 255,
+			G: 196,
+			B: 175
+    },
+    {
+			name: 'Melocotón',
+			code: 'RJ173-T',
+			R: 251,
+			G: 175,
+			B: 151
+    },
+    {
+			name: 'Flor de la Pasión',
+			code: 'RJ174-D',
+			R: 248,
+			G: 147,
+			B: 115
+    },
+    {
+			name: 'Ponche de Mango',
+			code: 'RJ175-D',
+			R: 241,
+			G: 129,
+			B: 93
+    },
+    {
+			name: 'Sendero de Duraznos',
+			code: 'RJ176-P',
+			R: 250,
+			G: 234,
+			B: 218
+    },
+    {
+			name: 'Durazno Pálido',
+			code: 'RJ177-P',
+			R: 253,
+			G: 221,
+			B: 203
+    },
+    {
+			name: 'Salmón',
+			code: 'RJ178-P',
+			R: 252,
+			G: 210,
+			B: 191
+    },
+    {
+			name: 'Granizado Sandía',
+			code: 'RJ179-T',
+			R: 252,
+			G: 192,
+			B: 170
+    },
+    {
+			name: 'Toronja Tropical',
+			code: 'RJ180-T',
+			R: 251,
+			G: 177,
+			B: 149
+    },
+    {
+			name: 'Zumo de Naranja',
+			code: 'RJ181-D',
+			R: 248,
+			G: 154,
+			B: 116
+    },
+    {
+			name: 'Tentación Terracota',
+			code: 'RJ182-D',
+			R: 239,
+			G: 133,
+			B: 93
+    },
+    {
+			name: 'Terciopelo Rosa',
+			code: 'RJ183-P',
+			R: 250,
+			G: 227,
+			B: 210
+    },
+    {
+			name: 'Breve Suspiro',
+			code: 'RJ184-P',
+			R: 245,
+			G: 205,
+			B: 180
+    },
+    {
+			name: 'Picardía ',
+			code: 'RJ185-P',
+			R: 237,
+			G: 191,
+			B: 167
+    },
+    {
+			name: 'Damasco',
+			code: 'RJ186-T',
+			R: 232,
+			G: 179,
+			B: 153
+    },
+    {
+			name: 'Canela tostada',
+			code: 'RJ187-T',
+			R: 220,
+			G: 163,
+			B: 133
+    },
+    {
+			name: 'Cruce del Cañón',
+			code: 'RJ188-D',
+			R: 210,
+			G: 136,
+			B: 102
+    },
+    {
+			name: 'Mina de Cobre',
+			code: 'RJ189-D',
+			R: 194,
+			G: 120,
+			B: 85
+    },
+    {
+			name: 'Naranja Intenso',
+			code: 'NR001-A',
+			R: 217,
+			G: 97,
+			B: 59
+    },
+    {
+			name: 'Fuego Austral',
+			code: 'NR002-A',
+			R: 226,
+			G: 92,
+			B: 51
+    },
+    {
+			name: 'Ají Picante',
+			code: 'NR003-A',
+			R: 192,
+			G: 87,
+			B: 54
+    },
+    {
+			name: 'Tesoro Cobrizo',
+			code: 'NR004-A',
+			R: 162,
+			G: 91,
+			B: 59
+    },
+    {
+			name: 'Ceramica de la Villa',
+			code: 'NR005-A',
+			R: 160,
+			G: 95,
+			B: 63
+    },
+    {
+			name: 'Caoba',
+			code: 'NR006-A',
+			R: 131,
+			G: 81,
+			B: 60
+    },
+    {
+			name: 'Wenge Africano',
+			code: 'NR007-A',
+			R: 91,
+			G: 71,
+			B: 64
+    },
+    {
+			name: 'Antojo Melón',
+			code: 'NR008-P',
+			R: 250,
+			G: 230,
+			B: 216
+    },
+    {
+			name: 'Sonrojo Melón',
+			code: 'NR009-P',
+			R: 253,
+			G: 220,
+			B: 196
+    },
+    {
+			name: 'Sembrado de Melón',
+			code: 'NR010-P',
+			R: 255,
+			G: 212,
+			B: 183
+    },
+    {
+			name: 'Huerto de Duraznos',
+			code: 'NR011-T',
+			R: 253,
+			G: 192,
+			B: 159
+    },
+    {
+			name: 'Bocados de Melón',
+			code: 'NR012-T',
+			R: 252,
+			G: 177,
+			B: 140
+    },
+    {
+			name: 'Terracota Suave',
+			code: 'NR013-D',
+			R: 248,
+			G: 156,
+			B: 105
+    },
+    {
+			name: 'Delicia Naranja',
+			code: 'NR014-D',
+			R: 243,
+			G: 136,
+			B: 84
+    },
+    {
+			name: 'Dulce de Albaricoque',
+			code: 'NR015-P',
+			R: 253,
+			G: 230,
+			B: 211
+    },
+    {
+			name: 'Dulce Melocotón',
+			code: 'NR016-P',
+			R: 253,
+			G: 221,
+			B: 197
+    },
+    {
+			name: 'Mousse de Durazno',
+			code: 'NR017-P',
+			R: 254,
+			G: 211,
+			B: 180
+    },
+    {
+			name: 'Fruta Tropical',
+			code: 'NR018-T',
+			R: 255,
+			G: 201,
+			B: 162
+    },
+    {
+			name: 'Popurrí de Melón',
+			code: 'NR019-T',
+			R: 255,
+			G: 182,
+			B: 139
+    },
+    {
+			name: 'Naranja Capuchina',
+			code: 'NR020-D',
+			R: 253,
+			G: 159,
+			B: 101
+    },
+    {
+			name: 'Otoño glorioso',
+			code: 'NR021-D',
+			R: 242,
+			G: 138,
+			B: 77
+    },
+    {
+			name: 'Tofu',
+			code: 'NR022-P',
+			R: 249,
+			G: 226,
+			B: 213
+    },
+    {
+			name: 'Reliquia Rosa',
+			code: 'NR023-P',
+			R: 248,
+			G: 216,
+			B: 193
+    },
+    {
+			name: 'Esponjado de Curuba',
+			code: 'NR024-P',
+			R: 242,
+			G: 202,
+			B: 176
+    },
+    {
+			name: 'Mágico Suroeste',
+			code: 'NR025-T',
+			R: 234,
+			G: 185,
+			B: 152
+    },
+    {
+			name: 'Canela Almíbar',
+			code: 'NR026-T',
+			R: 223,
+			G: 167,
+			B: 131
+    },
+    {
+			name: 'Cimarrón',
+			code: 'NR027-D',
+			R: 210,
+			G: 142,
+			B: 100
+    },
+    {
+			name: 'Dulce de Canela',
+			code: 'NR028-D',
+			R: 196,
+			G: 128,
+			B: 89
+    },
+    {
+			name: 'Calabaza Natural',
+			code: 'NR029-D',
+			R: 245,
+			G: 133,
+			B: 86
+    },
+    {
+			name: 'Locura de Amor',
+			code: 'NR030-A',
+			R: 222,
+			G: 101,
+			B: 48
+    },
+    {
+			name: 'Fogata de Hogar',
+			code: 'NR031-A',
+			R: 209,
+			G: 102,
+			B: 56
+    },
+    {
+			name: 'Trozo de Cobre',
+			code: 'NR032-A',
+			R: 171,
+			G: 102,
+			B: 62
+    },
+    {
+			name: 'Ron Caramelo',
+			code: 'NR033-A',
+			R: 151,
+			G: 96,
+			B: 63
+    },
+    {
+			name: 'Crema de Moca',
+			code: 'NR034-A',
+			R: 120,
+			G: 85,
+			B: 68
+    },
+    {
+			name: 'Chocolate Negro',
+			code: 'NR035-A',
+			R: 84,
+			G: 72,
+			B: 69
+    },
+    {
+			name: 'Sol de Primavera',
+			code: 'NR036-P',
+			R: 253,
+			G: 235,
+			B: 213
+    },
+    {
+			name: 'Aceite de Frutas',
+			code: 'NR037-P',
+			R: 255,
+			G: 226,
+			B: 200
+    },
+    {
+			name: 'Helado de Durazno',
+			code: 'NR038-P',
+			R: 255,
+			G: 217,
+			B: 184
+    },
+    {
+			name: 'Crema de Mandarina',
+			code: 'NR039-T',
+			R: 255,
+			G: 203,
+			B: 162
+    },
+    {
+			name: 'Rubor Melón',
+			code: 'NR040-T',
+			R: 255,
+			G: 182,
+			B: 134
+    },
+    {
+			name: 'Sorbete de Naranja',
+			code: 'NR041-D',
+			R: 252,
+			G: 160,
+			B: 99
+    },
+    {
+			name: 'Papaya Exótica',
+			code: 'NR042-D',
+			R: 253,
+			G: 148,
+			B: 82
+    },
+    {
+			name: ' Cálida Nieve',
+			code: 'NR043-P',
+			R: 251,
+			G: 232,
+			B: 213
+    },
+    {
+			name: 'Crema de Duraznos',
+			code: 'NR044-P',
+			R: 254,
+			G: 221,
+			B: 196
+    },
+    {
+			name: 'Granizado de Naranja',
+			code: 'NR045-P',
+			R: 254,
+			G: 216,
+			B: 182
+    },
+    {
+			name: 'A la Naranja',
+			code: 'NR046-T',
+			R: 255,
+			G: 203,
+			B: 162
+    },
+    {
+			name: 'Naranja a las Brasas',
+			code: 'NR047-T',
+			R: 255,
+			G: 186,
+			B: 138
+    },
+    {
+			name: 'Bris Florecida',
+			code: 'NR048-D',
+			R: 252,
+			G: 166,
+			B: 100
+    },
+    {
+			name: 'Huerto de Naranjas',
+			code: 'NR049-D',
+			R: 246,
+			G: 145,
+			B: 79
+    },
+    {
+			name: 'Jengibre Dulce',
+			code: 'NR050-P',
+			R: 252,
+			G: 226,
+			B: 205
+    },
+    {
+			name: 'Playa Baja',
+			code: 'NR051-P',
+			R: 250,
+			G: 222,
+			B: 197
+    },
+    {
+			name: 'Arenisca',
+			code: 'NR052-P',
+			R: 244,
+			G: 210,
+			B: 179
+    },
+    {
+			name: 'Crema Damasco',
+			code: 'NR053-T',
+			R: 238,
+			G: 195,
+			B: 158
+    },
+    {
+			name: 'Tierra del Sur',
+			code: 'NR054-T',
+			R: 228,
+			G: 176,
+			B: 136
+    },
+    {
+			name: 'Chimenea',
+			code: 'NR055-D',
+			R: 218,
+			G: 155,
+			B: 105
+    },
+    {
+			name: 'Toque de Canela',
+			code: 'NR056-D',
+			R: 208,
+			G: 141,
+			B: 94
+    },
+    {
+			name: 'Campamento Indio',
+			code: 'NR057-A',
+			R: 245,
+			G: 119,
+			B: 39
+    },
+    {
+			name: 'Fuego de Dragón',
+			code: 'NR058-A',
+			R: 227,
+			G: 112,
+			B: 54
+    },
+    {
+			name: 'Fiesta Otoñal',
+			code: 'NR059-A',
+			R: 216,
+			G: 108,
+			B: 57
+    },
+    {
+			name: 'Especia Exótica',
+			code: 'NR060-A',
+			R: 171,
+			G: 108,
+			B: 63
+    },
+    {
+			name: 'Toque de Jengibre',
+			code: 'NR061-A',
+			R: 164,
+			G: 109,
+			B: 68
+    },
+    {
+			name: 'Fiesta de Chocolate',
+			code: 'NR062-A',
+			R: 143,
+			G: 96,
+			B: 70
+    },
+    {
+			name: 'Tormenta',
+			code: 'NR063-A',
+			R: 81,
+			G: 72,
+			B: 69
+    },
+    {
+			name: 'Blanco Vainilla',
+			code: 'NR064-P',
+			R: 250,
+			G: 238,
+			B: 221
+    },
+    {
+			name: 'Azahar',
+			code: 'NR065-P',
+			R: 255,
+			G: 223,
+			B: 188
+    },
+    {
+			name: 'Limoncillo',
+			code: 'NR066-P',
+			R: 255,
+			G: 219,
+			B: 177
+    },
+    {
+			name: 'Almíbar',
+			code: 'NR067-T',
+			R: 255,
+			G: 206,
+			B: 156
+    },
+    {
+			name: 'Albaricoque',
+			code: 'NR068-T',
+			R: 255,
+			G: 192,
+			B: 128
+    },
+    {
+			name: 'Fruto de Damasco',
+			code: 'NR069-D',
+			R: 255,
+			G: 175,
+			B: 94
+    },
+    {
+			name: 'Naranja Asiática',
+			code: 'NR070-D',
+			R: 255,
+			G: 158,
+			B: 74
+    },
+    {
+			name: 'Casatta de Durazno',
+			code: 'NR071-P',
+			R: 253,
+			G: 234,
+			B: 214
+    },
+    {
+			name: 'Flan de Calabaza',
+			code: 'NR072-P',
+			R: 255,
+			G: 230,
+			B: 207
+    },
+    {
+			name: 'Playa Dorada',
+			code: 'NR073-P',
+			R: 255,
+			G: 222,
+			B: 189
+    },
+    {
+			name: 'Dulce de Melón',
+			code: 'NR074-T',
+			R: 255,
+			G: 208,
+			B: 164
+    },
+    {
+			name: 'Ciudad Dorada',
+			code: 'NR075-T',
+			R: 255,
+			G: 191,
+			B: 135
+    },
+    {
+			name: 'Listón Dorado',
+			code: 'NR076-D',
+			R: 248,
+			G: 163,
+			B: 91
+    },
+    {
+			name: 'Crucero en el Atardecer',
+			code: 'NR077-D',
+			R: 247,
+			G: 150,
+			B: 77
+    },
+    {
+			name: 'Rosa Jengibre',
+			code: 'NR078-P',
+			R: 250,
+			G: 226,
+			B: 198
+    },
+    {
+			name: 'Caminata en la Playa',
+			code: 'NR079-P',
+			R: 246,
+			G: 214,
+			B: 181
+    },
+    {
+			name: 'Duna',
+			code: 'NR080-P',
+			R: 246,
+			G: 214,
+			B: 181
+    },
+    {
+			name: 'Durazno Vivaz',
+			code: 'NR081-T',
+			R: 240,
+			G: 197,
+			B: 155
+    },
+    {
+			name: 'Sorbete de Curuba',
+			code: 'NR082-T',
+			R: 229,
+			G: 180,
+			B: 137
+    },
+    {
+			name: 'Tez Bronceada',
+			code: 'NR083-D',
+			R: 221,
+			G: 162,
+			B: 109
+    },
+    {
+			name: 'Nuez Moscada',
+			code: 'NR084-D',
+			R: 205,
+			G: 144,
+			B: 90
+    },
+    {
+			name: 'Sueño de un Atardecer',
+			code: 'NR085-D',
+			R: 254,
+			G: 152,
+			B: 79
+    },
+    {
+			name: 'Naranja Mazapán',
+			code: 'NR086-A',
+			R: 246,
+			G: 133,
+			B: 50
+    },
+    {
+			name: 'Atardecer Impactante',
+			code: 'NR087-A',
+			R: 217,
+			G: 116,
+			B: 49
+    },
+    {
+			name: 'Mix de Nueces',
+			code: 'NR088-A',
+			R: 175,
+			G: 110,
+			B: 55
+    },
+    {
+			name: 'Tierras Cálidas',
+			code: 'NR089-A',
+			R: 171,
+			G: 117,
+			B: 68
+    },
+    {
+			name: 'Crema de Café',
+			code: 'NR090-A',
+			R: 142,
+			G: 104,
+			B: 78
+    },
+    {
+			name: 'Gris Tempestad',
+			code: 'NR091-A',
+			R: 89,
+			G: 80,
+			B: 76
+    },
+    {
+			name: 'Blanco Chantilli',
+			code: 'NR092-P',
+			R: 250,
+			G: 233,
+			B: 203
+    },
+    {
+			name: 'Vista Soleada',
+			code: 'NR093-P',
+			R: 254,
+			G: 230,
+			B: 195
+    },
+    {
+			name: 'Calor de Verano',
+			code: 'NR094-P',
+			R: 255,
+			G: 218,
+			B: 169
+    },
+    {
+			name: 'Luz de Oro',
+			code: 'NR095-T',
+			R: 255,
+			G: 211,
+			B: 157
+    },
+    {
+			name: 'Sol de la Tarde',
+			code: 'NR096-T',
+			R: 255,
+			G: 200,
+			B: 130
+    },
+    {
+			name: 'Toronja Dulce',
+			code: 'NR097-D',
+			R: 255,
+			G: 177,
+			B: 90
+    },
+    {
+			name: 'Especias Cítricas',
+			code: 'NR098-D',
+			R: 255,
+			G: 163,
+			B: 68
+    },
+    {
+			name: 'Sorbete Suave',
+			code: 'NR099-P',
+			R: 253,
+			G: 231,
+			B: 207
+    },
+    {
+			name: 'Sol del Tayrona',
+			code: 'NR100-P',
+			R: 253,
+			G: 225,
+			B: 193
+    },
+    {
+			name: 'Aroma Frutal',
+			code: 'NR101-P',
+			R: 255,
+			G: 217,
+			B: 180
+    },
+    {
+			name: 'Destello Naranja',
+			code: 'NR102-T',
+			R: 255,
+			G: 206,
+			B: 159
+    },
+    {
+			name: 'Tarde en la Pradera',
+			code: 'NR103-T',
+			R: 255,
+			G: 193,
+			B: 137
+    },
+    {
+			name: 'Batido de Mango',
+			code: 'NR104-D',
+			R: 255,
+			G: 175,
+			B: 100
+    },
+    {
+			name: 'Granizado de Toronja',
+			code: 'NR105-D',
+			R: 251,
+			G: 155,
+			B: 76
+    },
+    {
+			name: 'Fusión Curuba',
+			code: 'NR106-P',
+			R: 248,
+			G: 233,
+			B: 216
+    },
+    {
+			name: 'Camino en la Arena',
+			code: 'NR107-P',
+			R: 251,
+			G: 223,
+			B: 192
+    },
+    {
+			name: 'Fresa Mandarina',
+			code: 'NR108-P',
+			R: 248,
+			G: 213,
+			B: 176
+    },
+    {
+			name: 'Viaje a la Playa',
+			code: 'NR109-T',
+			R: 241,
+			G: 200,
+			B: 155
+    },
+    {
+			name: 'Café Latte',
+			code: 'NR110-T',
+			R: 232,
+			G: 183,
+			B: 135
+    },
+    {
+			name: 'Ocre Dorado',
+			code: 'NR111-D',
+			R: 225,
+			G: 165,
+			B: 105
+    },
+    {
+			name: 'El camino del Sol',
+			code: 'NR112-D',
+			R: 215,
+			G: 150,
+			B: 88
+    },
+    {
+			name: 'Toronja Jugosa',
+			code: 'NR113-A',
+			R: 254,
+			G: 143,
+			B: 32
+    },
+    {
+			name: 'Naranja Toscano',
+			code: 'NR114-A',
+			R: 247,
+			G: 133,
+			B: 26
+    },
+    {
+			name: 'Naranja Caramelizada',
+			code: 'NR115-A',
+			R: 219,
+			G: 124,
+			B: 44
+    },
+    {
+			name: 'Ámbar',
+			code: 'NR116-A',
+			R: 185,
+			G: 122,
+			B: 65
+    },
+    {
+			name: 'Arenal',
+			code: 'NR117-A',
+			R: 162,
+			G: 117,
+			B: 68
+    },
+    {
+			name: 'Macchiato',
+			code: 'NR118-A',
+			R: 137,
+			G: 97,
+			B: 67
+    },
+    {
+			name: 'Crema de Cacao',
+			code: 'NR119-A',
+			R: 82,
+			G: 71,
+			B: 65
+    },
+    {
+			name: 'Brillo del Fuego',
+			code: 'AM001-P',
+			R: 254,
+			G: 231,
+			B: 200
+    },
+    {
+			name: 'Puesta del Sol',
+			code: 'AM002-P',
+			R: 255,
+			G: 228,
+			B: 188
+    },
+    {
+			name: 'Ciudad del Sol',
+			code: 'AM003-P',
+			R: 255,
+			G: 222,
+			B: 169
+    },
+    {
+			name: 'Cielo Dorado',
+			code: 'AM004-T',
+			R: 255,
+			G: 211,
+			B: 148
+    },
+    {
+			name: 'Rayo de Sol',
+			code: 'AM005-T',
+			R: 255,
+			G: 199,
+			B: 121
+    },
+    {
+			name: 'Oro Azteca',
+			code: 'AM006-D',
+			R: 255,
+			G: 187,
+			B: 84
+    },
+    {
+			name: 'Hojas de Oro',
+			code: 'AM007-D',
+			R: 255,
+			G: 169,
+			B: 50
+    },
+    {
+			name: 'Sensación de Verano',
+			code: 'AM008-P',
+			R: 249,
+			G: 226,
+			B: 201
+    },
+    {
+			name: 'Vacaciones de Verano',
+			code: 'AM009-P',
+			R: 254,
+			G: 223,
+			B: 186
+    },
+    {
+			name: 'Sol en la Playa',
+			code: 'AM010-P',
+			R: 251,
+			G: 225,
+			B: 187
+    },
+    {
+			name: 'Deleite de Vainilla',
+			code: 'AM011-T',
+			R: 253,
+			G: 206,
+			B: 150
+    },
+    {
+			name: 'Postre de Crema',
+			code: 'AM012-T',
+			R: 255,
+			G: 200,
+			B: 131
+    },
+    {
+			name: 'Flor de Oro',
+			code: 'AM013-D',
+			R: 253,
+			G: 178,
+			B: 96
+    },
+    {
+			name: 'Renacer de Otoño',
+			code: 'AM014-D',
+			R: 243,
+			G: 162,
+			B: 76
+    },
+    {
+			name: 'Algodón Egipcio',
+			code: 'AM015-P',
+			R: 252,
+			G: 242,
+			B: 225
+    },
+    {
+			name: 'Postre de Almendras',
+			code: 'AM016-P',
+			R: 248,
+			G: 224,
+			B: 192
+    },
+    {
+			name: 'Dulce Verano',
+			code: 'AM017-P',
+			R: 247,
+			G: 217,
+			B: 181
+    },
+    {
+			name: 'Trigo Suave',
+			code: 'AM018-T',
+			R: 241,
+			G: 205,
+			B: 158
+    },
+    {
+			name: 'Ondas de Trigo',
+			code: 'AM019-T',
+			R: 231,
+			G: 187,
+			B: 136
+    },
+    {
+			name: 'Toque de Midas',
+			code: 'AM020-D',
+			R: 220,
+			G: 167,
+			B: 106
+    },
+    {
+			name: 'Besos de Ron',
+			code: 'AM021-D',
+			R: 207,
+			G: 152,
+			B: 87
+    },
+    {
+			name: 'Dulce de Mantequilla',
+			code: 'AM022-D',
+			R: 255,
+			G: 170,
+			B: 64
+    },
+    {
+			name: 'Calabacín',
+			code: 'AM023-A',
+			R: 255,
+			G: 144,
+			B: 0
+    },
+    {
+			name: 'Pique Mexicano',
+			code: 'AM024-A',
+			R: 208,
+			G: 129,
+			B: 54
+    },
+    {
+			name: 'Trigo Tostado',
+			code: 'AM025-A',
+			R: 178,
+			G: 125,
+			B: 75
+    },
+    {
+			name: 'Nuez Pacana',
+			code: 'AM026-A',
+			R: 159,
+			G: 111,
+			B: 60
+    },
+    {
+			name: 'Nuez de Brasil',
+			code: 'AM027-A',
+			R: 144,
+			G: 107,
+			B: 73
+    },
+    {
+			name: 'Nuez Nativa',
+			code: 'AM028-A',
+			R: 93,
+			G: 81,
+			B: 74
+    },
+    {
+			name: 'Batido de Crema',
+			code: 'AM029-P',
+			R: 251,
+			G: 229,
+			B: 193
+    },
+    {
+			name: 'Día de Sol',
+			code: 'AM030-P',
+			R: 255,
+			G: 230,
+			B: 191
+    },
+    {
+			name: 'Maíz Sedoso',
+			code: 'AM031-P',
+			R: 255,
+			G: 227,
+			B: 177
+    },
+    {
+			name: 'Camino Dorado',
+			code: 'AM032-T',
+			R: 255,
+			G: 218,
+			B: 155
+    },
+    {
+			name: 'Oro Mexicano',
+			code: 'AM033-T',
+			R: 255,
+			G: 207,
+			B: 115
+    },
+    {
+			name: 'Sol Dorado',
+			code: 'AM034-D',
+			R: 255,
+			G: 184,
+			B: 59
+    },
+    {
+			name: 'Leyenda de Oro',
+			code: 'AM035-D',
+			R: 255,
+			G: 177,
+			B: 24
+    },
+    {
+			name: 'Crema Avellana',
+			code: 'AM036-P',
+			R: 249,
+			G: 229,
+			B: 193
+    },
+    {
+			name: 'Sol Espléndido',
+			code: 'AM037-P',
+			R: 255,
+			G: 231,
+			B: 192
+    },
+    {
+			name: 'Pétalo de Margarita',
+			code: 'AM038-P',
+			R: 255,
+			G: 225,
+			B: 178
+    },
+    {
+			name: 'Té de Manzanilla',
+			code: 'AM039-T',
+			R: 255,
+			G: 213,
+			B: 153
+    },
+    {
+			name: 'Espiga Dorada',
+			code: 'AM040-T',
+			R: 255,
+			G: 203,
+			B: 133
+    },
+    {
+			name: 'Costa De Oro',
+			code: 'AM041-D',
+			R: 254,
+			G: 185,
+			B: 94
+    },
+    {
+			name: 'Poder del Oro',
+			code: 'AM042-D',
+			R: 241,
+			G: 169,
+			B: 68
+    },
+    {
+			name: 'Crema Clásica',
+			code: 'AM043-P',
+			R: 249,
+			G: 239,
+			B: 220
+    },
+    {
+			name: 'Miel',
+			code: 'AM044-P',
+			R: 254,
+			G: 230,
+			B: 199
+    },
+    {
+			name: 'Piedra del Sol',
+			code: 'AM045-P',
+			R: 250,
+			G: 221,
+			B: 182
+    },
+    {
+			name: 'Villa Dorada',
+			code: 'AM046-T',
+			R: 245,
+			G: 207,
+			B: 160
+    },
+    {
+			name: 'Listón de Oro',
+			code: 'AM047-T',
+			R: 241,
+			G: 196,
+			B: 137
+    },
+    {
+			name: 'Sol del Este',
+			code: 'AM048-D',
+			R: 234,
+			G: 178,
+			B: 108
+    },
+    {
+			name: 'Sol del Desierto',
+			code: 'AM049-D',
+			R: 222,
+			G: 163,
+			B: 88
+    },
+    {
+			name: 'Cata Australiana',
+			code: 'AM050-A',
+			R: 255,
+			G: 162,
+			B: 0
+    },
+    {
+			name: 'Oro Mágico',
+			code: 'AM051-A',
+			R: 255,
+			G: 154,
+			B: 0
+    },
+    {
+			name: 'Rojizo Atardecer',
+			code: 'AM052-A',
+			R: 210,
+			G: 131,
+			B: 30
+    },
+    {
+			name: 'Oro Clásico',
+			code: 'AM053-A',
+			R: 192,
+			G: 134,
+			B: 60
+    },
+    {
+			name: 'Hoja Dorada',
+			code: 'AM054-A',
+			R: 160,
+			G: 118,
+			B: 67
+    },
+    {
+			name: 'Amaretto',
+			code: 'AM055-A',
+			R: 148,
+			G: 111,
+			B: 79
+    },
+    {
+			name: 'Tiramisú',
+			code: 'AM056-A',
+			R: 89,
+			G: 76,
+			B: 66
+    },
+    {
+			name: 'Villa Soleada',
+			code: 'AM057-P',
+			R: 248,
+			G: 239,
+			B: 213
+    },
+    {
+			name: 'Toque de Sol',
+			code: 'AM058-P',
+			R: 249,
+			G: 234,
+			B: 191
+    },
+    {
+			name: 'Destello del Sol',
+			code: 'AM059-P',
+			R: 253,
+			G: 225,
+			B: 169
+    },
+    {
+			name: 'Sol del Caribe',
+			code: 'AM060-T',
+			R: 255,
+			G: 226,
+			B: 171
+    },
+    {
+			name: 'Panal ',
+			code: 'AM061-T',
+			R: 255,
+			G: 215,
+			B: 132
+    },
+    {
+			name: 'Ananá',
+			code: 'AM062-D',
+			R: 255,
+			G: 207,
+			B: 99
+    },
+    {
+			name: 'Sorbete de Maracuyá',
+			code: 'AM063-D',
+			R: 255,
+			G: 193,
+			B: 57
+    },
+    {
+			name: 'Granizado de Limón',
+			code: 'AM064-P',
+			R: 251,
+			G: 234,
+			B: 205
+    },
+    {
+			name: 'Sol del Campo',
+			code: 'AM065-P',
+			R: 251,
+			G: 236,
+			B: 200
+    },
+    {
+			name: 'Fiesta del Sol',
+			code: 'AM066-P',
+			R: 254,
+			G: 232,
+			B: 187
+    },
+    {
+			name: 'Dorado por el Sol',
+			code: 'AM067-T',
+			R: 255,
+			G: 225,
+			B: 164
+    },
+    {
+			name: 'Feliz Amanecer',
+			code: 'AM068-T',
+			R: 255,
+			G: 214,
+			B: 138
+    },
+    {
+			name: 'Fusión Maracuyá',
+			code: 'AM069-D',
+			R: 255,
+			G: 203,
+			B: 102
+    },
+    {
+			name: 'Esplendor Dorado',
+			code: 'AM070-D',
+			R: 253,
+			G: 191,
+			B: 79
+    },
+    {
+			name: 'Bruma Limón',
+			code: 'AM071-P',
+			R: 250,
+			G: 239,
+			B: 216
+    },
+    {
+			name: 'Sol Nublado',
+			code: 'AM072-P',
+			R: 249,
+			G: 235,
+			B: 203
+    },
+    {
+			name: 'Bruma Cálida',
+			code: 'AM073-P',
+			R: 248,
+			G: 226,
+			B: 182
+    },
+    {
+			name: 'Ramo de Trigo',
+			code: 'AM074-T',
+			R: 246,
+			G: 215,
+			B: 161
+    },
+    {
+			name: 'Maíz Tenue',
+			code: 'AM075-T',
+			R: 248,
+			G: 207,
+			B: 142
+    },
+    {
+			name: 'Girasol de la Pradera',
+			code: 'AM076-D',
+			R: 241,
+			G: 191,
+			B: 108
+    },
+    {
+			name: 'Tequendama',
+			code: 'AM077-D',
+			R: 229,
+			G: 175,
+			B: 89
+    },
+    {
+			name: 'Playa Tropical',
+			code: 'AM078-D',
+			R: 255,
+			G: 188,
+			B: 63
+    },
+    {
+			name: 'Oro Real',
+			code: 'AM079-A',
+			R: 255,
+			G: 172,
+			B: 0
+    },
+    {
+			name: 'Oro Envejecido',
+			code: 'AM080-A',
+			R: 246,
+			G: 163,
+			B: 10
+    },
+    {
+			name: 'Corazón de Oro',
+			code: 'AM081-A',
+			R: 190,
+			G: 133,
+			B: 50
+    },
+    {
+			name: 'Pepino Agridulce',
+			code: 'AM082-A',
+			R: 149,
+			G: 117,
+			B: 68
+    },
+    {
+			name: 'Café Pardo',
+			code: 'AM083-A',
+			R: 122,
+			G: 97,
+			B: 69
+    },
+    {
+			name: 'Paraíso Terrenal',
+			code: 'AM084-A',
+			R: 84,
+			G: 72,
+			B: 64
+    },
+    {
+			name: 'Limonada Michelada',
+			code: 'AM085-P',
+			R: 247,
+			G: 238,
+			B: 209
+    },
+    {
+			name: 'Amarillo Jovial',
+			code: 'AM086-P',
+			R: 252,
+			G: 236,
+			B: 195
+    },
+    {
+			name: 'Brillo de Sol',
+			code: 'AM087-P',
+			R: 253,
+			G: 233,
+			B: 173
+    },
+    {
+			name: 'Sonrisa',
+			code: 'AM088-T',
+			R: 254,
+			G: 226,
+			B: 164
+    },
+    {
+			name: 'Pronto Atardecer',
+			code: 'AM089-T',
+			R: 255,
+			G: 221,
+			B: 139
+    },
+    {
+			name: 'Atrapasueños',
+			code: 'AM090-D',
+			R: 255,
+			G: 212,
+			B: 102
+    },
+    {
+			name: 'Baile del Sol',
+			code: 'AM091-D',
+			R: 255,
+			G: 201,
+			B: 66
+    },
+    {
+			name: 'Bruma Cítrica',
+			code: 'AM092-P',
+			R: 247,
+			G: 236,
+			B: 204
+    },
+    {
+			name: 'Explosión de Limón',
+			code: 'AM093-P',
+			R: 250,
+			G: 237,
+			B: 197
+    },
+    {
+			name: 'Amarillo Sol',
+			code: 'AM094-P',
+			R: 252,
+			G: 233,
+			B: 180
+    },
+    {
+			name: 'Suave Calidez',
+			code: 'AM095-T',
+			R: 255,
+			G: 225,
+			B: 161
+    },
+    {
+			name: 'Crema Batida',
+			code: 'AM096-T',
+			R: 255,
+			G: 219,
+			B: 144
+    },
+    {
+			name: 'Canario ',
+			code: 'AM097-D',
+			R: 255,
+			G: 210,
+			B: 104
+    },
+    {
+			name: 'Trofeo',
+			code: 'AM098-D',
+			R: 255,
+			G: 198,
+			B: 73
+    },
+    {
+			name: 'Miel de Azahar',
+			code: 'AM099-P',
+			R: 249,
+			G: 238,
+			B: 211
+    },
+    {
+			name: 'Luz Tenue',
+			code: 'AM100-P',
+			R: 249,
+			G: 233,
+			B: 197
+    },
+    {
+			name: 'Trigo del Campo',
+			code: 'AM101-P',
+			R: 252,
+			G: 231,
+			B: 187
+    },
+    {
+			name: 'Taza de Miel',
+			code: 'AM102-T',
+			R: 247,
+			G: 217,
+			B: 160
+    },
+    {
+			name: 'Maíz Crocante',
+			code: 'AM103-T',
+			R: 243,
+			G: 208,
+			B: 139
+    },
+    {
+			name: 'Petalo de Girasol',
+			code: 'AM104-D',
+			R: 237,
+			G: 195,
+			B: 110
+    },
+    {
+			name: 'Miel Mostaza',
+			code: 'AM105-D',
+			R: 226,
+			G: 177,
+			B: 90
+    },
+    {
+			name: 'Limón Mandarina',
+			code: 'AM106-A',
+			R: 255,
+			G: 187,
+			B: 0
+    },
+    {
+			name: 'Rey Midas',
+			code: 'AM107-A',
+			R: 255,
+			G: 178,
+			B: 0
+    },
+    {
+			name: 'Valle Dorado',
+			code: 'AM108-A',
+			R: 230,
+			G: 163,
+			B: 14
+    },
+    {
+			name: 'Tramontana',
+			code: 'AM109-A',
+			R: 192,
+			G: 138,
+			B: 43
+    },
+    {
+			name: 'Roble Majestuoso',
+			code: 'AM110-A',
+			R: 140,
+			G: 115,
+			B: 73
+    },
+    {
+			name: 'Pizca de Albahaca',
+			code: 'AM111-A',
+			R: 117,
+			G: 101,
+			B: 74
+    },
+    {
+			name: 'Tallo de Rosa',
+			code: 'AM112-A',
+			R: 91,
+			G: 78,
+			B: 67
+    },
+    {
+			name: 'Brillo de luz',
+			code: 'AM113-P',
+			R: 250,
+			G: 243,
+			B: 218
+    },
+    {
+			name: 'Seda Cítrica',
+			code: 'AM114-P',
+			R: 249,
+			G: 240,
+			B: 200
+    },
+    {
+			name: 'Tentación de Bananas',
+			code: 'AM115-P',
+			R: 252,
+			G: 236,
+			B: 173
+    },
+    {
+			name: 'Horizonte',
+			code: 'AM116-T',
+			R: 255,
+			G: 236,
+			B: 163
+    },
+    {
+			name: 'Lima Limón',
+			code: 'AM117-T',
+			R: 255,
+			G: 230,
+			B: 138
+    },
+    {
+			name: 'Banana Split',
+			code: 'AM118-D',
+			R: 255,
+			G: 224,
+			B: 102
+    },
+    {
+			name: 'Castañuela',
+			code: 'AM119-D',
+			R: 255,
+			G: 218,
+			B: 72
+    },
+    {
+			name: 'Bechamel',
+			code: 'AM120-P',
+			R: 249,
+			G: 241,
+			B: 214
+    },
+    {
+			name: 'Siempre Soleado',
+			code: 'AM121-P',
+			R: 249,
+			G: 239,
+			B: 201
+    },
+    {
+			name: 'Brillo de Hadas',
+			code: 'AM122-P',
+			R: 248,
+			G: 237,
+			B: 184
+    },
+    {
+			name: 'Luz líquida',
+			code: 'AM123-T',
+			R: 251,
+			G: 232,
+			B: 169
+    },
+    {
+			name: 'Luces Citadinas',
+			code: 'AM124-T',
+			R: 247,
+			G: 224,
+			B: 145
+    },
+    {
+			name: 'Colinas de Miel',
+			code: 'AM125-D',
+			R: 249,
+			G: 218,
+			B: 111
+    },
+    {
+			name: 'Campo Dorado',
+			code: 'AM126-D',
+			R: 238,
+			G: 201,
+			B: 84
+    },
+    {
+			name: 'Maíz Blanco',
+			code: 'AM127-P',
+			R: 249,
+			G: 241,
+			B: 213
+    },
+    {
+			name: 'Glaseado de Limón',
+			code: 'AM128-P',
+			R: 248,
+			G: 238,
+			B: 201
+    },
+    {
+			name: 'Luz Lima',
+			code: 'AM129-P',
+			R: 246,
+			G: 234,
+			B: 189
+    },
+    {
+			name: 'Rosa Lima',
+			code: 'AM130-T',
+			R: 240,
+			G: 223,
+			B: 167
+    },
+    {
+			name: 'Río Lima',
+			code: 'AM131-T',
+			R: 234,
+			G: 213,
+			B: 143
+    },
+    {
+			name: 'Campos de Invierno',
+			code: 'AM132-D',
+			R: 227,
+			G: 198,
+			B: 109
+    },
+    {
+			name: 'Banana cítrica',
+			code: 'AM133-D',
+			R: 211,
+			G: 183,
+			B: 92
+    },
+    {
+			name: 'Limetta',
+			code: 'AM134-D',
+			R: 255,
+			G: 209,
+			B: 73
+    },
+    {
+			name: 'Flor de Narciso',
+			code: 'AM135-A',
+			R: 255,
+			G: 195,
+			B: 0
+    },
+    {
+			name: 'Oro Eterno',
+			code: 'AM136-A',
+			R: 222,
+			G: 178,
+			B: 43
+    },
+    {
+			name: 'Tesoro de la Villa',
+			code: 'AM137-A',
+			R: 175,
+			G: 149,
+			B: 63
+    },
+    {
+			name: 'Verde Botánico',
+			code: 'AM138-A',
+			R: 131,
+			G: 113,
+			B: 68
+    },
+    {
+			name: 'Fruto del Olivo',
+			code: 'AM139-A',
+			R: 113,
+			G: 98,
+			B: 70
+    },
+    {
+			name: 'Montaña Rocosa',
+			code: 'AM140-A',
+			R: 74,
+			G: 68,
+			B: 61
+    },
+    {
+			name: 'Lima Suave',
+			code: 'VD001-P',
+			R: 241,
+			G: 242,
+			B: 201
+    },
+    {
+			name: 'Gotas de Lima',
+			code: 'VD002-P',
+			R: 243,
+			G: 240,
+			B: 194
+    },
+    {
+			name: 'Extracto de Limón',
+			code: 'VD003-P',
+			R: 244,
+			G: 240,
+			B: 184
+    },
+    {
+			name: 'Aceite de Limón',
+			code: 'VD004-T',
+			R: 245,
+			G: 234,
+			B: 158
+    },
+    {
+			name: 'Duranta',
+			code: 'VD005-T',
+			R: 241,
+			G: 232,
+			B: 132
+    },
+    {
+			name: 'Flor de Lima',
+			code: 'VD006-D',
+			R: 234,
+			G: 218,
+			B: 96
+    },
+    {
+			name: 'Ponche Cítrico',
+			code: 'VD007-D',
+			R: 240,
+			G: 214,
+			B: 71
+    },
+    {
+			name: 'Dulce Primavera',
+			code: 'VD008-P',
+			R: 239,
+			G: 239,
+			B: 204
+    },
+    {
+			name: 'Perejil',
+			code: 'VD009-P',
+			R: 241,
+			G: 239,
+			B: 200
+    },
+    {
+			name: 'Toque Natural',
+			code: 'VD010-P',
+			R: 237,
+			G: 233,
+			B: 182
+    },
+    {
+			name: 'Jardín de Luz',
+			code: 'VD011-T',
+			R: 239,
+			G: 232,
+			B: 168
+    },
+    {
+			name: 'Cosecha de la Pradera',
+			code: 'VD012-T',
+			R: 238,
+			G: 225,
+			B: 148
+    },
+    {
+			name: 'Suave Verano',
+			code: 'VD013-D',
+			R: 228,
+			G: 212,
+			B: 111
+    },
+    {
+			name: 'Verano Eterno',
+			code: 'VD014-D',
+			R: 222,
+			G: 202,
+			B: 91
+    },
+    {
+			name: 'Llegó la Primavera',
+			code: 'VD015-P',
+			R: 234,
+			G: 233,
+			B: 200
+    },
+    {
+			name: 'Luz Delicada',
+			code: 'VD016-P',
+			R: 235,
+			G: 232,
+			B: 191
+    },
+    {
+			name: 'Bruma en la Pradera',
+			code: 'VD017-P',
+			R: 235,
+			G: 229,
+			B: 179
+    },
+    {
+			name: 'Verde Altiplano',
+			code: 'VD018-T',
+			R: 232,
+			G: 223,
+			B: 167
+    },
+    {
+			name: 'Oliva',
+			code: 'VD019-T',
+			R: 225,
+			G: 213,
+			B: 145
+    },
+    {
+			name: 'Hierba de la Colina',
+			code: 'VD020-D',
+			R: 210,
+			G: 198,
+			B: 111
+    },
+    {
+			name: 'Brotes de Pino',
+			code: 'VD021-D',
+			R: 203,
+			G: 189,
+			B: 92
+    },
+    {
+			name: 'Musa Paradisiaca',
+			code: 'VD022-A',
+			R: 239,
+			G: 200,
+			B: 0
+    },
+    {
+			name: 'Cambur',
+			code: 'VD023-A',
+			R: 242,
+			G: 200,
+			B: 0
+    },
+    {
+			name: 'Sierra Verde',
+			code: 'VD024-A',
+			R: 191,
+			G: 164,
+			B: 47
+    },
+    {
+			name: 'Pradera Verde',
+			code: 'VD025-A',
+			R: 154,
+			G: 142,
+			B: 60
+    },
+    {
+			name: 'Sabana Verde',
+			code: 'VD026-A',
+			R: 124,
+			G: 107,
+			B: 61
+    },
+    {
+			name: 'Oliva Fresca',
+			code: 'VD027-A',
+			R: 113,
+			G: 105,
+			B: 68
+    },
+    {
+			name: 'Ébano Puro',
+			code: 'VD028-A',
+			R: 67,
+			G: 62,
+			B: 58
+    },
+    {
+			name: 'Esencia de Hierbas',
+			code: 'VD029-P',
+			R: 240,
+			G: 239,
+			B: 200
+    },
+    {
+			name: 'Yerbabuena',
+			code: 'VD030-P',
+			R: 237,
+			G: 241,
+			B: 198
+    },
+    {
+			name: 'Sorbete de Lima',
+			code: 'VD031-P',
+			R: 237,
+			G: 239,
+			B: 185
+    },
+    {
+			name: 'Manzana Cítrica',
+			code: 'VD032-T',
+			R: 236,
+			G: 234,
+			B: 164
+    },
+    {
+			name: 'Explosión Lima',
+			code: 'VD033-T',
+			R: 234,
+			G: 227,
+			B: 139
+    },
+    {
+			name: 'Limonada Fresca',
+			code: 'VD034-D',
+			R: 227,
+			G: 221,
+			B: 107
+    },
+    {
+			name: 'Lima Toronja',
+			code: 'VD035-D',
+			R: 218,
+			G: 213,
+			B: 85
+    },
+    {
+			name: 'Atardecer Oceánico',
+			code: 'VD036-P',
+			R: 242,
+			G: 241,
+			B: 208
+    },
+    {
+			name: 'Bruma en el Valle',
+			code: 'VD037-P',
+			R: 238,
+			G: 238,
+			B: 196
+    },
+    {
+			name: 'Hoja de Menta',
+			code: 'VD038-P',
+			R: 237,
+			G: 237,
+			B: 186
+    },
+    {
+			name: 'Saltamontes',
+			code: 'VD039-T',
+			R: 229,
+			G: 230,
+			B: 169
+    },
+    {
+			name: 'Frescura Primaveral',
+			code: 'VD040-T',
+			R: 220,
+			G: 221,
+			B: 149
+    },
+    {
+			name: 'Primavera Cítrica',
+			code: 'VD041-D',
+			R: 211,
+			G: 211,
+			B: 114
+    },
+    {
+			name: 'Manzana Verde',
+			code: 'VD042-D',
+			R: 192,
+			G: 197,
+			B: 92
+    },
+    {
+			name: 'Camino en la Pradera',
+			code: 'VD043-P',
+			R: 237,
+			G: 242,
+			B: 213
+    },
+    {
+			name: 'Infusión de Menta',
+			code: 'VD044-P',
+			R: 236,
+			G: 237,
+			B: 205
+    },
+    {
+			name: 'Brote de Primavera',
+			code: 'VD045-P',
+			R: 229,
+			G: 233,
+			B: 190
+    },
+    {
+			name: 'Pradera',
+			code: 'VD046-T',
+			R: 212,
+			G: 218,
+			B: 167
+    },
+    {
+			name: 'Brillo Primaveral',
+			code: 'VD047-T',
+			R: 203,
+			G: 209,
+			B: 150
+    },
+    {
+			name: 'Primavera Gloriosa',
+			code: 'VD048-D',
+			R: 185,
+			G: 193,
+			B: 116
+    },
+    {
+			name: 'Colinas de Pino',
+			code: 'VD049-D',
+			R: 172,
+			G: 183,
+			B: 105
+    },
+    {
+			name: 'Lucía',
+			code: 'VD050-D',
+			R: 227,
+			G: 212,
+			B: 83
+    },
+    {
+			name: 'Gotas de Limón',
+			code: 'VD051-A',
+			R: 210,
+			G: 186,
+			B: 23
+    },
+    {
+			name: 'Verde Selva',
+			code: 'VD052-A',
+			R: 157,
+			G: 156,
+			B: 44
+    },
+    {
+			name: 'Bosques de Olivo',
+			code: 'VD053-A',
+			R: 139,
+			G: 146,
+			B: 69
+    },
+    {
+			name: 'Pesto',
+			code: 'VD054-A',
+			R: 109,
+			G: 108,
+			B: 64
+    },
+    {
+			name: 'Jardín Herbal',
+			code: 'VD055-A',
+			R: 105,
+			G: 103,
+			B: 72
+    },
+    {
+			name: 'Wengué',
+			code: 'VD056-A',
+			R: 64,
+			G: 60,
+			B: 56
+    },
+    {
+			name: 'Verde Pálido',
+			code: 'VD057-P',
+			R: 236,
+			G: 244,
+			B: 217
+    },
+    {
+			name: 'Gotas de Menta',
+			code: 'VD058-P',
+			R: 240,
+			G: 244,
+			B: 205
+    },
+    {
+			name: 'Rocío de Menta',
+			code: 'VD059-P',
+			R: 238,
+			G: 240,
+			B: 185
+    },
+    {
+			name: 'Fresca Hierbabuena',
+			code: 'VD060-T',
+			R: 227,
+			G: 233,
+			B: 157
+    },
+    {
+			name: 'Aceite de Hierbabuena',
+			code: 'VD061-T',
+			R: 223,
+			G: 228,
+			B: 141
+    },
+    {
+			name: 'Té de Hierbabuena',
+			code: 'VD062-D',
+			R: 212,
+			G: 219,
+			B: 107
+    },
+    {
+			name: 'Prado Fresco',
+			code: 'VD063-D',
+			R: 198,
+			G: 209,
+			B: 83
+    },
+    {
+			name: 'Hierbabuena',
+			code: 'VD064-P',
+			R: 235,
+			G: 241,
+			B: 215
+    },
+    {
+			name: 'Perejil Fresco',
+			code: 'VD065-P',
+			R: 236,
+			G: 241,
+			B: 205
+    },
+    {
+			name: 'Pistacho ',
+			code: 'VD066-P',
+			R: 230,
+			G: 237,
+			B: 190
+    },
+    {
+			name: 'Helado de Menta',
+			code: 'VD067-T',
+			R: 223,
+			G: 229,
+			B: 175
+    },
+    {
+			name: 'Té de Hierbas',
+			code: 'VD068-T',
+			R: 207,
+			G: 218,
+			B: 151
+    },
+    {
+			name: 'Esencia de Manzana',
+			code: 'VD069-D',
+			R: 196,
+			G: 209,
+			B: 119
+    },
+    {
+			name: 'Uva Verde',
+			code: 'VD070-D',
+			R: 176,
+			G: 193,
+			B: 97
+    },
+    {
+			name: 'Suave Trébol',
+			code: 'VD071-P',
+			R: 235,
+			G: 241,
+			B: 216
+    },
+    {
+			name: 'Ramilla Verde',
+			code: 'VD072-P',
+			R: 226,
+			G: 234,
+			B: 205
+    },
+    {
+			name: 'Sensación del Bosque',
+			code: 'VD073-P',
+			R: 220,
+			G: 230,
+			B: 193
+    },
+    {
+			name: 'Amor de Primavera',
+			code: 'VD074-T',
+			R: 208,
+			G: 220,
+			B: 174
+    },
+    {
+			name: 'Hojas de Menta',
+			code: 'VD075-T',
+			R: 189,
+			G: 206,
+			B: 151
+    },
+    {
+			name: 'Verano Refrescante',
+			code: 'VD076-D',
+			R: 172,
+			G: 189,
+			B: 120
+    },
+    {
+			name: 'Cáctus del Desierto',
+			code: 'VD077-D',
+			R: 151,
+			G: 173,
+			B: 101
+    },
+    {
+			name: 'Guirnalda Verde',
+			code: 'VD078-A',
+			R: 125,
+			G: 172,
+			B: 55
+    },
+    {
+			name: 'Cenizo',
+			code: 'VD079-A',
+			R: 158,
+			G: 181,
+			B: 48
+    },
+    {
+			name: 'Jovial Primavera',
+			code: 'VD080-A',
+			R: 145,
+			G: 160,
+			B: 56
+    },
+    {
+			name: 'Suave Albahaca',
+			code: 'VD081-A',
+			R: 119,
+			G: 144,
+			B: 71
+    },
+    {
+			name: 'Riachuelo Escondido',
+			code: 'VD082-A',
+			R: 97,
+			G: 107,
+			B: 73
+    },
+    {
+			name: 'Verde Añil',
+			code: 'VD083-A',
+			R: 92,
+			G: 98,
+			B: 72
+    },
+    {
+			name: 'Negro de Humo',
+			code: 'VD084-A',
+			R: 71,
+			G: 72,
+			B: 69
+    },
+    {
+			name: 'Agua Silvestre',
+			code: 'VD085-P',
+			R: 232,
+			G: 242,
+			B: 222
+    },
+    {
+			name: 'Aromática de Menta',
+			code: 'VD086-P',
+			R: 220,
+			G: 239,
+			B: 208
+    },
+    {
+			name: 'Crema de Pistacho',
+			code: 'VD087-P',
+			R: 212,
+			G: 235,
+			B: 196
+    },
+    {
+			name: 'Popurrí de Hierbas',
+			code: 'VD088-T',
+			R: 191,
+			G: 228,
+			B: 179
+    },
+    {
+			name: 'Gelato de Menta',
+			code: 'VD089-T',
+			R: 168,
+			G: 216,
+			B: 158
+    },
+    {
+			name: 'Sorbete de Hierbabuena',
+			code: 'VD090-D',
+			R: 145,
+			G: 204,
+			B: 127
+    },
+    {
+			name: 'Menta Citrata',
+			code: 'VD091-D',
+			R: 121,
+			G: 191,
+			B: 103
+    },
+    {
+			name: 'Limonaria',
+			code: 'VD092-P',
+			R: 239,
+			G: 243,
+			B: 217
+    },
+    {
+			name: 'Bonanza en el Bosque',
+			code: 'VD093-P',
+			R: 223,
+			G: 241,
+			B: 213
+    },
+    {
+			name: 'Jardín de Hierbas',
+			code: 'VD094-P',
+			R: 205,
+			G: 235,
+			B: 199
+    },
+    {
+			name: 'Siempreverde',
+			code: 'VD095-T',
+			R: 191,
+			G: 227,
+			B: 182
+    },
+    {
+			name: 'Té de Menta',
+			code: 'VD096-T',
+			R: 171,
+			G: 216,
+			B: 162
+    },
+    {
+			name: 'Tarde en el Parque',
+			code: 'VD097-D',
+			R: 145,
+			G: 202,
+			B: 131
+    },
+    {
+			name: 'Jardín Siempreverde',
+			code: 'VD098-D',
+			R: 129,
+			G: 192,
+			B: 116
+    },
+    {
+			name: 'Gema',
+			code: 'VD099-P',
+			R: 229,
+			G: 244,
+			B: 231
+    },
+    {
+			name: 'Esmeralda',
+			code: 'VD100-P',
+			R: 202,
+			G: 232,
+			B: 213
+    },
+    {
+			name: 'Jardín Verde',
+			code: 'VD101-P',
+			R: 195,
+			G: 227,
+			B: 206
+    },
+    {
+			name: 'Jardín de Primavera',
+			code: 'VD102-T',
+			R: 168,
+			G: 211,
+			B: 185
+    },
+    {
+			name: 'Primavera Silvestre',
+			code: 'VD103-T',
+			R: 145,
+			G: 196,
+			B: 165
+    },
+    {
+			name: 'Sauce ',
+			code: 'VD104-D',
+			R: 125,
+			G: 178,
+			B: 139
+    },
+    {
+			name: 'Hoja de Manzanilla',
+			code: 'VD105-D',
+			R: 101,
+			G: 159,
+			B: 120
+    },
+    {
+			name: 'Jardín del Prado',
+			code: 'VD106-A',
+			R: 48,
+			G: 150,
+			B: 71
+    },
+    {
+			name: 'Hierba Vivaz',
+			code: 'VD107-A',
+			R: 87,
+			G: 163,
+			B: 85
+    },
+    {
+			name: 'Sendero Verde',
+			code: 'VD108-A',
+			R: 74,
+			G: 151,
+			B: 72
+    },
+    {
+			name: 'Frescura Botánica',
+			code: 'VD109-A',
+			R: 69,
+			G: 126,
+			B: 85
+    },
+    {
+			name: 'Bosque Madero',
+			code: 'VD110-A',
+			R: 73,
+			G: 100,
+			B: 80
+    },
+    {
+			name: 'Oliva Pálido',
+			code: 'VD111-A',
+			R: 75,
+			G: 99,
+			B: 82
+    },
+    {
+			name: 'Noche Negra',
+			code: 'VD112-A',
+			R: 61,
+			G: 67,
+			B: 67
+    },
+    {
+			name: 'Bruma del Bosque',
+			code: 'VD113-P',
+			R: 228,
+			G: 239,
+			B: 224
+    },
+    {
+			name: 'Salvia Pastel',
+			code: 'VD114-P',
+			R: 216,
+			G: 242,
+			B: 219
+    },
+    {
+			name: 'Fuente de Agua',
+			code: 'VD115-P',
+			R: 191,
+			G: 234,
+			B: 208
+    },
+    {
+			name: 'Melisa de Limón',
+			code: 'VD116-T',
+			R: 170,
+			G: 223,
+			B: 188
+    },
+    {
+			name: 'Infusión de Hierbas',
+			code: 'VD117-T',
+			R: 140,
+			G: 212,
+			B: 170
+    },
+    {
+			name: 'Menta de la Montaña',
+			code: 'VD118-D',
+			R: 108,
+			G: 198,
+			B: 143
+    },
+    {
+			name: 'Piedra Esmeralda',
+			code: 'VD119-D',
+			R: 83,
+			G: 183,
+			B: 121
+    },
+    {
+			name: 'Bruma Boreal',
+			code: 'VD120-P',
+			R: 226,
+			G: 235,
+			B: 216
+    },
+    {
+			name: 'Verde Aromático',
+			code: 'VD121-P',
+			R: 206,
+			G: 238,
+			B: 216
+    },
+    {
+			name: 'Chispa de Menta',
+			code: 'VD122-P',
+			R: 189,
+			G: 227,
+			B: 200
+    },
+    {
+			name: 'Hoja de Albaca',
+			code: 'VD123-T',
+			R: 171,
+			G: 222,
+			B: 187
+    },
+    {
+			name: 'Jardín del Paraíso',
+			code: 'VD124-T',
+			R: 147,
+			G: 210,
+			B: 166
+    },
+    {
+			name: 'Jazmín',
+			code: 'VD125-D',
+			R: 120,
+			G: 197,
+			B: 142
+    },
+    {
+			name: 'Arboleda',
+			code: 'VD126-D',
+			R: 95,
+			G: 180,
+			B: 120
+    },
+    {
+			name: 'Vista Primaveral',
+			code: 'VD127-P',
+			R: 215,
+			G: 236,
+			B: 223
+    },
+    {
+			name: 'Rocío de Amanecer',
+			code: 'VD128-P',
+			R: 196,
+			G: 231,
+			B: 220
+    },
+    {
+			name: 'Polvo de Estrellas',
+			code: 'VD129-P',
+			R: 181,
+			G: 227,
+			B: 215
+    },
+    {
+			name: 'Azul de Verano',
+			code: 'VD130-T',
+			R: 155,
+			G: 212,
+			B: 196
+    },
+    {
+			name: 'Mangazul',
+			code: 'VD131-T',
+			R: 129,
+			G: 200,
+			B: 183
+    },
+    {
+			name: 'Cristal Líquido',
+			code: 'VD132-D',
+			R: 97,
+			G: 174,
+			B: 152
+    },
+    {
+			name: 'Verde Jade',
+			code: 'VD133-D',
+			R: 74,
+			G: 160,
+			B: 137
+    },
+    {
+			name: 'Conciencia Natural',
+			code: 'VD134-D',
+			R: 101,
+			G: 187,
+			B: 113
+    },
+    {
+			name: 'Verde Laurel',
+			code: 'VD135-A',
+			R: 44,
+			G: 156,
+			B: 92
+    },
+    {
+			name: 'Hoja de Té',
+			code: 'VD136-A',
+			R: 55,
+			G: 148,
+			B: 97
+    },
+    {
+			name: 'Verde Salvaje',
+			code: 'VD137-A',
+			R: 41,
+			G: 120,
+			B: 98
+    },
+    {
+			name: 'Sentimiento Verde',
+			code: 'VD138-A',
+			R: 58,
+			G: 97,
+			B: 83
+    },
+    {
+			name: 'Brisa entre las Hojas',
+			code: 'VD139-A',
+			R: 63,
+			G: 94,
+			B: 85
+    },
+    {
+			name: 'Verde Espinaca',
+			code: 'VD140-A',
+			R: 60,
+			G: 75,
+			B: 79
+    },
+    {
+			name: 'Suave Aromática',
+			code: 'VD141-P',
+			R: 227,
+			G: 244,
+			B: 234
+    },
+    {
+			name: 'Campos Frondosos',
+			code: 'VD142-P',
+			R: 195,
+			G: 234,
+			B: 220
+    },
+    {
+			name: 'Ojos Verdes',
+			code: 'VD143-P',
+			R: 178,
+			G: 228,
+			B: 210
+    },
+    {
+			name: 'Herbolaria',
+			code: 'VD144-T',
+			R: 150,
+			G: 221,
+			B: 196
+    },
+    {
+			name: 'Brisa Herbal',
+			code: 'VD145-T',
+			R: 126,
+			G: 212,
+			B: 179
+    },
+    {
+			name: 'Verde Espiritual',
+			code: 'VD146-D',
+			R: 97,
+			G: 197,
+			B: 151
+    },
+    {
+			name: 'Gema Turmalina',
+			code: 'VD147-D',
+			R: 66,
+			G: 181,
+			B: 134
+    },
+    {
+			name: 'Verde Suave',
+			code: 'VD148-P',
+			R: 224,
+			G: 241,
+			B: 227
+    },
+    {
+			name: 'Tentación Herbal',
+			code: 'VD149-P',
+			R: 201,
+			G: 236,
+			B: 219
+    },
+    {
+			name: 'Palmera',
+			code: 'VD150-P',
+			R: 173,
+			G: 226,
+			B: 205
+    },
+    {
+			name: 'Vista al Valle',
+			code: 'VD151-T',
+			R: 153,
+			G: 219,
+			B: 194
+    },
+    {
+			name: 'Obsequio Natural',
+			code: 'VD152-T',
+			R: 131,
+			G: 208,
+			B: 178
+    },
+    {
+			name: 'Viña',
+			code: 'VD153-D',
+			R: 101,
+			G: 191,
+			B: 151
+    },
+    {
+			name: 'Palma de Coco',
+			code: 'VD154-D',
+			R: 69,
+			G: 174,
+			B: 130
+    },
+    {
+			name: 'Espuma de mar',
+			code: 'VD155-P',
+			R: 205,
+			G: 237,
+			B: 233
+    },
+    {
+			name: 'Lluvia Primaveral',
+			code: 'VD156-P',
+			R: 195,
+			G: 233,
+			B: 225
+    },
+    {
+			name: 'Junto al Mar',
+			code: 'VD157-P',
+			R: 170,
+			G: 225,
+			B: 219
+    },
+    {
+			name: 'Cristal Marino',
+			code: 'VD158-T',
+			R: 146,
+			G: 216,
+			B: 208
+    },
+    {
+			name: 'Menta Yerbabuena',
+			code: 'VD159-T',
+			R: 121,
+			G: 200,
+			B: 190
+    },
+    {
+			name: 'Palo Verde',
+			code: 'VD160-D',
+			R: 84,
+			G: 182,
+			B: 168
+    },
+    {
+			name: 'Azul Tranquilo',
+			code: 'VD161-D',
+			R: 58,
+			G: 166,
+			B: 150
+    },
+    {
+			name: 'Tomillo Fresco',
+			code: 'VD162-A',
+			R: 0,
+			G: 154,
+			B: 109
+    },
+    {
+			name: 'Verde Majestuoso',
+			code: 'VD163-A',
+			R: 18,
+			G: 150,
+			B: 103
+    },
+    {
+			name: 'Pasto de la Colina',
+			code: 'VD164-A',
+			R: 34,
+			G: 125,
+			B: 86
+    },
+    {
+			name: 'Trébol',
+			code: 'VD165-A',
+			R: 12,
+			G: 126,
+			B: 108
+    },
+    {
+			name: 'Verde Abedul',
+			code: 'VD166-A',
+			R: 55,
+			G: 98,
+			B: 89
+    },
+    {
+			name: 'Selva Profunda',
+			code: 'VD167-A',
+			R: 59,
+			G: 79,
+			B: 76
+    },
+    {
+			name: 'Verde Monte',
+			code: 'VD168-A',
+			R: 55,
+			G: 70,
+			B: 72
+    },
+    {
+			name: 'Reino Verde',
+			code: 'VD169-P',
+			R: 227,
+			G: 243,
+			B: 239
+    },
+    {
+			name: 'Acuario',
+			code: 'VD170-P',
+			R: 189,
+			G: 237,
+			B: 230
+    },
+    {
+			name: 'Playa Blanca',
+			code: 'VD171-P',
+			R: 169,
+			G: 231,
+			B: 221
+    },
+    {
+			name: 'Agua Verde',
+			code: 'VD172-T',
+			R: 134,
+			G: 219,
+			B: 208
+    },
+    {
+			name: 'Verde Glaciar',
+			code: 'VD173-T',
+			R: 103,
+			G: 211,
+			B: 196
+    },
+    {
+			name: 'Prisma de Hielo',
+			code: 'VD174-D',
+			R: 56,
+			G: 196,
+			B: 172
+    },
+    {
+			name: 'Agua Dulce',
+			code: 'VD175-D',
+			R: 0,
+			G: 177,
+			B: 153
+    },
+    {
+			name: 'Brisa Fresca',
+			code: 'VD176-P',
+			R: 218,
+			G: 242,
+			B: 229
+    },
+    {
+			name: 'Polvo de Esmeralda',
+			code: 'VD177-P',
+			R: 188,
+			G: 234,
+			B: 227
+    },
+    {
+			name: 'Nubes del Caribe',
+			code: 'VD178-P',
+			R: 167,
+			G: 226,
+			B: 215
+    },
+    {
+			name: 'Cielo de Verano',
+			code: 'VD179-T',
+			R: 140,
+			G: 219,
+			B: 206
+    },
+    {
+			name: 'Gema Esmeralda',
+			code: 'VD180-T',
+			R: 111,
+			G: 208,
+			B: 195
+    },
+    {
+			name: 'Aqua',
+			code: 'VD181-D',
+			R: 78,
+			G: 196,
+			B: 176
+    },
+    {
+			name: 'Pepino Verde',
+			code: 'VD182-D',
+			R: 5,
+			G: 174,
+			B: 152
+    },
+    {
+			name: 'Alga Verdeazul',
+			code: 'VD183-P',
+			R: 210,
+			G: 241,
+			B: 236
+    },
+    {
+			name: 'Destello Oceánico',
+			code: 'VD184-P',
+			R: 191,
+			G: 233,
+			B: 231
+    },
+    {
+			name: 'Paraíso Oceánico',
+			code: 'VD185-P',
+			R: 171,
+			G: 228,
+			B: 226
+    },
+    {
+			name: 'Fruto del Mar',
+			code: 'VD186-T',
+			R: 139,
+			G: 215,
+			B: 214
+    },
+    {
+			name: 'Cristal de Agua',
+			code: 'VD187-T',
+			R: 112,
+			G: 202,
+			B: 200
+    },
+    {
+			name: 'Agua Clara',
+			code: 'VD188-D',
+			R: 64,
+			G: 184,
+			B: 181
+    },
+    {
+			name: 'Río Profundo',
+			code: 'VD189-D',
+			R: 22,
+			G: 168,
+			B: 164
+    },
+    {
+			name: 'Horizonte Marino',
+			code: 'VD190-D',
+			R: 48,
+			G: 179,
+			B: 140
+    },
+    {
+			name: 'Turquesa Oscuro',
+			code: 'VD191-A',
+			R: 0,
+			G: 152,
+			B: 123
+    },
+    {
+			name: 'Campo Salvaje',
+			code: 'VD192-A',
+			R: 0,
+			G: 121,
+			B: 101
+    },
+    {
+			name: 'Isleño',
+			code: 'VD193-A',
+			R: 0,
+			G: 132,
+			B: 124
+    },
+    {
+			name: 'Cono de Pino',
+			code: 'VD194-A',
+			R: 45,
+			G: 96,
+			B: 96
+    },
+    {
+			name: 'Denso Bosque',
+			code: 'VD195-A',
+			R: 51,
+			G: 78,
+			B: 78
+    },
+    {
+			name: 'Verde Petróleo',
+			code: 'VD196-A',
+			R: 59,
+			G: 81,
+			B: 87
+    },
+    {
+			name: 'Glaciar Ártico',
+			code: 'VD197-P',
+			R: 217,
+			G: 240,
+			B: 237
+    },
+    {
+			name: 'Antártida',
+			code: 'VD198-P',
+			R: 192,
+			G: 236,
+			B: 233
+    },
+    {
+			name: 'Cruce de Lagos',
+			code: 'VD199-P',
+			R: 164,
+			G: 227,
+			B: 222
+    },
+    {
+			name: 'Caudal Puro',
+			code: 'VD200-T',
+			R: 138,
+			G: 219,
+			B: 213
+    },
+    {
+			name: 'Nacimiento',
+			code: 'VD201-T',
+			R: 104,
+			G: 209,
+			B: 203
+    },
+    {
+			name: 'Regadío',
+			code: 'VD202-D',
+			R: 52,
+			G: 191,
+			B: 180
+    },
+    {
+			name: 'Aqua Pura',
+			code: 'VD203-D',
+			R: 0,
+			G: 174,
+			B: 161
+    },
+    {
+			name: 'Mar Egeo',
+			code: 'VD204-P',
+			R: 214,
+			G: 236,
+			B: 226
+    },
+    {
+			name: 'Aire Fresco',
+			code: 'VD205-P',
+			R: 190,
+			G: 233,
+			B: 228
+    },
+    {
+			name: 'Vista al Cielo',
+			code: 'VD206-P',
+			R: 171,
+			G: 228,
+			B: 222
+    },
+    {
+			name: 'Jardín Marítimo',
+			code: 'VD207-T',
+			R: 135,
+			G: 215,
+			B: 208
+    },
+    {
+			name: 'Océano Opulente',
+			code: 'VD208-T',
+			R: 114,
+			G: 204,
+			B: 196
+    },
+    {
+			name: 'Jardín Refrescante',
+			code: 'VD209-D',
+			R: 63,
+			G: 187,
+			B: 175
+    },
+    {
+			name: 'Algas Marinas',
+			code: 'VD210-D',
+			R: 2,
+			G: 171,
+			B: 156
+    },
+    {
+			name: 'Rocío de Agua',
+			code: 'VD211-P',
+			R: 210,
+			G: 234,
+			B: 234
+    },
+    {
+			name: 'Baño de Cristales',
+			code: 'VD212-P',
+			R: 189,
+			G: 228,
+			B: 228
+    },
+    {
+			name: 'Cielo Infinito',
+			code: 'VD213-P',
+			R: 171,
+			G: 221,
+			B: 223
+    },
+    {
+			name: 'Gran Lago',
+			code: 'VD214-T',
+			R: 140,
+			G: 205,
+			B: 209
+    },
+    {
+			name: 'Tesoros del Mar',
+			code: 'VD215-T',
+			R: 112,
+			G: 190,
+			B: 196
+    },
+    {
+			name: 'Aqua Pacífica',
+			code: 'VD216-D',
+			R: 76,
+			G: 170,
+			B: 175
+    },
+    {
+			name: 'Bahía Azul',
+			code: 'VD217-D',
+			R: 42,
+			G: 153,
+			B: 156
+    },
+    {
+			name: 'Faro de la Colina',
+			code: 'VD218-A',
+			R: 0,
+			G: 141,
+			B: 135
+    },
+    {
+			name: 'Aqua Profunda',
+			code: 'VD219-A',
+			R: 0,
+			G: 152,
+			B: 138
+    },
+    {
+			name: 'Jardín secreto',
+			code: 'VD220-A',
+			R: 0,
+			G: 113,
+			B: 100
+    },
+    {
+			name: 'Refugio Pacífico',
+			code: 'VD221-A',
+			R: 5,
+			G: 113,
+			B: 114
+    },
+    {
+			name: 'Azul Marítimo',
+			code: 'VD222-A',
+			R: 43,
+			G: 95,
+			B: 98
+    },
+    {
+			name: 'Eucalipto',
+			code: 'VD223-A',
+			R: 61,
+			G: 96,
+			B: 101
+    },
+    {
+			name: 'Verde Pizarra',
+			code: 'VD224-A',
+			R: 59,
+			G: 78,
+			B: 84
+    },
+    {
+			name: 'Brisa del Este',
+			code: 'VD225-P',
+			R: 226,
+			G: 243,
+			B: 240
+    },
+    {
+			name: 'Escarcha',
+			code: 'VD226-P',
+			R: 189,
+			G: 232,
+			B: 235
+    },
+    {
+			name: 'Gotas de Lluvia',
+			code: 'VD227-P',
+			R: 166,
+			G: 223,
+			B: 226
+    },
+    {
+			name: 'Rocío Fresco',
+			code: 'VD228-T',
+			R: 135,
+			G: 212,
+			B: 218
+    },
+    {
+			name: 'Hielo Glaseado',
+			code: 'VD229-T',
+			R: 105,
+			G: 201,
+			B: 210
+    },
+    {
+			name: 'Agua Cristalina',
+			code: 'VD230-D',
+			R: 51,
+			G: 180,
+			B: 188
+    },
+    {
+			name: 'Ola de Mar',
+			code: 'VD231-D',
+			R: 0,
+			G: 165,
+			B: 172
+    },
+    {
+			name: 'Azul Místico',
+			code: 'VD232-P',
+			R: 208,
+			G: 237,
+			B: 235
+    },
+    {
+			name: 'Bahía Encantada',
+			code: 'VD233-P',
+			R: 190,
+			G: 230,
+			B: 231
+    },
+    {
+			name: 'Conexión Marítima',
+			code: 'VD234-P',
+			R: 169,
+			G: 222,
+			B: 226
+    },
+    {
+			name: 'Haz de Luz',
+			code: 'VD235-T',
+			R: 139,
+			G: 209,
+			B: 214
+    },
+    {
+			name: 'Arroyo Claro',
+			code: 'VD236-T',
+			R: 108,
+			G: 200,
+			B: 207
+    },
+    {
+			name: 'Brillo en las Olas',
+			code: 'VD237-D',
+			R: 62,
+			G: 178,
+			B: 185
+    },
+    {
+			name: 'Bahía Esmeralda',
+			code: 'VD238-D',
+			R: 0,
+			G: 158,
+			B: 163
+    },
+    {
+			name: 'Azul de los Aires',
+			code: 'VD239-P',
+			R: 208,
+			G: 237,
+			B: 234
+    },
+    {
+			name: 'Azul de la Lejanía',
+			code: 'VD240-P',
+			R: 191,
+			G: 224,
+			B: 230
+    },
+    {
+			name: 'Torbellino',
+			code: 'VD241-P',
+			R: 165,
+			G: 216,
+			B: 226
+    },
+    {
+			name: 'Azul Enérgico',
+			code: 'VD242-T',
+			R: 136,
+			G: 202,
+			B: 216
+    },
+    {
+			name: 'Playa del Este',
+			code: 'VD243-T',
+			R: 108,
+			G: 185,
+			B: 202
+    },
+    {
+			name: 'Secreto del Mar',
+			code: 'VD244-D',
+			R: 77,
+			G: 163,
+			B: 180
+    },
+    {
+			name: 'Campo Sereno',
+			code: 'VD245-D',
+			R: 45,
+			G: 143,
+			B: 160
+    },
+    {
+			name: 'Paraíso Caribeño',
+			code: 'VD246-D',
+			R: 0,
+			G: 169,
+			B: 168
+    },
+    {
+			name: 'Fondo del Mar',
+			code: 'VD247-A',
+			R: 0,
+			G: 140,
+			B: 143
+    },
+    {
+			name: 'Gloria Natural',
+			code: 'VD248-A',
+			R: 4,
+			G: 105,
+			B: 110
+    },
+    {
+			name: 'Noche en la Pradera',
+			code: 'VD249-A',
+			R: 36,
+			G: 110,
+			B: 123
+    },
+    {
+			name: 'Tesoro Marítimo',
+			code: 'VD250-A',
+			R: 39,
+			G: 94,
+			B: 106
+    },
+    {
+			name: 'Absenta Oscuro',
+			code: 'VD251-A',
+			R: 49,
+			G: 90,
+			B: 96
+    },
+    {
+			name: 'Nilo',
+			code: 'VD252-A',
+			R: 64,
+			G: 79,
+			B: 89
+    },
+    {
+			name: 'Aqua Alcalina',
+			code: 'VD253-P',
+			R: 219,
+			G: 240,
+			B: 239
+    },
+    {
+			name: 'Onda Apacible',
+			code: 'VD254-P',
+			R: 186,
+			G: 230,
+			B: 235
+    },
+    {
+			name: 'Brisa Cristal',
+			code: 'VD255-P',
+			R: 164,
+			G: 219,
+			B: 225
+    },
+    {
+			name: 'H2O',
+			code: 'VD256-T',
+			R: 128,
+			G: 209,
+			B: 219
+    },
+    {
+			name: 'Manantial',
+			code: 'VD257-T',
+			R: 99,
+			G: 194,
+			B: 206
+    },
+    {
+			name: 'Yacimiento de Agua',
+			code: 'VD258-D',
+			R: 53,
+			G: 179,
+			B: 193
+    },
+    {
+			name: 'Canal Cristalino',
+			code: 'VD259-D',
+			R: 0,
+			G: 163,
+			B: 177
+    },
+    {
+			name: 'Playa del Sur',
+			code: 'VD260-P',
+			R: 205,
+			G: 233,
+			B: 234
+    },
+    {
+			name: 'Lágrimas de Cristal',
+			code: 'VD261-P',
+			R: 194,
+			G: 230,
+			B: 234
+    },
+    {
+			name: 'Agua de los Caminos',
+			code: 'VD262-P',
+			R: 169,
+			G: 219,
+			B: 226
+    },
+    {
+			name: 'Cielos del Sur',
+			code: 'VD263-T',
+			R: 141,
+			G: 210,
+			B: 221
+    },
+    {
+			name: 'Tesoro Navajo',
+			code: 'VD264-T',
+			R: 107,
+			G: 195,
+			B: 208
+    },
+    {
+			name: 'Agua Tranquila',
+			code: 'VD265-D',
+			R: 67,
+			G: 178,
+			B: 190
+    },
+    {
+			name: 'Agua Salvaje',
+			code: 'VD266-D',
+			R: 10,
+			G: 161,
+			B: 174
+    },
+    {
+			name: 'Azul Cristalino',
+			code: 'VD267-P',
+			R: 207,
+			G: 230,
+			B: 236
+    },
+    {
+			name: 'Menta Azul',
+			code: 'VD268-P',
+			R: 192,
+			G: 228,
+			B: 235
+    },
+    {
+			name: 'Puerto Acuático',
+			code: 'VD269-P',
+			R: 176,
+			G: 218,
+			B: 229
+    },
+    {
+			name: 'Azul Infinito',
+			code: 'VD270-T',
+			R: 137,
+			G: 199,
+			B: 217
+    },
+    {
+			name: 'Arroyo Cristalino',
+			code: 'VD271-T',
+			R: 112,
+			G: 186,
+			B: 207
+    },
+    {
+			name: 'Lago Profundo',
+			code: 'VD272-D',
+			R: 78,
+			G: 164,
+			B: 187
+    },
+    {
+			name: 'Bahía del Campo',
+			code: 'VD273-D',
+			R: 44,
+			G: 143,
+			B: 166
+    },
+    {
+			name: 'Azul Laguna',
+			code: 'AZ001-A',
+			R: 0,
+			G: 131,
+			B: 149
+    },
+    {
+			name: 'Termales ',
+			code: 'AZ002-A',
+			R: 0,
+			G: 133,
+			B: 146
+    },
+    {
+			name: 'Playa Bonita',
+			code: 'AZ003-A',
+			R: 0,
+			G: 121,
+			B: 132
+    },
+    {
+			name: 'Azul Espiritual',
+			code: 'AZ004-A',
+			R: 22,
+			G: 105,
+			B: 124
+    },
+    {
+			name: 'Noche de Gala',
+			code: 'AZ005-A',
+			R: 39,
+			G: 95,
+			B: 112
+    },
+    {
+			name: 'Gema Peridot',
+			code: 'AZ006-A',
+			R: 57,
+			G: 85,
+			B: 92
+    },
+    {
+			name: 'Mar Denso',
+			code: 'AZ007-A',
+			R: 57,
+			G: 70,
+			B: 78
+    },
+    {
+			name: 'Brisa Refrescante',
+			code: 'AZ008-P',
+			R: 209,
+			G: 236,
+			B: 241
+    },
+    {
+			name: 'Aura Azul',
+			code: 'AZ009-P',
+			R: 192,
+			G: 230,
+			B: 240
+    },
+    {
+			name: 'Isla de Cristales',
+			code: 'AZ010-P',
+			R: 170,
+			G: 218,
+			B: 231
+    },
+    {
+			name: 'Cielo Azul',
+			code: 'AZ011-T',
+			R: 133,
+			G: 205,
+			B: 227
+    },
+    {
+			name: 'Camino Azul',
+			code: 'AZ012-T',
+			R: 103,
+			G: 191,
+			B: 216
+    },
+    {
+			name: 'Azul del Cielo',
+			code: 'AZ013-D',
+			R: 59,
+			G: 174,
+			B: 202
+    },
+    {
+			name: 'Azul Belice',
+			code: 'AZ014-D',
+			R: 0,
+			G: 156,
+			B: 185
+    },
+    {
+			name: 'Azul Agua',
+			code: 'AZ015-P',
+			R: 208,
+			G: 234,
+			B: 237
+    },
+    {
+			name: 'Mar Sereno',
+			code: 'AZ016-P',
+			R: 171,
+			G: 216,
+			B: 230
+    },
+    {
+			name: 'Luna Azul',
+			code: 'AZ017-P',
+			R: 169,
+			G: 216,
+			B: 231
+    },
+    {
+			name: 'Brisa Azul',
+			code: 'AZ018-T',
+			R: 142,
+			G: 205,
+			B: 226
+    },
+    {
+			name: 'Mar y Cielo',
+			code: 'AZ019-T',
+			R: 107,
+			G: 189,
+			B: 216
+    },
+    {
+			name: 'Azul Malibú',
+			code: 'AZ020-D',
+			R: 70,
+			G: 170,
+			B: 197
+    },
+    {
+			name: 'Turquesa Brillante',
+			code: 'AZ021-D',
+			R: 13,
+			G: 152,
+			B: 183
+    },
+    {
+			name: 'Brisa del Campo',
+			code: 'AZ022-P',
+			R: 206,
+			G: 229,
+			B: 236
+    },
+    {
+			name: 'Espíritu Cristalino',
+			code: 'AZ023-P',
+			R: 194,
+			G: 226,
+			B: 235
+    },
+    {
+			name: 'Azul Frío',
+			code: 'AZ024-P',
+			R: 177,
+			G: 217,
+			B: 231
+    },
+    {
+			name: 'Vidrio Cobalto',
+			code: 'AZ025-T',
+			R: 142,
+			G: 199,
+			B: 221
+    },
+    {
+			name: 'Rocío en la Madrugada',
+			code: 'AZ026-T',
+			R: 118,
+			G: 186,
+			B: 210
+    },
+    {
+			name: 'Azul Del Riachuelo',
+			code: 'AZ027-D',
+			R: 78,
+			G: 160,
+			B: 189
+    },
+    {
+			name: 'Azul Pradera',
+			code: 'AZ028-D',
+			R: 58,
+			G: 148,
+			B: 180
+    },
+    {
+			name: 'Azul Bondi',
+			code: 'AZ029-D',
+			R: 0,
+			G: 160,
+			B: 181
+    },
+    {
+			name: 'Laguna Azul',
+			code: 'AZ030-A',
+			R: 0,
+			G: 133,
+			B: 162
+    },
+    {
+			name: 'Mar Profundo',
+			code: 'AZ031-A',
+			R: 0,
+			G: 118,
+			B: 146
+    },
+    {
+			name: 'Sendero Azul',
+			code: 'AZ032-A',
+			R: 15,
+			G: 103,
+			B: 130
+    },
+    {
+			name: 'Rio Cudaloso',
+			code: 'AZ033-A',
+			R: 45,
+			G: 94,
+			B: 117
+    },
+    {
+			name: 'Malaquita Azulada',
+			code: 'AZ034-A',
+			R: 49,
+			G: 82,
+			B: 96
+    },
+    {
+			name: 'Azul Negro',
+			code: 'AZ035-A',
+			R: 57,
+			G: 66,
+			B: 72
+    },
+    {
+			name: 'Agua Azucarada',
+			code: 'AZ036-P',
+			R: 220,
+			G: 239,
+			B: 243
+    },
+    {
+			name: 'Luna Nueva',
+			code: 'AZ037-P',
+			R: 185,
+			G: 225,
+			B: 239
+    },
+    {
+			name: 'Estela Celeste',
+			code: 'AZ038-P',
+			R: 170,
+			G: 219,
+			B: 239
+    },
+    {
+			name: 'Riachuelo Vivo',
+			code: 'AZ039-T',
+			R: 138,
+			G: 205,
+			B: 232
+    },
+    {
+			name: 'Glaseado Azul',
+			code: 'AZ040-T',
+			R: 107,
+			G: 192,
+			B: 224
+    },
+    {
+			name: 'Glaciar Helado',
+			code: 'AZ041-D',
+			R: 72,
+			G: 176,
+			B: 212
+    },
+    {
+			name: 'Embalse Profundo',
+			code: 'AZ042-D',
+			R: 0,
+			G: 157,
+			B: 197
+    },
+    {
+			name: 'Cristal Marinero',
+			code: 'AZ043-P',
+			R: 211,
+			G: 233,
+			B: 238
+    },
+    {
+			name: 'Azul Calma',
+			code: 'AZ044-P',
+			R: 195,
+			G: 226,
+			B: 237
+    },
+    {
+			name: 'Viento Lluvioso',
+			code: 'AZ045-P',
+			R: 176,
+			G: 218,
+			B: 236
+    },
+    {
+			name: 'Cielo Claro',
+			code: 'AZ046-T',
+			R: 144,
+			G: 201,
+			B: 226
+    },
+    {
+			name: 'Cielo Abierto',
+			code: 'AZ047-T',
+			R: 116,
+			G: 185,
+			B: 214
+    },
+    {
+			name: 'Azul Temperamental',
+			code: 'AZ048-D',
+			R: 84,
+			G: 166,
+			B: 200
+    },
+    {
+			name: 'Noche de Faroles',
+			code: 'AZ049-D',
+			R: 46,
+			G: 149,
+			B: 187
+    },
+    {
+			name: 'Azul Navegante',
+			code: 'AZ050-P',
+			R: 211,
+			G: 231,
+			B: 238
+    },
+    {
+			name: 'Remolinos de Agua',
+			code: 'AZ051-P',
+			R: 194,
+			G: 224,
+			B: 236
+    },
+    {
+			name: 'Sueño de Día',
+			code: 'AZ052-P',
+			R: 170,
+			G: 213,
+			B: 232
+    },
+    {
+			name: 'Azul de Primavera',
+			code: 'AZ053-T',
+			R: 148,
+			G: 199,
+			B: 223
+    },
+    {
+			name: 'Topacio Azul',
+			code: 'AZ054-T',
+			R: 118,
+			G: 185,
+			B: 216
+    },
+    {
+			name: 'Azul Mineral',
+			code: 'AZ055-D',
+			R: 83,
+			G: 162,
+			B: 197
+    },
+    {
+			name: 'Zafiro del Mar',
+			code: 'AZ056-D',
+			R: 58,
+			G: 146,
+			B: 184
+    },
+    {
+			name: 'Caudal Azul',
+			code: 'AZ057-A',
+			R: 0,
+			G: 128,
+			B: 181
+    },
+    {
+			name: 'Laguna Zafiro',
+			code: 'AZ058-A',
+			R: 0,
+			G: 127,
+			B: 167
+    },
+    {
+			name: 'Azul de la Marina',
+			code: 'AZ059-A',
+			R: 0,
+			G: 108,
+			B: 143
+    },
+    {
+			name: 'Azul de la Noche',
+			code: 'AZ060-A',
+			R: 17,
+			G: 104,
+			B: 137
+    },
+    {
+			name: 'Mora Azul Salvaje',
+			code: 'AZ061-A',
+			R: 41,
+			G: 89,
+			B: 114
+    },
+    {
+			name: 'Azul Acero',
+			code: 'AZ062-A',
+			R: 58,
+			G: 86,
+			B: 99
+    },
+    {
+			name: 'Azul Niebla',
+			code: 'AZ063-A',
+			R: 58,
+			G: 63,
+			B: 66
+    },
+    {
+			name: 'Puerto Dulce',
+			code: 'AZ064-P',
+			R: 211,
+			G: 229,
+			B: 239
+    },
+    {
+			name: 'Cáliz de la Aurora',
+			code: 'AZ065-P',
+			R: 197,
+			G: 225,
+			B: 239
+    },
+    {
+			name: 'Lirio de Agua',
+			code: 'AZ066-P',
+			R: 176,
+			G: 215,
+			B: 239
+    },
+    {
+			name: 'Fiesta en el Mar',
+			code: 'AZ067-T',
+			R: 140,
+			G: 197,
+			B: 231
+    },
+    {
+			name: 'Campanilla China',
+			code: 'AZ068-T',
+			R: 119,
+			G: 187,
+			B: 227
+    },
+    {
+			name: 'Selva del Oeste',
+			code: 'AZ069-D',
+			R: 81,
+			G: 162,
+			B: 209
+    },
+    {
+			name: 'Azul Escarcha',
+			code: 'AZ070-D',
+			R: 43,
+			G: 146,
+			B: 197
+    },
+    {
+			name: 'Sendero en el Aire',
+			code: 'AZ071-P',
+			R: 213,
+			G: 229,
+			B: 237
+    },
+    {
+			name: 'Azul Claro',
+			code: 'AZ072-P',
+			R: 200,
+			G: 223,
+			B: 236
+    },
+    {
+			name: 'Puerto Azul',
+			code: 'AZ073-P',
+			R: 181,
+			G: 214,
+			B: 232
+    },
+    {
+			name: 'Día de Verano',
+			code: 'AZ074-T',
+			R: 151,
+			G: 193,
+			B: 222
+    },
+    {
+			name: 'Pincelada Azul',
+			code: 'AZ075-T',
+			R: 129,
+			G: 177,
+			B: 211
+    },
+    {
+			name: 'Cabellos de Venus',
+			code: 'AZ076-D',
+			R: 105,
+			G: 160,
+			B: 198
+    },
+    {
+			name: 'Arroyo Tranquilo',
+			code: 'AZ077-D',
+			R: 72,
+			G: 138,
+			B: 180
+    },
+    {
+			name: 'Lago de Cisnes',
+			code: 'AZ078-P',
+			R: 211,
+			G: 226,
+			B: 235
+    },
+    {
+			name: 'Cielo Nublado',
+			code: 'AZ079-P',
+			R: 197,
+			G: 220,
+			B: 235
+    },
+    {
+			name: 'Zafiro',
+			code: 'AZ080-P',
+			R: 180,
+			G: 212,
+			B: 234
+    },
+    {
+			name: 'Lluvia de Cristales',
+			code: 'AZ081-T',
+			R: 151,
+			G: 196,
+			B: 225
+    },
+    {
+			name: 'Azul Selvático',
+			code: 'AZ082-T',
+			R: 125,
+			G: 180,
+			B: 215
+    },
+    {
+			name: 'Azul Puro',
+			code: 'AZ083-D',
+			R: 97,
+			G: 154,
+			B: 192
+    },
+    {
+			name: 'Lluvia de Escarcha',
+			code: 'AZ084-D',
+			R: 72,
+			G: 135,
+			B: 176
+    },
+    {
+			name: 'Puerto Luna',
+			code: 'AZ085-D',
+			R: 0,
+			G: 151,
+			B: 200
+    },
+    {
+			name: 'Azul Tecno',
+			code: 'AZ086-A',
+			R: 0,
+			G: 117,
+			B: 171
+    },
+    {
+			name: 'Morazul',
+			code: 'AZ087-A',
+			R: 36,
+			G: 99,
+			B: 136
+    },
+    {
+			name: 'Cielo Nocturno',
+			code: 'AZ088-A',
+			R: 40,
+			G: 96,
+			B: 136
+    },
+    {
+			name: 'Uva Negra',
+			code: 'AZ089-A',
+			R: 46,
+			G: 88,
+			B: 116
+    },
+    {
+			name: 'Gris Plomo',
+			code: 'AZ090-A',
+			R: 59,
+			G: 80,
+			B: 95
+    },
+    {
+			name: 'Negro Zarzamora',
+			code: 'AZ091-A',
+			R: 58,
+			G: 59,
+			B: 59
+    },
+    {
+			name: 'Nubes de Algodón',
+			code: 'AZ092-P',
+			R: 217,
+			G: 230,
+			B: 237
+    },
+    {
+			name: 'Extracto de Arándanos',
+			code: 'AZ093-P',
+			R: 198,
+			G: 223,
+			B: 237
+    },
+    {
+			name: 'Glaseado Lila',
+			code: 'AZ094-P',
+			R: 179,
+			G: 215,
+			B: 235
+    },
+    {
+			name: 'Azul Acuarela',
+			code: 'AZ095-T',
+			R: 146,
+			G: 196,
+			B: 229
+    },
+    {
+			name: 'Pétalos de Orquídea',
+			code: 'AZ096-T',
+			R: 122,
+			G: 182,
+			B: 222
+    },
+    {
+			name: 'Pensamiento Azul',
+			code: 'AZ097-D',
+			R: 86,
+			G: 158,
+			B: 206
+    },
+    {
+			name: 'Azul Fractal',
+			code: 'AZ098-D',
+			R: 66,
+			G: 143,
+			B: 194
+    },
+    {
+			name: 'Colina Azul',
+			code: 'AZ099-P',
+			R: 215,
+			G: 227,
+			B: 235
+    },
+    {
+			name: 'Azul Caballero',
+			code: 'AZ100-P',
+			R: 203,
+			G: 222,
+			B: 236
+    },
+    {
+			name: 'Azulejo',
+			code: 'AZ101-P',
+			R: 182,
+			G: 209,
+			B: 230
+    },
+    {
+			name: 'Rocío Violeta',
+			code: 'AZ102-T',
+			R: 158,
+			G: 192,
+			B: 222
+    },
+    {
+			name: 'Azul Vespertino',
+			code: 'AZ103-T',
+			R: 132,
+			G: 174,
+			B: 211
+    },
+    {
+			name: 'Lapizlázuli',
+			code: 'AZ104-D',
+			R: 110,
+			G: 153,
+			B: 193
+    },
+    {
+			name: 'Azul Gentiana',
+			code: 'AZ105-D',
+			R: 88,
+			G: 134,
+			B: 179
+    },
+    {
+			name: 'Vidrio de Escarcha',
+			code: 'AZ106-P',
+			R: 214,
+			G: 224,
+			B: 234
+    },
+    {
+			name: 'Celeste Pálido',
+			code: 'AZ107-P',
+			R: 201,
+			G: 220,
+			B: 234
+    },
+    {
+			name: 'Amanecer en el Cielo',
+			code: 'AZ108-P',
+			R: 184,
+			G: 210,
+			B: 231
+    },
+    {
+			name: 'Flor de los Pirineos',
+			code: 'AZ109-T',
+			R: 157,
+			G: 192,
+			B: 222
+    },
+    {
+			name: 'Escape al Mar',
+			code: 'AZ110-T',
+			R: 137,
+			G: 176,
+			B: 215
+    },
+    {
+			name: 'Más allá del Mar',
+			code: 'AZ111-D',
+			R: 110,
+			G: 155,
+			B: 200
+    },
+    {
+			name: 'Azul Fresco',
+			code: 'AZ112-D',
+			R: 81,
+			G: 131,
+			B: 181
+    },
+    {
+			name: 'Imperial',
+			code: 'AZ113-A',
+			R: 51,
+			G: 104,
+			B: 159
+    },
+    {
+			name: 'Pluma Real',
+			code: 'AZ114-A',
+			R: 9,
+			G: 113,
+			B: 166
+    },
+    {
+			name: 'Flor de las Fuentes',
+			code: 'AZ115-A',
+			R: 55,
+			G: 105,
+			B: 148
+    },
+    {
+			name: 'Azul Atlántico',
+			code: 'AZ116-A',
+			R: 50,
+			G: 94,
+			B: 141
+    },
+    {
+			name: 'Azul Cobalto',
+			code: 'AZ117-A',
+			R: 51,
+			G: 87,
+			B: 115
+    },
+    {
+			name: 'Gris Cenizo',
+			code: 'AZ118-A',
+			R: 65,
+			G: 85,
+			B: 104
+    },
+    {
+			name: 'Negro Alquitrán',
+			code: 'AZ119-A',
+			R: 61,
+			G: 63,
+			B: 67
+    },
+    {
+			name: 'Suelo de Nubes',
+			code: 'AZ120-P',
+			R: 223,
+			G: 232,
+			B: 239
+    },
+    {
+			name: 'Gotas Lila',
+			code: 'AZ121-P',
+			R: 204,
+			G: 221,
+			B: 236
+    },
+    {
+			name: 'Bruma Lila',
+			code: 'AZ122-P',
+			R: 188,
+			G: 210,
+			B: 234
+    },
+    {
+			name: 'Lila Seda',
+			code: 'AZ123-T',
+			R: 163,
+			G: 193,
+			B: 226
+    },
+    {
+			name: 'Azul Brezo',
+			code: 'AZ124-T',
+			R: 141,
+			G: 175,
+			B: 216
+    },
+    {
+			name: 'Azul Violáceo',
+			code: 'AZ125-D',
+			R: 113,
+			G: 148,
+			B: 197
+    },
+    {
+			name: 'Cambur Morado',
+			code: 'AZ126-D',
+			R: 91,
+			G: 129,
+			B: 181
+    },
+    {
+			name: 'Claridad',
+			code: 'AZ127-P',
+			R: 220,
+			G: 229,
+			B: 236
+    },
+    {
+			name: 'Paisaje Azul',
+			code: 'AZ128-P',
+			R: 212,
+			G: 223,
+			B: 236
+    },
+    {
+			name: 'Cielo Violeta',
+			code: 'AZ129-P',
+			R: 195,
+			G: 210,
+			B: 230
+    },
+    {
+			name: 'Lavanda Serena',
+			code: 'AZ130-T',
+			R: 169,
+			G: 190,
+			B: 219
+    },
+    {
+			name: 'Lago Violeta',
+			code: 'AZ131-T',
+			R: 147,
+			G: 172,
+			B: 208
+    },
+    {
+			name: 'Lavanda Florecida',
+			code: 'AZ132-D',
+			R: 123,
+			G: 147,
+			B: 188
+    },
+    {
+			name: 'Lago Lila',
+			code: 'AZ133-D',
+			R: 100,
+			G: 123,
+			B: 169
+    },
+    {
+			name: 'Suave Brisa',
+			code: 'AZ134-P',
+			R: 218,
+			G: 224,
+			B: 233
+    },
+    {
+			name: 'Aura Violeta',
+			code: 'AZ135-P',
+			R: 205,
+			G: 218,
+			B: 235
+    },
+    {
+			name: 'Clavel del Aire',
+			code: 'AZ136-P',
+			R: 189,
+			G: 205,
+			B: 226
+    },
+    {
+			name: 'Campanilla Azul',
+			code: 'AZ137-T',
+			R: 166,
+			G: 189,
+			B: 220
+    },
+    {
+			name: 'Lila Clásica',
+			code: 'AZ138-T',
+			R: 144,
+			G: 169,
+			B: 208
+    },
+    {
+			name: 'Danza Violeta',
+			code: 'AZ139-D',
+			R: 116,
+			G: 142,
+			B: 186
+    },
+    {
+			name: 'Violeta Africana',
+			code: 'AZ140-D',
+			R: 100,
+			G: 120,
+			B: 169
+    },
+    {
+			name: 'Río de Ensueño',
+			code: 'AZ141-D',
+			R: 79,
+			G: 131,
+			B: 185
+    },
+    {
+			name: 'Dulce Morazul',
+			code: 'AZ142-A',
+			R: 67,
+			G: 105,
+			B: 157
+    },
+    {
+			name: 'Orquídea Imperial',
+			code: 'AZ143-A',
+			R: 72,
+			G: 94,
+			B: 141
+    },
+    {
+			name: 'Violeta Pandora',
+			code: 'AZ144-A',
+			R: 71,
+			G: 88,
+			B: 128
+    },
+    {
+			name: 'Flor del Amor',
+			code: 'AZ145-A',
+			R: 58,
+			G: 81,
+			B: 111
+    },
+    {
+			name: 'Gris Titán',
+			code: 'AZ146-A',
+			R: 64,
+			G: 79,
+			B: 100
+    },
+    {
+			name: 'Diamante Negro',
+			code: 'AZ147-A',
+			R: 67,
+			G: 74,
+			B: 84
+    },
+    {
+			name: 'Lila Lavanda',
+			code: 'VL001-P',
+			R: 221,
+			G: 230,
+			B: 239
+    },
+    {
+			name: 'Lila Endrino',
+			code: 'VL002-P',
+			R: 210,
+			G: 221,
+			B: 237
+    },
+    {
+			name: 'Lila Cristal',
+			code: 'VL003-P',
+			R: 195,
+			G: 209,
+			B: 234
+    },
+    {
+			name: 'Malva Pastel',
+			code: 'VL004-T',
+			R: 170,
+			G: 191,
+			B: 224
+    },
+    {
+			name: 'Pastel Lavanda',
+			code: 'VL005-T',
+			R: 149,
+			G: 173,
+			B: 214
+    },
+    {
+			name: 'Realeza Purpura',
+			code: 'VL006-D',
+			R: 122,
+			G: 145,
+			B: 195
+    },
+    {
+			name: 'Sorbete de Arándanos',
+			code: 'VL007-D',
+			R: 99,
+			G: 125,
+			B: 179
+    },
+    {
+			name: 'Bruma Lavanda',
+			code: 'VL008-P',
+			R: 225,
+			G: 230,
+			B: 238
+    },
+    {
+			name: 'Niebla Lila',
+			code: 'VL009-P',
+			R: 214,
+			G: 222,
+			B: 236
+    },
+    {
+			name: 'Suave Violeta',
+			code: 'VL010-P',
+			R: 201,
+			G: 208,
+			B: 227
+    },
+    {
+			name: 'Violetas de Primavera',
+			code: 'VL011-T',
+			R: 176,
+			G: 189,
+			B: 217
+    },
+    {
+			name: 'Colina de Lavandas',
+			code: 'VL012-T',
+			R: 156,
+			G: 172,
+			B: 209
+    },
+    {
+			name: 'Valle Violeta',
+			code: 'VL013-D',
+			R: 136,
+			G: 147,
+			B: 190
+    },
+    {
+			name: 'Idilio',
+			code: 'VL014-D',
+			R: 113,
+			G: 127,
+			B: 170
+    },
+    {
+			name: 'Destello Lila',
+			code: 'VL015-P',
+			R: 220,
+			G: 224,
+			B: 234
+    },
+    {
+			name: 'Jardín de Hortensias',
+			code: 'VL016-P',
+			R: 216,
+			G: 220,
+			B: 234
+    },
+    {
+			name: 'Azafrán de Pascua',
+			code: 'VL017-P',
+			R: 203,
+			G: 209,
+			B: 230
+    },
+    {
+			name: 'Mora Efervescente',
+			code: 'VL018-T',
+			R: 176,
+			G: 187,
+			B: 216
+    },
+    {
+			name: 'Vino de Moras',
+			code: 'VL019-T',
+			R: 159,
+			G: 173,
+			B: 207
+    },
+    {
+			name: 'Fibras Violeta',
+			code: 'VL020-D',
+			R: 135,
+			G: 146,
+			B: 187
+    },
+    {
+			name: 'Paraíso Violeta',
+			code: 'VL021-D',
+			R: 113,
+			G: 124,
+			B: 168
+    },
+    {
+			name: 'Tentación de Moras',
+			code: 'VL022-A',
+			R: 75,
+			G: 92,
+			B: 146
+    },
+    {
+			name: 'Cardo Violeta',
+			code: 'VL023-A',
+			R: 76,
+			G: 95,
+			B: 147
+    },
+    {
+			name: 'Mora Fantasía',
+			code: 'VL024-A',
+			R: 85,
+			G: 95,
+			B: 139
+    },
+    {
+			name: 'Violeta de Agua',
+			code: 'VL025-A',
+			R: 76,
+			G: 90,
+			B: 129
+    },
+    {
+			name: 'Azul Mágico',
+			code: 'VL026-A',
+			R: 64,
+			G: 79,
+			B: 110
+    },
+    {
+			name: 'Azul Real',
+			code: 'VL027-A',
+			R: 66,
+			G: 82,
+			B: 104
+    },
+    {
+			name: 'Tinta China',
+			code: 'VL028-A',
+			R: 61,
+			G: 66,
+			B: 75
+    },
+    {
+			name: 'Brisa Púrpura',
+			code: 'VL029-P',
+			R: 228,
+			G: 229,
+			B: 238
+    },
+    {
+			name: 'Cobalto Ultraclaro',
+			code: 'VL030-P',
+			R: 217,
+			G: 219,
+			B: 234
+    },
+    {
+			name: 'Té de Arándanos',
+			code: 'VL031-P',
+			R: 202,
+			G: 208,
+			B: 231
+    },
+    {
+			name: 'Violeta Pastel',
+			code: 'VL032-T',
+			R: 180,
+			G: 188,
+			B: 222
+    },
+    {
+			name: 'Lila Delicado',
+			code: 'VL033-T',
+			R: 162,
+			G: 170,
+			B: 209
+    },
+    {
+			name: 'Lavanda Floral',
+			code: 'VL034-D',
+			R: 137,
+			G: 143,
+			B: 191
+    },
+    {
+			name: 'Amatista Cristalina',
+			code: 'VL035-D',
+			R: 116,
+			G: 125,
+			B: 177
+    },
+    {
+			name: 'Lavanda Suave',
+			code: 'VL036-P',
+			R: 225,
+			G: 226,
+			B: 234
+    },
+    {
+			name: 'Rocío de Lavanda',
+			code: 'VL037-P',
+			R: 218,
+			G: 216,
+			B: 230
+    },
+    {
+			name: 'Mora Salvaje',
+			code: 'VL038-P',
+			R: 206,
+			G: 205,
+			B: 226
+    },
+    {
+			name: 'Esencia Floral',
+			code: 'VL039-T',
+			R: 189,
+			G: 188,
+			B: 217
+    },
+    {
+			name: 'Conexión Lavanda',
+			code: 'VL040-T',
+			R: 168,
+			G: 171,
+			B: 208
+    },
+    {
+			name: 'Orquídea',
+			code: 'VL041-D',
+			R: 146,
+			G: 145,
+			B: 186
+    },
+    {
+			name: 'Uva Tentación',
+			code: 'VL042-D',
+			R: 124,
+			G: 123,
+			B: 168
+    },
+    {
+			name: 'Fiesta Violeta',
+			code: 'VL043-P',
+			R: 228,
+			G: 229,
+			B: 234
+    },
+    {
+			name: 'Mora Celebración',
+			code: 'VL044-P',
+			R: 216,
+			G: 218,
+			B: 231
+    },
+    {
+			name: 'Lila Verónica',
+			code: 'VL045-P',
+			R: 207,
+			G: 209,
+			B: 231
+    },
+    {
+			name: 'Reina de Azafrán',
+			code: 'VL046-T',
+			R: 186,
+			G: 190,
+			B: 218
+    },
+    {
+			name: 'Tarde Lila',
+			code: 'VL047-T',
+			R: 168,
+			G: 171,
+			B: 205
+    },
+    {
+			name: 'Violeta Vanidoso',
+			code: 'VL048-D',
+			R: 143,
+			G: 144,
+			B: 184
+    },
+    {
+			name: 'Orquídea Lila',
+			code: 'VL049-D',
+			R: 122,
+			G: 124,
+			B: 166
+    },
+    {
+			name: 'Mora Mágica',
+			code: 'VL050-D',
+			R: 106,
+			G: 125,
+			B: 179
+    },
+    {
+			name: 'Ultravioleta',
+			code: 'VL051-A',
+			R: 83,
+			G: 92,
+			B: 144
+    },
+    {
+			name: 'Vino de Uvas',
+			code: 'VL052-A',
+			R: 100,
+			G: 100,
+			B: 138
+    },
+    {
+			name: 'Arándano  Silvestre',
+			code: 'VL053-A',
+			R: 86,
+			G: 87,
+			B: 126
+    },
+    {
+			name: 'Amapola Violeta',
+			code: 'VL054-A',
+			R: 64,
+			G: 69,
+			B: 98
+    },
+    {
+			name: 'Púrpura Heráldico',
+			code: 'VL055-A',
+			R: 74,
+			G: 82,
+			B: 104
+    },
+    {
+			name: 'Ónice',
+			code: 'VL056-A',
+			R: 63,
+			G: 66,
+			B: 79
+    },
+    {
+			name: 'Fantasía de Moras',
+			code: 'VL057-P',
+			R: 236,
+			G: 232,
+			B: 239
+    },
+    {
+			name: 'Esencia de Lavandas',
+			code: 'VL058-P',
+			R: 218,
+			G: 218,
+			B: 234
+    },
+    {
+			name: 'Lavanda Azulado',
+			code: 'VL059-P',
+			R: 204,
+			G: 206,
+			B: 230
+    },
+    {
+			name: 'Lila Cardo',
+			code: 'VL060-T',
+			R: 185,
+			G: 188,
+			B: 223
+    },
+    {
+			name: 'Orquídea Magna',
+			code: 'VL061-T',
+			R: 163,
+			G: 167,
+			B: 206
+    },
+    {
+			name: 'Wisteria',
+			code: 'VL062-D',
+			R: 141,
+			G: 139,
+			B: 188
+    },
+    {
+			name: 'Cuarzo Amatista',
+			code: 'VL063-D',
+			R: 121,
+			G: 121,
+			B: 173
+    },
+    {
+			name: 'Pastel de Moras',
+			code: 'VL064-P',
+			R: 228,
+			G: 226,
+			B: 236
+    },
+    {
+			name: 'Brisa Floral',
+			code: 'VL065-P',
+			R: 223,
+			G: 218,
+			B: 231
+    },
+    {
+			name: 'Ramo de Lirios',
+			code: 'VL066-P',
+			R: 206,
+			G: 206,
+			B: 227
+    },
+    {
+			name: 'Campo de Lavandas',
+			code: 'VL067-T',
+			R: 186,
+			G: 185,
+			B: 216
+    },
+    {
+			name: 'Lavanda Espléndida',
+			code: 'VL068-T',
+			R: 170,
+			G: 169,
+			B: 206
+    },
+    {
+			name: 'Vanidad Violeta',
+			code: 'VL069-D',
+			R: 148,
+			G: 142,
+			B: 182
+    },
+    {
+			name: 'Violeta Vivo',
+			code: 'VL070-D',
+			R: 127,
+			G: 119,
+			B: 166
+    },
+    {
+			name: 'Mora Pretenciosa',
+			code: 'VL071-P',
+			R: 233,
+			G: 230,
+			B: 236
+    },
+    {
+			name: 'Rocío Púrpura',
+			code: 'VL072-P',
+			R: 221,
+			G: 221,
+			B: 230
+    },
+    {
+			name: 'Fiesta de Moras',
+			code: 'VL073-P',
+			R: 210,
+			G: 206,
+			B: 224
+    },
+    {
+			name: 'Primer Azafrán',
+			code: 'VL074-T',
+			R: 194,
+			G: 190,
+			B: 215
+    },
+    {
+			name: 'Violeta Francés',
+			code: 'VL075-T',
+			R: 173,
+			G: 171,
+			B: 204
+    },
+    {
+			name: 'Visión Violeta',
+			code: 'VL076-D',
+			R: 147,
+			G: 141,
+			B: 178
+    },
+    {
+			name: 'Lila Tentación',
+			code: 'VL077-D',
+			R: 131,
+			G: 124,
+			B: 164
+    },
+    {
+			name: 'Violeta Clásico',
+			code: 'VL078-A',
+			R: 104,
+			G: 93,
+			B: 144
+    },
+    {
+			name: 'Púrpura Índigo',
+			code: 'VL079-A',
+			R: 93,
+			G: 94,
+			B: 143
+    },
+    {
+			name: 'Púrpura Premier',
+			code: 'VL080-A',
+			R: 97,
+			G: 90,
+			B: 133
+    },
+    {
+			name: 'Berenjena',
+			code: 'VL081-A',
+			R: 82,
+			G: 77,
+			B: 107
+    },
+    {
+			name: 'Zumo de Moras',
+			code: 'VL082-A',
+			R: 67,
+			G: 70,
+			B: 97
+    },
+    {
+			name: 'Púrpura Imperial',
+			code: 'VL083-A',
+			R: 71,
+			G: 76,
+			B: 103
+    },
+    {
+			name: 'Ébano Violeta',
+			code: 'VL084-A',
+			R: 65,
+			G: 64,
+			B: 76
+    },
+    {
+			name: 'Magnolia de Cristal',
+			code: 'VL085-P',
+			R: 235,
+			G: 228,
+			B: 236
+    },
+    {
+			name: 'Cardo Suave',
+			code: 'VL086-P',
+			R: 224,
+			G: 214,
+			B: 232
+    },
+    {
+			name: 'Sonrojo Lila',
+			code: 'VL087-P',
+			R: 217,
+			G: 205,
+			B: 227
+    },
+    {
+			name: 'Atardecer Lila',
+			code: 'VL088-T',
+			R: 197,
+			G: 183,
+			B: 217
+    },
+    {
+			name: 'Orquídea Pastel',
+			code: 'VL089-T',
+			R: 179,
+			G: 165,
+			B: 205
+    },
+    {
+			name: 'Orquídea Medio',
+			code: 'VL090-D',
+			R: 159,
+			G: 136,
+			B: 184
+    },
+    {
+			name: 'Cardo Oscuro',
+			code: 'VL091-D',
+			R: 139,
+			G: 114,
+			B: 165
+    },
+    {
+			name: 'Brisa Frutal',
+			code: 'VL092-P',
+			R: 235,
+			G: 229,
+			B: 235
+    },
+    {
+			name: 'Helado de Yogurt',
+			code: 'VL093-P',
+			R: 229,
+			G: 218,
+			B: 231
+    },
+    {
+			name: 'Lila Romántico',
+			code: 'VL094-P',
+			R: 215,
+			G: 202,
+			B: 225
+    },
+    {
+			name: 'Púrpura Plácido',
+			code: 'VL095-T',
+			R: 202,
+			G: 187,
+			B: 214
+    },
+    {
+			name: 'Reino Púrpura',
+			code: 'VL096-T',
+			R: 186,
+			G: 168,
+			B: 203
+    },
+    {
+			name: 'Mora Elegante',
+			code: 'VL097-D',
+			R: 171,
+			G: 142,
+			B: 181
+    },
+    {
+			name: 'Lila Majestuoso',
+			code: 'VL098-D',
+			R: 143,
+			G: 118,
+			B: 163
+    },
+    {
+			name: 'Granizado de Mora',
+			code: 'VL099-P',
+			R: 234,
+			G: 229,
+			B: 235
+    },
+    {
+			name: 'Púrpura ',
+			code: 'VL100-P',
+			R: 227,
+			G: 218,
+			B: 231
+    },
+    {
+			name: 'Destello Lavanda',
+			code: 'VL101-P',
+			R: 216,
+			G: 206,
+			B: 225
+    },
+    {
+			name: 'Azafrán de las Nieves',
+			code: 'VL102-T',
+			R: 198,
+			G: 183,
+			B: 210
+    },
+    {
+			name: 'Sendero de Lilas',
+			code: 'VL103-T',
+			R: 181,
+			G: 169,
+			B: 201
+    },
+    {
+			name: 'Violeta del Campo',
+			code: 'VL104-D',
+			R: 158,
+			G: 138,
+			B: 177
+    },
+    {
+			name: 'Orquídea Real',
+			code: 'VL105-D',
+			R: 142,
+			G: 119,
+			B: 158
+    },
+    {
+			name: 'Violeta Versátil',
+			code: 'VL106-D',
+			R: 131,
+			G: 122,
+			B: 172
+    },
+    {
+			name: 'Berenjena Oscuro',
+			code: 'VL107-A',
+			R: 112,
+			G: 85,
+			B: 136
+    },
+    {
+			name: 'Ocaso Violeta',
+			code: 'VL108-A',
+			R: 115,
+			G: 88,
+			B: 132
+    },
+    {
+			name: 'Viñedo',
+			code: 'VL109-A',
+			R: 97,
+			G: 82,
+			B: 107
+    },
+    {
+			name: 'Poder Violeta',
+			code: 'VL110-A',
+			R: 79,
+			G: 71,
+			B: 95
+    },
+    {
+			name: 'Mora Irresistible',
+			code: 'VL111-A',
+			R: 77,
+			G: 75,
+			B: 100
+    },
+    {
+			name: 'Púrpura Sólido',
+			code: 'VL112-A',
+			R: 69,
+			G: 64,
+			B: 76
+    },
+    {
+			name: 'Blanco Siempre Joven',
+			code: 'VL113-P',
+			R: 232,
+			G: 224,
+			B: 236
+    },
+    {
+			name: 'Lila Primavera',
+			code: 'VL114-P',
+			R: 229,
+			G: 215,
+			B: 232
+    },
+    {
+			name: 'Cupcake',
+			code: 'VL115-P',
+			R: 224,
+			G: 202,
+			B: 226
+    },
+    {
+			name: 'Mora Silvestre',
+			code: 'VL116-T',
+			R: 209,
+			G: 184,
+			B: 217
+    },
+    {
+			name: 'Lavanda Puro',
+			code: 'VL117-T',
+			R: 191,
+			G: 163,
+			B: 203
+    },
+    {
+			name: 'Fiesta Pastel',
+			code: 'VL118-D',
+			R: 172,
+			G: 135,
+			B: 182
+    },
+    {
+			name: 'Ciruela del Campo',
+			code: 'VL119-D',
+			R: 159,
+			G: 117,
+			B: 166
+    },
+    {
+			name: 'Lila Tenue',
+			code: 'VL120-P',
+			R: 237,
+			G: 226,
+			B: 232
+    },
+    {
+			name: 'Granizado Lila',
+			code: 'VL121-P',
+			R: 229,
+			G: 215,
+			B: 230
+    },
+    {
+			name: 'Celebración Violeta',
+			code: 'VL122-P',
+			R: 224,
+			G: 203,
+			B: 223
+    },
+    {
+			name: 'Amatista',
+			code: 'VL123-T',
+			R: 206,
+			G: 180,
+			B: 211
+    },
+    {
+			name: 'Jacinto Primaveral',
+			code: 'VL124-T',
+			R: 188,
+			G: 159,
+			B: 198
+    },
+    {
+			name: 'Baño de Violetas',
+			code: 'VL125-D',
+			R: 174,
+			G: 135,
+			B: 177
+    },
+    {
+			name: 'Florecer Violeta',
+			code: 'VL126-D',
+			R: 152,
+			G: 113,
+			B: 157
+    },
+    {
+			name: 'Sorpresa Violeta',
+			code: 'VL127-P',
+			R: 234,
+			G: 222,
+			B: 230
+    },
+    {
+			name: 'Cielo de Abril',
+			code: 'VL128-P',
+			R: 233,
+			G: 217,
+			B: 226
+    },
+    {
+			name: 'Malva Pensativa',
+			code: 'VL129-P',
+			R: 227,
+			G: 207,
+			B: 223
+    },
+    {
+			name: 'Niebla Malva',
+			code: 'VL130-T',
+			R: 209,
+			G: 185,
+			B: 209
+    },
+    {
+			name: 'Merengatta',
+			code: 'VL131-T',
+			R: 196,
+			G: 167,
+			B: 195
+    },
+    {
+			name: 'Noche Cálida',
+			code: 'VL132-D',
+			R: 175,
+			G: 135,
+			B: 169
+    },
+    {
+			name: 'Noche de Fiesta',
+			code: 'VL133-D',
+			R: 158,
+			G: 118,
+			B: 155
+    },
+    {
+			name: 'Violeta Orgulloso',
+			code: 'VL134-A',
+			R: 133,
+			G: 83,
+			B: 129
+    },
+    {
+			name: 'Rey Vaticano',
+			code: 'VL135-A',
+			R: 121,
+			G: 82,
+			B: 129
+    },
+    {
+			name: 'Terciopelo',
+			code: 'VL136-A',
+			R: 124,
+			G: 87,
+			B: 129
+    },
+    {
+			name: 'Platillo de Berenjenas',
+			code: 'VL137-A',
+			R: 108,
+			G: 79,
+			B: 110
+    },
+    {
+			name: 'Mora Gloriosa',
+			code: 'VL138-A',
+			R: 96,
+			G: 79,
+			B: 105
+    },
+    {
+			name: 'Fruta Estacional',
+			code: 'VL139-A',
+			R: 82,
+			G: 73,
+			B: 92
+    },
+    {
+			name: 'Negro Ciruela',
+			code: 'VL140-A',
+			R: 81,
+			G: 73,
+			B: 87
+    },
+    {
+			name: 'Nieve Rosa',
+			code: 'VL141-P',
+			R: 244,
+			G: 231,
+			B: 236
+    },
+    {
+			name: 'Rosa Primaveral',
+			code: 'VL142-P',
+			R: 232,
+			G: 211,
+			B: 229
+    },
+    {
+			name: 'Flores',
+			code: 'VL143-P',
+			R: 226,
+			G: 201,
+			B: 224
+    },
+    {
+			name: 'Suave Elegancia',
+			code: 'VL144-T',
+			R: 220,
+			G: 180,
+			B: 213
+    },
+    {
+			name: 'Reina Mora',
+			code: 'VL145-T',
+			R: 210,
+			G: 161,
+			B: 201
+    },
+    {
+			name: 'Violeta a la Moda',
+			code: 'VL146-D',
+			R: 194,
+			G: 131,
+			B: 178
+    },
+    {
+			name: 'Isabela',
+			code: 'VL147-D',
+			R: 177,
+			G: 109,
+			B: 159
+    },
+    {
+			name: 'Sonrojo Rosa',
+			code: 'VL148-P',
+			R: 245,
+			G: 228,
+			B: 232
+    },
+    {
+			name: 'Hada Madrina',
+			code: 'VL149-P',
+			R: 233,
+			G: 211,
+			B: 226
+    },
+    {
+			name: 'Encanto Rosa',
+			code: 'VL150-P',
+			R: 235,
+			G: 202,
+			B: 221
+    },
+    {
+			name: 'Cálido Amanecer',
+			code: 'VL151-T',
+			R: 219,
+			G: 176,
+			B: 206
+    },
+    {
+			name: 'Malagueña',
+			code: 'VL152-T',
+			R: 210,
+			G: 159,
+			B: 193
+    },
+    {
+			name: 'Rosa Lila',
+			code: 'VL153-D',
+			R: 199,
+			G: 135,
+			B: 174
+    },
+    {
+			name: 'Lilas de Mayo',
+			code: 'VL154-D',
+			R: 182,
+			G: 109,
+			B: 153
+    },
+    {
+			name: 'Rosado Pálido',
+			code: 'VL155-P',
+			R: 238,
+			G: 216,
+			B: 217
+    },
+    {
+			name: 'Rosa Alta Costura',
+			code: 'VL156-P',
+			R: 235,
+			G: 208,
+			B: 216
+    },
+    {
+			name: 'Malva Místico',
+			code: 'VL157-P',
+			R: 229,
+			G: 197,
+			B: 209
+    },
+    {
+			name: 'Suave Toque Rosa',
+			code: 'VL158-T',
+			R: 215,
+			G: 179,
+			B: 203
+    },
+    {
+			name: 'Aire Pícaro',
+			code: 'VL159-T',
+			R: 198,
+			G: 161,
+			B: 188
+    },
+    {
+			name: 'Postre de Bayas',
+			code: 'VL160-D',
+			R: 182,
+			G: 131,
+			B: 164
+    },
+    {
+			name: 'Rosa de la Realeza',
+			code: 'VL161-D',
+			R: 165,
+			G: 107,
+			B: 141
+    },
+    {
+			name: 'Princesa Púrpura',
+			code: 'VL162-A',
+			R: 165,
+			G: 80,
+			B: 127
+    },
+    {
+			name: 'Mora Cítrica',
+			code: 'VL163-A',
+			R: 156,
+			G: 81,
+			B: 129
+    },
+    {
+			name: 'Ponche Tropical',
+			code: 'VL164-A',
+			R: 137,
+			G: 69,
+			B: 106
+    },
+    {
+			name: 'Dulce Ciruela',
+			code: 'VL165-A',
+			R: 109,
+			G: 68,
+			B: 89
+    },
+    {
+			name: 'Ciruela Exhuberante',
+			code: 'VL166-A',
+			R: 86,
+			G: 64,
+			B: 82
+    },
+    {
+			name: 'Mora Coqueta',
+			code: 'VL167-A',
+			R: 93,
+			G: 75,
+			B: 89
+    },
+    {
+			name: 'Tierra Amazonas',
+			code: 'VL168-A',
+			R: 87,
+			G: 71,
+			B: 75
+    },
+    {
+			name: 'Astromelia',
+			code: 'VL169-P',
+			R: 245,
+			G: 235,
+			B: 233
+    },
+    {
+			name: 'Parque Floral',
+			code: 'VL170-P',
+			R: 242,
+			G: 215,
+			B: 229
+    },
+    {
+			name: 'Margarita',
+			code: 'VL171-P',
+			R: 241,
+			G: 205,
+			B: 225
+    },
+    {
+			name: 'Alegría Rosé',
+			code: 'VL172-T',
+			R: 234,
+			G: 181,
+			B: 214
+    },
+    {
+			name: 'Santa Rita',
+			code: 'VL173-T',
+			R: 224,
+			G: 158,
+			B: 198
+    },
+    {
+			name: 'Rosa Princesa',
+			code: 'VL174-D',
+			R: 212,
+			G: 129,
+			B: 176
+    },
+    {
+			name: 'Flor Tropical',
+			code: 'VL175-D',
+			R: 200,
+			G: 104,
+			B: 155
+    },
+    {
+			name: 'Ternura Coral',
+			code: 'VL176-P',
+			R: 249,
+			G: 232,
+			B: 235
+    },
+    {
+			name: 'Roce de Pétalos',
+			code: 'VL177-P',
+			R: 241,
+			G: 213,
+			B: 225
+    },
+    {
+			name: 'Mora Fantástica',
+			code: 'VL178-P',
+			R: 237,
+			G: 202,
+			B: 218
+    },
+    {
+			name: 'Limonada de Fresas',
+			code: 'VL179-T',
+			R: 226,
+			G: 176,
+			B: 200
+    },
+    {
+			name: 'Rosa Suave',
+			code: 'VL180-T',
+			R: 217,
+			G: 159,
+			B: 189
+    },
+    {
+			name: 'Rosa de los Cielos',
+			code: 'VL181-D',
+			R: 207,
+			G: 132,
+			B: 166
+    },
+    {
+			name: 'Delicada Rebeldía',
+			code: 'VL182-D',
+			R: 192,
+			G: 113,
+			B: 147
+    },
+    {
+			name: 'Rosa Amanecer',
+			code: 'VL183-P',
+			R: 245,
+			G: 217,
+			B: 219
+    },
+    {
+			name: 'Ultra rosa',
+			code: 'VL184-P',
+			R: 242,
+			G: 211,
+			B: 218
+    },
+    {
+			name: 'Sorbete de Fresas',
+			code: 'VL185-P',
+			R: 230,
+			G: 195,
+			B: 205
+    },
+    {
+			name: 'Rosa Terciopelo',
+			code: 'VL186-T',
+			R: 222,
+			G: 176,
+			B: 192
+    },
+    {
+			name: 'Rosa Magnífica',
+			code: 'VL187-T',
+			R: 206,
+			G: 154,
+			B: 174
+    },
+    {
+			name: 'Malva',
+			code: 'VL188-D',
+			R: 191,
+			G: 125,
+			B: 145
+    },
+    {
+			name: 'Rosa Viva',
+			code: 'VL189-D',
+			R: 174,
+			G: 109,
+			B: 128
+    },
+    {
+			name: 'Primavera Fresca',
+			code: 'VL190-D',
+			R: 186,
+			G: 111,
+			B: 159
+    },
+    {
+			name: 'Fucsia Intenso',
+			code: 'VL191-A',
+			R: 179,
+			G: 76,
+			B: 122
+    },
+    {
+			name: 'Sorbete de Mora',
+			code: 'VL192-A',
+			R: 147,
+			G: 70,
+			B: 92
+    },
+    {
+			name: 'Vino Merlot',
+			code: 'VL193-A',
+			R: 123,
+			G: 65,
+			B: 71
+    },
+    {
+			name: 'Reina de Corazones',
+			code: 'VL194-A',
+			R: 106,
+			G: 73,
+			B: 86
+    },
+    {
+			name: 'Suelo Mediterráneo',
+			code: 'VL195-A',
+			R: 93,
+			G: 67,
+			B: 74
+    },
+    {
+			name: 'Sabor a Chocolate',
+			code: 'VL196-A',
+			R: 94,
+			G: 71,
+			B: 68
+    },
+    {
+			name: 'Pincelada Lila',
+			code: 'TR001-P',
+			R: 231,
+			G: 225,
+			B: 228
+    },
+    {
+			name: 'Rocío índigo',
+			code: 'TR002-P',
+			R: 219,
+			G: 209,
+			B: 219
+    },
+    {
+			name: 'Té de Lilas',
+			code: 'TR003-P',
+			R: 210,
+			G: 200,
+			B: 215
+    },
+    {
+			name: 'Malva Claro',
+			code: 'TR004-T',
+			R: 188,
+			G: 178,
+			B: 197
+    },
+    {
+			name: 'Aceite de Lavanda',
+			code: 'TR005-T',
+			R: 170,
+			G: 158,
+			B: 180
+    },
+    {
+			name: 'Aceite de Lilas',
+			code: 'TR006-D',
+			R: 148,
+			G: 131,
+			B: 155
+    },
+    {
+			name: 'Popurrí de Orquídeas',
+			code: 'TR007-D',
+			R: 125,
+			G: 108,
+			B: 131
+    },
+    {
+			name: 'Brisa Malva',
+			code: 'TR008-P',
+			R: 231,
+			G: 228,
+			B: 231
+    },
+    {
+			name: 'Primera Vista',
+			code: 'TR009-P',
+			R: 216,
+			G: 207,
+			B: 213
+    },
+    {
+			name: 'Orquídea Nocturna',
+			code: 'TR010-P',
+			R: 205,
+			G: 192,
+			B: 202
+    },
+    {
+			name: 'Alto del Valle',
+			code: 'TR011-T',
+			R: 184,
+			G: 173,
+			B: 185
+    },
+    {
+			name: 'Vida Color Lavanda',
+			code: 'TR012-T',
+			R: 168,
+			G: 156,
+			B: 170
+    },
+    {
+			name: 'Romance',
+			code: 'TR013-D',
+			R: 137,
+			G: 122,
+			B: 136
+    },
+    {
+			name: 'Vino del Campo',
+			code: 'TR014-D',
+			R: 121,
+			G: 107,
+			B: 119
+    },
+    {
+			name: 'Crema de Moras',
+			code: 'TR015-P',
+			R: 232,
+			G: 215,
+			B: 217
+    },
+    {
+			name: 'Malteada de Mora',
+			code: 'TR016-P',
+			R: 219,
+			G: 203,
+			B: 209
+    },
+    {
+			name: 'Pastel Violeta',
+			code: 'TR017-P',
+			R: 208,
+			G: 191,
+			B: 199
+    },
+    {
+			name: 'Lila Espiritual',
+			code: 'TR018-T',
+			R: 193,
+			G: 173,
+			B: 183
+    },
+    {
+			name: 'Violeta de Parma',
+			code: 'TR019-T',
+			R: 175,
+			G: 154,
+			B: 170
+    },
+    {
+			name: 'Prunella',
+			code: 'TR020-D',
+			R: 151,
+			G: 124,
+			B: 139
+    },
+    {
+			name: 'Verbena',
+			code: 'TR021-D',
+			R: 129,
+			G: 103,
+			B: 119
+    },
+    {
+			name: 'Deidad Griega',
+			code: 'TR022-P',
+			R: 229,
+			G: 217,
+			B: 216
+    },
+    {
+			name: 'Suave Velo',
+			code: 'TR023-P',
+			R: 221,
+			G: 210,
+			B: 213
+    },
+    {
+			name: 'Rosa Resplandeciente',
+			code: 'TR024-P',
+			R: 203,
+			G: 191,
+			B: 193
+    },
+    {
+			name: 'Espacio Rosa',
+			code: 'TR025-T',
+			R: 185,
+			G: 172,
+			B: 176
+    },
+    {
+			name: 'Belleza Natural',
+			code: 'TR026-T',
+			R: 168,
+			G: 153,
+			B: 158
+    },
+    {
+			name: 'Villa Rocosa',
+			code: 'TR027-D',
+			R: 143,
+			G: 124,
+			B: 129
+    },
+    {
+			name: 'Carruaje Fantástico',
+			code: 'TR028-D',
+			R: 121,
+			G: 101,
+			B: 104
+    },
+    {
+			name: 'Lila Maravilla',
+			code: 'TR029-P',
+			R: 231,
+			G: 214,
+			B: 214
+    },
+    {
+			name: 'Dalia Púrpura',
+			code: 'TR030-P',
+			R: 224,
+			G: 202,
+			B: 204
+    },
+    {
+			name: 'Iris Violeta',
+			code: 'TR031-P',
+			R: 210,
+			G: 189,
+			B: 194
+    },
+    {
+			name: 'Jacinto',
+			code: 'TR032-T',
+			R: 191,
+			G: 169,
+			B: 175
+    },
+    {
+			name: 'Buganvilia',
+			code: 'TR033-T',
+			R: 175,
+			G: 149,
+			B: 156
+    },
+    {
+			name: 'Lila Franciscana',
+			code: 'TR034-D',
+			R: 153,
+			G: 121,
+			B: 126
+    },
+    {
+			name: 'Petunia',
+			code: 'TR035-D',
+			R: 133,
+			G: 99,
+			B: 102
+    },
+    {
+			name: 'Rosa Clavel',
+			code: 'TR036-P',
+			R: 227,
+			G: 217,
+			B: 216
+    },
+    {
+			name: 'Popurrí',
+			code: 'TR037-P',
+			R: 215,
+			G: 202,
+			B: 201
+    },
+    {
+			name: 'Vibra Latina',
+			code: 'TR038-P',
+			R: 201,
+			G: 186,
+			B: 185
+    },
+    {
+			name: 'Bruma Acogedora',
+			code: 'TR039-T',
+			R: 179,
+			G: 161,
+			B: 160
+    },
+    {
+			name: 'Sendero de la Villa',
+			code: 'TR040-T',
+			R: 165,
+			G: 147,
+			B: 148
+    },
+    {
+			name: 'Castaño Púrpura',
+			code: 'TR041-D',
+			R: 140,
+			G: 117,
+			B: 113
+    },
+    {
+			name: 'Flora Silvestre',
+			code: 'TR042-D',
+			R: 122,
+			G: 100,
+			B: 97
+    },
+    {
+			name: 'Inspiración Rosa',
+			code: 'TR043-P',
+			R: 239,
+			G: 219,
+			B: 211
+    },
+    {
+			name: 'Frambuesa Pastel',
+			code: 'TR044-P',
+			R: 222,
+			G: 195,
+			B: 189
+    },
+    {
+			name: 'Flor del Rosal',
+			code: 'TR045-P',
+			R: 206,
+			G: 177,
+			B: 173
+    },
+    {
+			name: 'Lila Rosa',
+			code: 'TR046-T',
+			R: 190,
+			G: 155,
+			B: 149
+    },
+    {
+			name: 'Lila Taupé',
+			code: 'TR047-T',
+			R: 172,
+			G: 136,
+			B: 130
+    },
+    {
+			name: 'Rubor Frambuesa',
+			code: 'TR048-D',
+			R: 151,
+			G: 110,
+			B: 100
+    },
+    {
+			name: 'Plato de Berenjenas',
+			code: 'TR049-D',
+			R: 133,
+			G: 92,
+			B: 83
+    },
+    {
+			name: 'Rosa Jazmín',
+			code: 'TR050-P',
+			R: 226,
+			G: 211,
+			B: 207
+    },
+    {
+			name: 'Cuarzo Rosa',
+			code: 'TR051-P',
+			R: 217,
+			G: 200,
+			B: 195
+    },
+    {
+			name: 'Brillo Amatista',
+			code: 'TR052-P',
+			R: 208,
+			G: 189,
+			B: 184
+    },
+    {
+			name: 'Bruma Mojicana',
+			code: 'TR053-T',
+			R: 186,
+			G: 162,
+			B: 158
+    },
+    {
+			name: 'Ágata Marrón',
+			code: 'TR054-T',
+			R: 167,
+			G: 142,
+			B: 138
+    },
+    {
+			name: 'Café Dulce',
+			code: 'TR055-D',
+			R: 143,
+			G: 115,
+			B: 106
+    },
+    {
+			name: 'Balsa de Río',
+			code: 'TR056-D',
+			R: 124,
+			G: 94,
+			B: 86
+    },
+    {
+			name: 'Té de Frambuesa',
+			code: 'TR057-P',
+			R: 236,
+			G: 214,
+			B: 206
+    },
+    {
+			name: 'Agua de Rosas',
+			code: 'TR058-P',
+			R: 225,
+			G: 201,
+			B: 192
+    },
+    {
+			name: 'Té de Rosas',
+			code: 'TR059-P',
+			R: 214,
+			G: 183,
+			B: 172
+    },
+    {
+			name: 'Rosa Pálido',
+			code: 'TR060-T',
+			R: 196,
+			G: 161,
+			B: 149
+    },
+    {
+			name: 'Rosa Taupé',
+			code: 'TR061-T',
+			R: 182,
+			G: 144,
+			B: 131
+    },
+    {
+			name: 'Canela Rosa',
+			code: 'TR062-D',
+			R: 161,
+			G: 119,
+			B: 102
+    },
+    {
+			name: 'Siena Caoba',
+			code: 'TR063-D',
+			R: 142,
+			G: 99,
+			B: 84
+    },
+    {
+			name: 'Rosa Azucarada',
+			code: 'TR064-P',
+			R: 239,
+			G: 223,
+			B: 216
+    },
+    {
+			name: 'Gris Rosa',
+			code: 'TR065-P',
+			R: 219,
+			G: 204,
+			B: 199
+    },
+    {
+			name: 'Dulce Poesía',
+			code: 'TR066-P',
+			R: 204,
+			G: 187,
+			B: 182
+    },
+    {
+			name: 'Rosa Trigo',
+			code: 'TR067-T',
+			R: 181,
+			G: 163,
+			B: 158
+    },
+    {
+			name: 'Pardo de la Colina',
+			code: 'TR068-T',
+			R: 166,
+			G: 145,
+			B: 140
+    },
+    {
+			name: 'Gris Pardo',
+			code: 'TR069-D',
+			R: 142,
+			G: 116,
+			B: 108
+    },
+    {
+			name: 'Sauce Frondoso',
+			code: 'TR070-D',
+			R: 125,
+			G: 99,
+			B: 89
+    },
+    {
+			name: 'Flor de Cerezo',
+			code: 'TR071-P',
+			R: 238,
+			G: 222,
+			B: 211
+    },
+    {
+			name: 'Rosa Discreta',
+			code: 'TR072-P',
+			R: 232,
+			G: 204,
+			B: 189
+    },
+    {
+			name: 'Rosa Nácar',
+			code: 'TR073-P',
+			R: 222,
+			G: 188,
+			B: 171
+    },
+    {
+			name: 'Rosa Albaricoque',
+			code: 'TR074-T',
+			R: 209,
+			G: 169,
+			B: 149
+    },
+    {
+			name: 'Rosa Antiguo',
+			code: 'TR075-T',
+			R: 194,
+			G: 149,
+			B: 129
+    },
+    {
+			name: 'Rosa Caramelo',
+			code: 'TR076-D',
+			R: 174,
+			G: 126,
+			B: 101
+    },
+    {
+			name: 'Caoba Rosa',
+			code: 'TR077-D',
+			R: 155,
+			G: 105,
+			B: 81
+    },
+    {
+			name: 'Blanco Perlado',
+			code: 'TR078-P',
+			R: 230,
+			G: 221,
+			B: 217
+    },
+    {
+			name: 'Mirador',
+			code: 'TR079-P',
+			R: 213,
+			G: 203,
+			B: 201
+    },
+    {
+			name: 'Cristal de Roca',
+			code: 'TR080-P',
+			R: 200,
+			G: 189,
+			B: 186
+    },
+    {
+			name: 'Turmalina',
+			code: 'TR081-T',
+			R: 181,
+			G: 171,
+			B: 169
+    },
+    {
+			name: 'Roca del Fuego',
+			code: 'TR082-T',
+			R: 164,
+			G: 149,
+			B: 148
+    },
+    {
+			name: 'Cosecha Herbal',
+			code: 'TR083-D',
+			R: 137,
+			G: 119,
+			B: 115
+    },
+    {
+			name: 'Cornalina',
+			code: 'TR084-D',
+			R: 118,
+			G: 100,
+			B: 95
+    },
+    {
+			name: 'Blanco Azucena',
+			code: 'TR085-P',
+			R: 241,
+			G: 223,
+			B: 210
+    },
+    {
+			name: 'Melón Casaba',
+			code: 'TR086-P',
+			R: 236,
+			G: 214,
+			B: 197
+    },
+    {
+			name: 'Sándalo',
+			code: 'TR087-P',
+			R: 228,
+			G: 198,
+			B: 175
+    },
+    {
+			name: 'Pera Exótica',
+			code: 'TR088-T',
+			R: 218,
+			G: 182,
+			B: 154
+    },
+    {
+			name: 'Pardo Cálido',
+			code: 'TR089-T',
+			R: 205,
+			G: 164,
+			B: 135
+    },
+    {
+			name: 'Flan de Caramelo',
+			code: 'TR090-D',
+			R: 188,
+			G: 141,
+			B: 105
+    },
+    {
+			name: 'Tierra Arenosa',
+			code: 'TR091-D',
+			R: 172,
+			G: 124,
+			B: 87
+    },
+    {
+			name: 'Cubierta Nevada',
+			code: 'TR092-P',
+			R: 225,
+			G: 219,
+			B: 216
+    },
+    {
+			name: 'Danza de Invierno',
+			code: 'TR093-P',
+			R: 212,
+			G: 207,
+			B: 203
+    },
+    {
+			name: 'Diamante',
+			code: 'TR094-P',
+			R: 196,
+			G: 191,
+			B: 189
+    },
+    {
+			name: 'Talismán',
+			code: 'TR095-T',
+			R: 176,
+			G: 172,
+			B: 171
+    },
+    {
+			name: 'Muro de Roca',
+			code: 'TR096-T',
+			R: 157,
+			G: 152,
+			B: 150
+    },
+    {
+			name: 'Peñasco',
+			code: 'TR097-D',
+			R: 135,
+			G: 125,
+			B: 120
+    },
+    {
+			name: 'Hogar Campestre',
+			code: 'TR098-D',
+			R: 113,
+			G: 104,
+			B: 99
+    },
+    {
+			name: 'Blanco Nácar',
+			code: 'TR099-P',
+			R: 245,
+			G: 231,
+			B: 215
+    },
+    {
+			name: 'Crema de Té',
+			code: 'TR100-P',
+			R: 240,
+			G: 221,
+			B: 199
+    },
+    {
+			name: 'Nuez del Nogal',
+			code: 'TR101-P',
+			R: 236,
+			G: 210,
+			B: 183
+    },
+    {
+			name: 'Crema de Maní',
+			code: 'TR102-T',
+			R: 228,
+			G: 196,
+			B: 164
+    },
+    {
+			name: 'Duna Arenosa',
+			code: 'TR103-T',
+			R: 212,
+			G: 179,
+			B: 143
+    },
+    {
+			name: 'Arena Cálida',
+			code: 'TR104-D',
+			R: 193,
+			G: 152,
+			B: 110
+    },
+    {
+			name: 'Playa Cálida',
+			code: 'TR105-D',
+			R: 178,
+			G: 134,
+			B: 92
+    },
+    {
+			name: 'Vainilla Pálido',
+			code: 'TR106-P',
+			R: 224,
+			G: 222,
+			B: 219
+    },
+    {
+			name: 'Lila Champaña',
+			code: 'TR107-P',
+			R: 218,
+			G: 212,
+			B: 208
+    },
+    {
+			name: 'Gris Pardo Suave',
+			code: 'TR108-P',
+			R: 204,
+			G: 199,
+			B: 195
+    },
+    {
+			name: 'Gris Cuarzo',
+			code: 'TR109-T',
+			R: 187,
+			G: 182,
+			B: 178
+    },
+    {
+			name: 'Gris Ambiental',
+			code: 'TR110-T',
+			R: 168,
+			G: 163,
+			B: 160
+    },
+    {
+			name: 'Gris Perla',
+			code: 'TR111-D',
+			R: 145,
+			G: 135,
+			B: 129
+    },
+    {
+			name: 'Gris Tierra',
+			code: 'TR112-D',
+			R: 124,
+			G: 114,
+			B: 108
+    },
+    {
+			name: 'Rosa Durazno',
+			code: 'TR113-P',
+			R: 241,
+			G: 227,
+			B: 210
+    },
+    {
+			name: 'Postre de Natas',
+			code: 'TR114-P',
+			R: 240,
+			G: 227,
+			B: 205
+    },
+    {
+			name: 'Lino',
+			code: 'TR115-P',
+			R: 236,
+			G: 217,
+			B: 192
+    },
+    {
+			name: 'Arena Cristalina',
+			code: 'TR116-T',
+			R: 222,
+			G: 199,
+			B: 170
+    },
+    {
+			name: 'Caqui Clásico',
+			code: 'TR117-T',
+			R: 205,
+			G: 181,
+			B: 149
+    },
+    {
+			name: 'Hortensia',
+			code: 'TR118-D',
+			R: 190,
+			G: 158,
+			B: 118
+    },
+    {
+			name: 'Cosecha de Trigo',
+			code: 'TR119-D',
+			R: 174,
+			G: 142,
+			B: 101
+    },
+    {
+			name: 'Té de Vainilla',
+			code: 'TR120-P',
+			R: 238,
+			G: 229,
+			B: 220
+    },
+    {
+			name: 'Mármol Italiano',
+			code: 'TR121-P',
+			R: 227,
+			G: 219,
+			B: 213
+    },
+    {
+			name: 'Granizado Plata',
+			code: 'TR122-P',
+			R: 218,
+			G: 209,
+			B: 202
+    },
+    {
+			name: 'Arena Plateada',
+			code: 'TR123-T',
+			R: 198,
+			G: 189,
+			B: 180
+    },
+    {
+			name: 'Gris Sofisticado',
+			code: 'TR124-T',
+			R: 187,
+			G: 175,
+			B: 166
+    },
+    {
+			name: 'Puerto Plata',
+			code: 'TR125-D',
+			R: 161,
+			G: 145,
+			B: 131
+    },
+    {
+			name: 'Café Espresso',
+			code: 'TR126-D',
+			R: 140,
+			G: 122,
+			B: 108
+    },
+    {
+			name: 'Blanco Lana',
+			code: 'TR127-P',
+			R: 237,
+			G: 232,
+			B: 215
+    },
+    {
+			name: 'Hierbas Exóticas',
+			code: 'TR128-P',
+			R: 234,
+			G: 226,
+			B: 203
+    },
+    {
+			name: 'Vainilla',
+			code: 'TR129-P',
+			R: 223,
+			G: 214,
+			B: 188
+    },
+    {
+			name: 'Piedra Caliza',
+			code: 'TR130-T',
+			R: 211,
+			G: 200,
+			B: 173
+    },
+    {
+			name: 'Duna Desértica',
+			code: 'TR131-T',
+			R: 195,
+			G: 183,
+			B: 154
+    },
+    {
+			name: 'Arena Delicada',
+			code: 'TR132-D',
+			R: 177,
+			G: 161,
+			B: 124
+    },
+    {
+			name: 'Ruta de Madera',
+			code: 'TR133-D',
+			R: 160,
+			G: 142,
+			B: 103
+    },
+    {
+			name: 'Crema de Anís',
+			code: 'TR134-P',
+			R: 241,
+			G: 236,
+			B: 224
+    },
+    {
+			name: 'Café Breve',
+			code: 'TR135-P',
+			R: 229,
+			G: 223,
+			B: 216
+    },
+    {
+			name: 'Sobre las Nubes',
+			code: 'TR136-P',
+			R: 217,
+			G: 208,
+			B: 198
+    },
+    {
+			name: 'Gris Delicado',
+			code: 'TR137-T',
+			R: 205,
+			G: 196,
+			B: 185
+    },
+    {
+			name: 'Gris Cálido',
+			code: 'TR138-T',
+			R: 187,
+			G: 177,
+			B: 165
+    },
+    {
+			name: 'Sendero Nocturno',
+			code: 'TR139-D',
+			R: 158,
+			G: 144,
+			B: 128
+    },
+    {
+			name: 'Café Caramelo',
+			code: 'TR140-D',
+			R: 141,
+			G: 126,
+			B: 110
+    },
+    {
+			name: 'Crema de Cilantro',
+			code: 'TR141-P',
+			R: 232,
+			G: 230,
+			B: 215
+    },
+    {
+			name: 'Umbra Clara',
+			code: 'TR142-P',
+			R: 228,
+			G: 224,
+			B: 202
+    },
+    {
+			name: 'Verde Pistacho',
+			code: 'TR143-P',
+			R: 219,
+			G: 216,
+			B: 189
+    },
+    {
+			name: 'Verde Seda',
+			code: 'TR144-T',
+			R: 205,
+			G: 201,
+			B: 169
+    },
+    {
+			name: 'Finas Hierbas',
+			code: 'TR145-T',
+			R: 189,
+			G: 185,
+			B: 151
+    },
+    {
+			name: 'Verde Orégano ',
+			code: 'TR146-D',
+			R: 171,
+			G: 162,
+			B: 119
+    },
+    {
+			name: 'Verde Pesto',
+			code: 'TR147-D',
+			R: 156,
+			G: 147,
+			B: 102
+    },
+    {
+			name: 'Postre de Leche',
+			code: 'TR148-P',
+			R: 226,
+			G: 225,
+			B: 221
+    },
+    {
+			name: 'Nieve en los Alpes',
+			code: 'TR149-P',
+			R: 216,
+			G: 215,
+			B: 212
+    },
+    {
+			name: 'Hoja de Plata',
+			code: 'TR150-P',
+			R: 207,
+			G: 206,
+			B: 202
+    },
+    {
+			name: 'Sevilla',
+			code: 'TR151-T',
+			R: 189,
+			G: 189,
+			B: 184
+    },
+    {
+			name: 'Costa Nublada',
+			code: 'TR152-T',
+			R: 173,
+			G: 171,
+			B: 166
+    },
+    {
+			name: 'Arenillla',
+			code: 'TR153-D',
+			R: 146,
+			G: 140,
+			B: 131
+    },
+    {
+			name: 'Agua de Piedra',
+			code: 'TR154-D',
+			R: 127,
+			G: 122,
+			B: 114
+    },
+    {
+			name: 'Verde Cristalino',
+			code: 'TR155-P',
+			R: 225,
+			G: 227,
+			B: 215
+    },
+    {
+			name: 'Verde Fronda',
+			code: 'TR156-P',
+			R: 211,
+			G: 219,
+			B: 204
+    },
+    {
+			name: 'Verde Victoria',
+			code: 'TR157-P',
+			R: 200,
+			G: 211,
+			B: 192
+    },
+    {
+			name: 'Verde Acuático',
+			code: 'TR158-T',
+			R: 180,
+			G: 192,
+			B: 170
+    },
+    {
+			name: 'Verde Betula',
+			code: 'TR159-T',
+			R: 162,
+			G: 176,
+			B: 152
+    },
+    {
+			name: 'Verde París',
+			code: 'TR160-D',
+			R: 133,
+			G: 145,
+			B: 120
+    },
+    {
+			name: 'Verde Veronés',
+			code: 'TR161-D',
+			R: 122,
+			G: 136,
+			B: 108
+    },
+    {
+			name: 'Verde Pastel',
+			code: 'TR162-P',
+			R: 224,
+			G: 224,
+			B: 220
+    },
+    {
+			name: 'Primer Rocío',
+			code: 'TR163-P',
+			R: 208,
+			G: 214,
+			B: 212
+    },
+    {
+			name: 'Palacio de Versalles',
+			code: 'TR164-P',
+			R: 207,
+			G: 209,
+			B: 206
+    },
+    {
+			name: 'Gris Veneciano',
+			code: 'TR165-T',
+			R: 177,
+			G: 182,
+			B: 180
+    },
+    {
+			name: 'Artemisa',
+			code: 'TR166-T',
+			R: 161,
+			G: 165,
+			B: 163
+    },
+    {
+			name: 'Gris Pizarra',
+			code: 'TR167-D',
+			R: 136,
+			G: 137,
+			B: 133
+    },
+    {
+			name: 'Granito',
+			code: 'TR168-D',
+			R: 115,
+			G: 118,
+			B: 115
+    },
+    {
+			name: 'Ambrosía',
+			code: 'TR169-P',
+			R: 219,
+			G: 235,
+			B: 226
+    },
+    {
+			name: 'Té Verde',
+			code: 'TR170-P',
+			R: 204,
+			G: 224,
+			B: 215
+    },
+    {
+			name: 'Maná Suave',
+			code: 'TR171-P',
+			R: 190,
+			G: 213,
+			B: 202
+    },
+    {
+			name: 'Turquesa Pálido',
+			code: 'TR172-T',
+			R: 163,
+			G: 195,
+			B: 184
+    },
+    {
+			name: 'Veronés Medio',
+			code: 'TR173-T',
+			R: 143,
+			G: 177,
+			B: 165
+    },
+    {
+			name: 'Verde Frailejón',
+			code: 'TR174-D',
+			R: 116,
+			G: 152,
+			B: 136
+    },
+    {
+			name: 'Verde Primitivo',
+			code: 'TR175-D',
+			R: 100,
+			G: 135,
+			B: 121
+    },
+    {
+			name: 'Tiempo de Lluvia',
+			code: 'TR176-P',
+			R: 215,
+			G: 221,
+			B: 220
+    },
+    {
+			name: 'Destellos Murano',
+			code: 'TR177-P',
+			R: 199,
+			G: 212,
+			B: 212
+    },
+    {
+			name: 'Arroyo del Glaciar ',
+			code: 'TR178-P',
+			R: 186,
+			G: 200,
+			B: 201
+    },
+    {
+			name: 'Niebla del Río',
+			code: 'TR179-T',
+			R: 168,
+			G: 185,
+			B: 187
+    },
+    {
+			name: 'Melodía en la Montaña',
+			code: 'TR180-T',
+			R: 145,
+			G: 165,
+			B: 169
+    },
+    {
+			name: 'Cabo Escondido',
+			code: 'TR181-D',
+			R: 120,
+			G: 137,
+			B: 137
+    },
+    {
+			name: 'Noche en la Bahía',
+			code: 'TR182-D',
+			R: 97,
+			G: 114,
+			B: 114
+    },
+    {
+			name: 'Luz Azul',
+			code: 'TR183-P',
+			R: 223,
+			G: 238,
+			B: 235
+    },
+    {
+			name: 'Río Esmeralda',
+			code: 'TR184-P',
+			R: 196,
+			G: 223,
+			B: 219
+    },
+    {
+			name: 'Terrenal',
+			code: 'TR185-P',
+			R: 180,
+			G: 214,
+			B: 210
+    },
+    {
+			name: 'Mar de Cristal',
+			code: 'TR186-T',
+			R: 157,
+			G: 200,
+			B: 199
+    },
+    {
+			name: 'Tierra de Tréboles',
+			code: 'TR187-T',
+			R: 132,
+			G: 181,
+			B: 179
+    },
+    {
+			name: 'Orilla del Río',
+			code: 'TR188-D',
+			R: 105,
+			G: 154,
+			B: 151
+    },
+    {
+			name: 'Valle Campestre',
+			code: 'TR189-D',
+			R: 83,
+			G: 134,
+			B: 130
+    },
+    {
+			name: 'Cristal de Lago',
+			code: 'TR190-P',
+			R: 226,
+			G: 236,
+			B: 232
+    },
+    {
+			name: 'Río Cristalino',
+			code: 'TR191-P',
+			R: 200,
+			G: 219,
+			B: 222
+    },
+    {
+			name: 'Diamantino',
+			code: 'TR192-P',
+			R: 177,
+			G: 202,
+			B: 205
+    },
+    {
+			name: 'Bruma de Cristal',
+			code: 'TR193-T',
+			R: 156,
+			G: 186,
+			B: 192
+    },
+    {
+			name: 'Día de Lluvia',
+			code: 'TR194-T',
+			R: 135,
+			G: 168,
+			B: 175
+    },
+    {
+			name: 'Día Gris',
+			code: 'TR195-D',
+			R: 106,
+			G: 140,
+			B: 144
+    },
+    {
+			name: 'Crucero del Mar',
+			code: 'TR196-D',
+			R: 86,
+			G: 117,
+			B: 123
+    },
+    {
+			name: 'Regalo Natural',
+			code: 'TR197-P',
+			R: 210,
+			G: 230,
+			B: 230
+    },
+    {
+			name: 'A la Orilla del Mar',
+			code: 'TR198-P',
+			R: 195,
+			G: 223,
+			B: 225
+    },
+    {
+			name: 'Costa Azul',
+			code: 'TR199-P',
+			R: 178,
+			G: 213,
+			B: 219
+    },
+    {
+			name: 'Hogar en la Isla',
+			code: 'TR200-T',
+			R: 149,
+			G: 193,
+			B: 200
+    },
+    {
+			name: 'Primavera en el Paraíso',
+			code: 'TR201-T',
+			R: 128,
+			G: 174,
+			B: 183
+    },
+    {
+			name: 'Turquesa Real',
+			code: 'TR202-D',
+			R: 94,
+			G: 150,
+			B: 157
+    },
+    {
+			name: 'Verde Campestre',
+			code: 'TR203-D',
+			R: 74,
+			G: 131,
+			B: 139
+    },
+    {
+			name: 'Manantial de la Montaña',
+			code: 'TR204-P',
+			R: 218,
+			G: 229,
+			B: 228
+    },
+    {
+			name: 'Arroyo Brillante',
+			code: 'TR205-P',
+			R: 200,
+			G: 219,
+			B: 226
+    },
+    {
+			name: 'Dulces Sueños',
+			code: 'TR206-P',
+			R: 182,
+			G: 206,
+			B: 216
+    },
+    {
+			name: 'Sueño en la Orilla',
+			code: 'TR207-T',
+			R: 158,
+			G: 187,
+			B: 199
+    },
+    {
+			name: 'Pureza Azulada',
+			code: 'TR208-T',
+			R: 135,
+			G: 170,
+			B: 185
+    },
+    {
+			name: 'Azul Armonioso',
+			code: 'TR209-D',
+			R: 105,
+			G: 141,
+			B: 155
+    },
+    {
+			name: 'Océano Profundo',
+			code: 'TR210-D',
+			R: 83,
+			G: 119,
+			B: 133
+    },
+    {
+			name: 'Toque de Algodón',
+			code: 'TR211-P',
+			R: 216,
+			G: 230,
+			B: 233
+    },
+    {
+			name: 'Entre Nubes',
+			code: 'TR212-P',
+			R: 197,
+			G: 219,
+			B: 225
+    },
+    {
+			name: 'Azul Hielo',
+			code: 'TR213-P',
+			R: 177,
+			G: 207,
+			B: 216
+    },
+    {
+			name: 'Azur',
+			code: 'TR214-T',
+			R: 154,
+			G: 191,
+			B: 203
+    },
+    {
+			name: 'Azul Bebé',
+			code: 'TR215-T',
+			R: 131,
+			G: 173,
+			B: 187
+    },
+    {
+			name: 'Azul Profundo',
+			code: 'TR216-D',
+			R: 100,
+			G: 143,
+			B: 158
+    },
+    {
+			name: 'Azul Egipcio',
+			code: 'TR217-D',
+			R: 75,
+			G: 122,
+			B: 135
+    },
+    {
+			name: 'Viaje al Mar',
+			code: 'TR218-P',
+			R: 224,
+			G: 234,
+			B: 236
+    },
+    {
+			name: 'Castillo de Hielo',
+			code: 'TR219-P',
+			R: 197,
+			G: 210,
+			B: 216
+    },
+    {
+			name: 'Gris Neblina',
+			code: 'TR220-P',
+			R: 185,
+			G: 200,
+			B: 208
+    },
+    {
+			name: 'Luz sobre las olas',
+			code: 'TR221-T',
+			R: 164,
+			G: 182,
+			B: 193
+    },
+    {
+			name: 'Río de Seda',
+			code: 'TR222-T',
+			R: 139,
+			G: 161,
+			B: 174
+    },
+    {
+			name: 'Lago Cristalino',
+			code: 'TR223-D',
+			R: 115,
+			G: 135,
+			B: 145
+    },
+    {
+			name: 'Frescura Sombría',
+			code: 'TR224-D',
+			R: 91,
+			G: 115,
+			B: 128
+    },
+    {
+			name: 'Azul Nuboso',
+			code: 'TR225-P',
+			R: 219,
+			G: 231,
+			B: 234
+    },
+    {
+			name: 'Azul de la Mañana',
+			code: 'TR226-P',
+			R: 198,
+			G: 216,
+			B: 223
+    },
+    {
+			name: 'Azul Angelical',
+			code: 'TR227-P',
+			R: 180,
+			G: 202,
+			B: 214
+    },
+    {
+			name: 'Azul Espuela',
+			code: 'TR228-T',
+			R: 158,
+			G: 185,
+			B: 199
+    },
+    {
+			name: 'Piedra de Río',
+			code: 'TR229-T',
+			R: 138,
+			G: 169,
+			B: 185
+    },
+    {
+			name: 'Azul Grisáceo',
+			code: 'TR230-D',
+			R: 106,
+			G: 138,
+			B: 153
+    },
+    {
+			name: 'Azul Cosmos',
+			code: 'TR231-D',
+			R: 89,
+			G: 119,
+			B: 135
+    },
+    {
+			name: 'Frailejón',
+			code: 'TR232-P',
+			R: 227,
+			G: 233,
+			B: 233
+    },
+    {
+			name: 'Acero Industrial',
+			code: 'TR233-P',
+			R: 205,
+			G: 211,
+			B: 214
+    },
+    {
+			name: 'Hojalata',
+			code: 'TR234-P',
+			R: 192,
+			G: 199,
+			B: 204
+    },
+    {
+			name: 'Bruma Plata',
+			code: 'TR235-T',
+			R: 170,
+			G: 179,
+			B: 185
+    },
+    {
+			name: 'Delfines al Atardecer',
+			code: 'TR236-T',
+			R: 146,
+			G: 157,
+			B: 165
+    },
+    {
+			name: 'Mar Gris',
+			code: 'TR237-D',
+			R: 117,
+			G: 126,
+			B: 131
+    },
+    {
+			name: 'Estaño Antiguo',
+			code: 'TR238-D',
+			R: 100,
+			G: 109,
+			B: 116
+    },
+    {
+			name: 'Nuevo Atardecer',
+			code: 'TR239-P',
+			R: 222,
+			G: 229,
+			B: 230
+    },
+    {
+			name: 'Azul Lavanda',
+			code: 'TR240-P',
+			R: 207,
+			G: 218,
+			B: 227
+    },
+    {
+			name: 'Glaseado Índigo',
+			code: 'TR241-P',
+			R: 187,
+			G: 204,
+			B: 220
+    },
+    {
+			name: 'Azulejo Real',
+			code: 'TR242-T',
+			R: 166,
+			G: 188,
+			B: 209
+    },
+    {
+			name: 'Azul Aciano',
+			code: 'TR243-T',
+			R: 143,
+			G: 169,
+			B: 193
+    },
+    {
+			name: 'Azul Oriente',
+			code: 'TR244-D',
+			R: 122,
+			G: 144,
+			B: 168
+    },
+    {
+			name: 'Azul Luminoso',
+			code: 'TR245-D',
+			R: 96,
+			G: 120,
+			B: 145
+    },
+    {
+			name: 'Cromo Sutil',
+			code: 'TR246-P',
+			R: 223,
+			G: 225,
+			B: 225
+    },
+    {
+			name: 'Hilos de Plata',
+			code: 'TR247-P',
+			R: 204,
+			G: 210,
+			B: 215
+    },
+    {
+			name: 'Bruma Celestial',
+			code: 'TR248-P',
+			R: 190,
+			G: 197,
+			B: 207
+    },
+    {
+			name: 'Plumas de Plata',
+			code: 'TR249-T',
+			R: 167,
+			G: 177,
+			B: 190
+    },
+    {
+			name: 'Fogata en la Bahía',
+			code: 'TR250-T',
+			R: 148,
+			G: 160,
+			B: 173
+    },
+    {
+			name: 'Vuelo de Gaviota',
+			code: 'TR251-D',
+			R: 120,
+			G: 130,
+			B: 143
+    },
+    {
+			name: 'Bruma Densa',
+			code: 'TR252-D',
+			R: 100,
+			G: 110,
+			B: 123
+    },
+    {
+			name: 'Gris Lila',
+			code: 'TR253-P',
+			R: 220,
+			G: 224,
+			B: 230
+    },
+    {
+			name: 'Ciruela Pastel',
+			code: 'TR254-P',
+			R: 206,
+			G: 215,
+			B: 226
+    },
+    {
+			name: 'Gris de Payne',
+			code: 'TR255-P',
+			R: 191,
+			G: 201,
+			B: 217
+    },
+    {
+			name: 'Lila Masmelo',
+			code: 'TR256-T',
+			R: 171,
+			G: 185,
+			B: 207
+    },
+    {
+			name: 'Rocío Lavanda',
+			code: 'TR257-T',
+			R: 155,
+			G: 169,
+			B: 197
+    },
+    {
+			name: 'Violeta Espiritual',
+			code: 'TR258-D',
+			R: 124,
+			G: 137,
+			B: 164
+    },
+    {
+			name: 'Seda Europea',
+			code: 'TR259-D',
+			R: 104,
+			G: 118,
+			B: 147
+    },
+    {
+			name: 'Lluvia Delicada',
+			code: 'TR260-P',
+			R: 224,
+			G: 225,
+			B: 228
+    },
+    {
+			name: 'Brisa de Lilas',
+			code: 'TR261-P',
+			R: 210,
+			G: 213,
+			B: 222
+    },
+    {
+			name: 'Vista de Primavera ',
+			code: 'TR262-P',
+			R: 194,
+			G: 199,
+			B: 211
+    },
+    {
+			name: 'Lavanda Salvaje',
+			code: 'TR263-T',
+			R: 174,
+			G: 182,
+			B: 197
+    },
+    {
+			name: 'Lavanda de la Pradera',
+			code: 'TR264-T',
+			R: 154,
+			G: 164,
+			B: 183
+    },
+    {
+			name: 'Lila Pasión',
+			code: 'TR265-D',
+			R: 124,
+			G: 134,
+			B: 153
+    },
+    {
+			name: 'Jacinto Mora',
+			code: 'TR266-D',
+			R: 106,
+			G: 116,
+			B: 135
+    },
+    {
+			name: 'Malva Pálido',
+			code: 'TR267-P',
+			R: 230,
+			G: 230,
+			B: 233
+    },
+    {
+			name: 'Violeta Cristal',
+			code: 'TR268-P',
+			R: 211,
+			G: 215,
+			B: 226
+    },
+    {
+			name: 'Libélula Pastel',
+			code: 'TR269-P',
+			R: 202,
+			G: 205,
+			B: 221
+    },
+    {
+			name: 'Gotas de Lavanda',
+			code: 'TR270-T',
+			R: 180,
+			G: 185,
+			B: 207
+    },
+    {
+			name: 'Esencia de Lilas',
+			code: 'TR271-T',
+			R: 160,
+			G: 164,
+			B: 192
+    },
+    {
+			name: 'Púrpura Brezo',
+			code: 'TR272-D',
+			R: 133,
+			G: 137,
+			B: 168
+    },
+    {
+			name: 'Violeta Profundo',
+			code: 'TR273-D',
+			R: 112,
+			G: 115,
+			B: 146
+    },
+    {
+			name: 'Escarcha Lila',
+			code: 'TR274-P',
+			R: 226,
+			G: 224,
+			B: 231
+    },
+    {
+			name: 'Despertar de Seducción',
+			code: 'TR275-P',
+			R: 216,
+			G: 214,
+			B: 221
+    },
+    {
+			name: 'Popurrí de Lavandas',
+			code: 'TR276-P',
+			R: 202,
+			G: 201,
+			B: 211
+    },
+    {
+			name: 'Coronilla de Pétalos',
+			code: 'TR277-T',
+			R: 183,
+			G: 182,
+			B: 198
+    },
+    {
+			name: 'Pétalos Cálidos',
+			code: 'TR278-T',
+			R: 163,
+			G: 163,
+			B: 182
+    },
+    {
+			name: 'Silencio Majestuoso',
+			code: 'TR279-D',
+			R: 138,
+			G: 132,
+			B: 149
+    },
+    {
+			name: 'Mora del Sur',
+			code: 'TR280-D',
+			R: 112,
+			G: 111,
+			B: 130
+    },
+    {
+			name: 'Sendero de luz ',
+			code: 'TR281-A',
+			R: 105,
+			G: 89,
+			B: 79
+    },
+    {
+			name: 'Cañon profundo',
+			code: 'TR282-A',
+			R: 127,
+			G: 105,
+			B: 87
+    },
+    {
+			name: 'Vapor de café',
+			code: 'TR283-A',
+			R: 99,
+			G: 83,
+			B: 78
+    },
+    {
+			name: 'Corteza de arbol',
+			code: 'TR284-A',
+			R: 95,
+			G: 74,
+			B: 66
+    },
+    {
+			name: 'Bosque pacifico',
+			code: 'TR285-A',
+			R: 87,
+			G: 71,
+			B: 66
+    },
+    {
+			name: 'Polvo de café',
+			code: 'TR286-A',
+			R: 102,
+			G: 86,
+			B: 80
+    },
+    {
+			name: 'Pradera desierta',
+			code: 'TR287-A',
+			R: 83,
+			G: 68,
+			B: 62
+    },
+    {
+			name: 'Nubes arenosas',
+			code: 'TR288-P',
+			R: 213,
+			G: 204,
+			B: 201
+    },
+    {
+			name: 'Tejido de lana',
+			code: 'TR289-P',
+			R: 200,
+			G: 190,
+			B: 187
+    },
+    {
+			name: 'Volcan de polvo ',
+			code: 'TR290-T',
+			R: 177,
+			G: 169,
+			B: 168
+    },
+    {
+			name: 'Colina de humo',
+			code: 'TR291-T',
+			R: 161,
+			G: 152,
+			B: 152
+    },
+    {
+			name: 'Templo sereno ',
+			code: 'TR292-D',
+			R: 137,
+			G: 125,
+			B: 123
+    },
+    {
+			name: 'Piedra natural',
+			code: 'TR293-A',
+			R: 117,
+			G: 107,
+			B: 105
+    },
+    {
+			name: 'Montaña escondida',
+			code: 'TR294-A',
+			R: 83,
+			G: 71,
+			B: 68
+    },
+    {
+			name: 'Espuma de champaña ',
+			code: 'TR295-P',
+			R: 215,
+			G: 192,
+			B: 190
+    },
+    {
+			name: 'Refugio interior ',
+			code: 'TR296-P',
+			R: 202,
+			G: 179,
+			B: 175
+    },
+    {
+			name: 'Hoja de otoño',
+			code: 'TR297-T',
+			R: 185,
+			G: 159,
+			B: 155
+    },
+    {
+			name: 'Templo antiguo ',
+			code: 'TR298-T',
+			R: 164,
+			G: 140,
+			B: 137
+    },
+    {
+			name: 'Rio de cañon ',
+			code: 'TR299-D',
+			R: 142,
+			G: 115,
+			B: 109
+    },
+    {
+			name: 'Café marrueco',
+			code: 'TR300-D',
+			R: 127,
+			G: 100,
+			B: 94
+    },
+    {
+			name: 'Especias tradicionales',
+			code: 'TR301-A',
+			R: 87,
+			G: 68,
+			B: 61
+    },
+    {
+			name: 'Otoño en el desierto',
+			code: 'TR302-P',
+			R: 217,
+			G: 195,
+			B: 189
+    },
+    {
+			name: 'Desierto antiguo ',
+			code: 'TR303-P',
+			R: 203,
+			G: 178,
+			B: 172
+    },
+    {
+			name: 'Duna dorada ',
+			code: 'TR304-T',
+			R: 190,
+			G: 159,
+			B: 153
+    },
+    {
+			name: 'Ceramica tradicional ',
+			code: 'TR305-T',
+			R: 170,
+			G: 139,
+			B: 132
+    },
+    {
+			name: 'Jardin de café ',
+			code: 'TR306-D',
+			R: 150,
+			G: 116,
+			B: 107
+    },
+    {
+			name: 'Desierto rocoso ',
+			code: 'TR307-D',
+			R: 133,
+			G: 100,
+			B: 91
+    },
+    {
+			name: 'Caverna del desierto ',
+			code: 'TR308-A',
+			R: 107,
+			G: 80,
+			B: 70
+    },
+    {
+			name: 'Cúpula Medieval',
+			code: 'NE001-A',
+			R: 111,
+			G: 77,
+			B: 68
+    },
+    {
+			name: 'Chocolate Tostado',
+			code: 'NE002-A',
+			R: 115,
+			G: 78,
+			B: 65
+    },
+    {
+			name: 'Niebla Mediterránea',
+			code: 'NE003-A',
+			R: 128,
+			G: 84,
+			B: 66
+    },
+    {
+			name: 'Sombra Desértica',
+			code: 'NE004-A',
+			R: 139,
+			G: 95,
+			B: 67
+    },
+    {
+			name: 'Ocaso Milenario',
+			code: 'NE005-A',
+			R: 93,
+			G: 74,
+			B: 70
+    },
+    {
+			name: 'Dulce De Cacao',
+			code: 'NE006-A',
+			R: 97,
+			G: 73,
+			B: 66
+    },
+    {
+			name: 'Trufa',
+			code: 'NE007-A',
+			R: 97,
+			G: 74,
+			B: 65
+    },
+    {
+			name: 'Estela Rosa',
+			code: 'NE008-P',
+			R: 227,
+			G: 212,
+			B: 209
+    },
+    {
+			name: 'Doble Corazón',
+			code: 'NE009-P',
+			R: 217,
+			G: 199,
+			B: 196
+    },
+    {
+			name: 'Retrato',
+			code: 'NE010-P',
+			R: 203,
+			G: 183,
+			B: 182
+    },
+    {
+			name: 'Playa Pacífica',
+			code: 'NE011-T',
+			R: 182,
+			G: 162,
+			B: 160
+    },
+    {
+			name: 'Viento Ártico',
+			code: 'NE012-T',
+			R: 164,
+			G: 144,
+			B: 144
+    },
+    {
+			name: 'Cosecha De Cereza',
+			code: 'NE013-D',
+			R: 138,
+			G: 113,
+			B: 109
+    },
+    {
+			name: 'Ladrillo Antiguo',
+			code: 'NE014-D',
+			R: 123,
+			G: 98,
+			B: 95
+    },
+    {
+			name: 'Flor Imperial',
+			code: 'NE015-P',
+			R: 228,
+			G: 212,
+			B: 205
+    },
+    {
+			name: 'Textura Floral',
+			code: 'NE016-P',
+			R: 213,
+			G: 200,
+			B: 197
+    },
+    {
+			name: 'Señal Rosa',
+			code: 'NE017-P',
+			R: 200,
+			G: 182,
+			B: 179
+    },
+    {
+			name: 'Huella De Amor',
+			code: 'NE018-T',
+			R: 179,
+			G: 161,
+			B: 157
+    },
+    {
+			name: 'Granada',
+			code: 'NE019-T',
+			R: 166,
+			G: 146,
+			B: 142
+    },
+    {
+			name: 'Cuento Romano',
+			code: 'NE020-D',
+			R: 137,
+			G: 113,
+			B: 106
+    },
+    {
+			name: 'Obsequio Hindú',
+			code: 'NE021-D',
+			R: 120,
+			G: 97,
+			B: 90
+    },
+    {
+			name: 'Toque Exquisito',
+			code: 'NE022-P',
+			R: 229,
+			G: 214,
+			B: 209
+    },
+    {
+			name: 'Tora Bora',
+			code: 'NE023-P',
+			R: 221,
+			G: 203,
+			B: 196
+    },
+    {
+			name: 'Piel Rosa',
+			code: 'NE024-P',
+			R: 207,
+			G: 185,
+			B: 179
+    },
+    {
+			name: 'Bruma De Verano',
+			code: 'NE025-T',
+			R: 186,
+			G: 163,
+			B: 156
+    },
+    {
+			name: 'Varadero',
+			code: 'NE026-T',
+			R: 169,
+			G: 146,
+			B: 139
+    },
+    {
+			name: 'Tormenta De Arena',
+			code: 'NE027-D',
+			R: 145,
+			G: 116,
+			B: 104
+    },
+    {
+			name: 'Etnia Silvestre',
+			code: 'NE028-D',
+			R: 128,
+			G: 98,
+			B: 88
+    },
+    {
+			name: 'Lienzo Delicado',
+			code: 'NE029-P',
+			R: 244,
+			G: 218,
+			B: 202
+    },
+    {
+			name: 'Mensaje De Amor',
+			code: 'NE030-P',
+			R: 229,
+			G: 198,
+			B: 188
+    },
+    {
+			name: 'Pergamino Rosa',
+			code: 'NE031-P',
+			R: 219,
+			G: 184,
+			B: 172
+    },
+    {
+			name: 'Pétalo Suave',
+			code: 'NE032-T',
+			R: 201,
+			G: 161,
+			B: 148
+    },
+    {
+			name: 'Momento Romántico',
+			code: 'NE033-T',
+			R: 185,
+			G: 143,
+			B: 129
+    },
+    {
+			name: 'Camboya',
+			code: 'NE034-D',
+			R: 165,
+			G: 117,
+			B: 99
+    },
+    {
+			name: 'Desierto Rojo',
+			code: 'NE035-D',
+			R: 145,
+			G: 98,
+			B: 81
+    },
+    {
+			name: 'Arena Del Desierto',
+			code: 'NE036-P',
+			R: 250,
+			G: 226,
+			B: 210
+    },
+    {
+			name: 'Valle De Rosas',
+			code: 'NE037-P',
+			R: 233,
+			G: 201,
+			B: 187
+    },
+    {
+			name: 'Capullo Rosa',
+			code: 'NE038-P',
+			R: 220,
+			G: 183,
+			B: 168
+    },
+    {
+			name: 'Atardecer Campestre',
+			code: 'NE039-T',
+			R: 208,
+			G: 165,
+			B: 148
+    },
+    {
+			name: 'Estancia Rústica',
+			code: 'NE040-T',
+			R: 192,
+			G: 146,
+			B: 128
+    },
+    {
+			name: 'Hojas De Cobre',
+			code: 'NE041-D',
+			R: 171,
+			G: 120,
+			B: 98
+    },
+    {
+			name: 'Papel Tapiz',
+			code: 'NE042-D',
+			R: 157,
+			G: 106,
+			B: 84
+    },
+    {
+			name: 'Relicario',
+			code: 'NE043-P',
+			R: 247,
+			G: 223,
+			B: 204
+    },
+    {
+			name: 'Perla Rosa',
+			code: 'NE044-P',
+			R: 234,
+			G: 207,
+			B: 191
+    },
+    {
+			name: 'Zarzuela',
+			code: 'NE045-P',
+			R: 227,
+			G: 196,
+			B: 177
+    },
+    {
+			name: 'Semilla De Nuez',
+			code: 'NE046-T',
+			R: 209,
+			G: 173,
+			B: 152
+    },
+    {
+			name: 'Tarta Capuchina',
+			code: 'NE047-T',
+			R: 194,
+			G: 154,
+			B: 132
+    },
+    {
+			name: 'Canutillos',
+			code: 'NE048-D',
+			R: 178,
+			G: 130,
+			B: 103
+    },
+    {
+			name: 'Fortaleza Rústica',
+			code: 'NE049-D',
+			R: 157,
+			G: 112,
+			B: 84
+    },
+    {
+			name: 'Postal Antigua',
+			code: 'NE050-P',
+			R: 247,
+			G: 229,
+			B: 209
+    },
+    {
+			name: 'Destello Rosa',
+			code: 'NE051-P',
+			R: 238,
+			G: 210,
+			B: 192
+    },
+    {
+			name: 'Aldea Medieval',
+			code: 'NE052-P',
+			R: 229,
+			G: 197,
+			B: 175
+    },
+    {
+			name: 'Baúl de Recuerdos',
+			code: 'NE053-T',
+			R: 219,
+			G: 180,
+			B: 154
+    },
+    {
+			name: 'Cepa Andina',
+			code: 'NE054-T',
+			R: 202,
+			G: 160,
+			B: 133
+    },
+    {
+			name: 'Orquesta Tradicional',
+			code: 'NE055-D',
+			R: 187,
+			G: 137,
+			B: 103
+    },
+    {
+			name: 'Pastel De Avellana',
+			code: 'NE056-D',
+			R: 171,
+			G: 122,
+			B: 91
+    },
+    {
+			name: 'Crema De Almendras',
+			code: 'NE057-P',
+			R: 245,
+			G: 230,
+			B: 212
+    },
+    {
+			name: 'Desierto Blanco',
+			code: 'NE058-P',
+			R: 236,
+			G: 214,
+			B: 194
+    },
+    {
+			name: 'Manuscrito Antiguo',
+			code: 'NE059-P',
+			R: 233,
+			G: 205,
+			B: 181
+    },
+    {
+			name: 'Semola',
+			code: 'NE060-T',
+			R: 220,
+			G: 187,
+			B: 158
+    },
+    {
+			name: 'Galleta De Nuez',
+			code: 'NE061-T',
+			R: 205,
+			G: 169,
+			B: 139
+    },
+    {
+			name: 'Estancia Cálida',
+			code: 'NE062-D',
+			R: 188,
+			G: 145,
+			B: 108
+    },
+    {
+			name: 'Doncella De Oro',
+			code: 'NE063-D',
+			R: 175,
+			G: 130,
+			B: 91
+    },
+    {
+			name: 'Paño Suave',
+			code: 'NE064-P',
+			R: 249,
+			G: 231,
+			B: 210
+    },
+    {
+			name: 'Alpaca',
+			code: 'NE065-P',
+			R: 240,
+			G: 218,
+			B: 197
+    },
+    {
+			name: 'Chalís',
+			code: 'NE066-P',
+			R: 229,
+			G: 203,
+			B: 178
+    },
+    {
+			name: 'Día Tranquilo',
+			code: 'NE067-T',
+			R: 222,
+			G: 190,
+			B: 161
+    },
+    {
+			name: 'Algodón',
+			code: 'NE068-T',
+			R: 206,
+			G: 171,
+			B: 139
+    },
+    {
+			name: 'Arcilla Morena',
+			code: 'NE069-D',
+			R: 191,
+			G: 149,
+			B: 109
+    },
+    {
+			name: 'Crema De Calabaza',
+			code: 'NE070-D',
+			R: 173,
+			G: 131,
+			B: 92
+    },
+    {
+			name: 'Chifón',
+			code: 'NE071-P',
+			R: 249,
+			G: 234,
+			B: 210
+    },
+    {
+			name: 'Bahía Del Sol',
+			code: 'NE072-P',
+			R: 238,
+			G: 218,
+			B: 195
+    },
+    {
+			name: 'Sahára',
+			code: 'NE073-P',
+			R: 232,
+			G: 206,
+			B: 179
+    },
+    {
+			name: 'Lirio De Pascua',
+			code: 'NE074-T',
+			R: 222,
+			G: 194,
+			B: 161
+    },
+    {
+			name: 'Huellas Del Desierto',
+			code: 'NE075-T',
+			R: 211,
+			G: 178,
+			B: 141
+    },
+    {
+			name: 'Roma',
+			code: 'NE076-D',
+			R: 193,
+			G: 154,
+			B: 111
+    },
+    {
+			name: 'Neblina De Otoño',
+			code: 'NE077-D',
+			R: 175,
+			G: 135,
+			B: 92
+    },
+    {
+			name: 'Crema De Vainilla',
+			code: 'NE078-P',
+			R: 250,
+			G: 235,
+			B: 212
+    },
+    {
+			name: 'Luna De Miel',
+			code: 'NE079-P',
+			R: 236,
+			G: 219,
+			B: 198
+    },
+    {
+			name: 'Flor De Algodón',
+			code: 'NE080-P',
+			R: 233,
+			G: 210,
+			B: 183
+    },
+    {
+			name: 'Mariposa De Verano',
+			code: 'NE081-T',
+			R: 225,
+			G: 197,
+			B: 165
+    },
+    {
+			name: 'Mosaico',
+			code: 'NE082-T',
+			R: 209,
+			G: 178,
+			B: 142
+    },
+    {
+			name: 'Arena Del Sahára',
+			code: 'NE083-D',
+			R: 194,
+			G: 156,
+			B: 112
+    },
+    {
+			name: 'Tierra De Siena',
+			code: 'NE084-D',
+			R: 177,
+			G: 138,
+			B: 94
+    },
+    {
+			name: 'Luna De Agosto',
+			code: 'NE085-P',
+			R: 246,
+			G: 236,
+			B: 218
+    },
+    {
+			name: 'Día De Ocio',
+			code: 'NE086-P',
+			R: 237,
+			G: 224,
+			B: 205
+    },
+    {
+			name: 'Vainilla Almendrada',
+			code: 'NE087-P',
+			R: 229,
+			G: 214,
+			B: 189
+    },
+    {
+			name: 'Estrella Fugaz',
+			code: 'NE088-T',
+			R: 214,
+			G: 197,
+			B: 170
+    },
+    {
+			name: 'Toque De Néctar',
+			code: 'NE089-T',
+			R: 200,
+			G: 180,
+			B: 150
+    },
+    {
+			name: 'Arcilla Artesanal',
+			code: 'NE090-D',
+			R: 186,
+			G: 159,
+			B: 121
+    },
+    {
+			name: 'Dulce De Maní',
+			code: 'NE091-D',
+			R: 167,
+			G: 142,
+			B: 108
+    },
+    {
+			name: 'Arenas De Sudán',
+			code: 'NE092-A',
+			R: 139,
+			G: 100,
+			B: 63
+    },
+    {
+			name: 'Bronce Antiguo',
+			code: 'NE093-A',
+			R: 127,
+			G: 100,
+			B: 68
+    },
+    {
+			name: 'Secreto',
+			code: 'NE094-A',
+			R: 87,
+			G: 70,
+			B: 64
+    },
+    {
+			name: 'Maní Confitado',
+			code: 'NE095-A',
+			R: 83,
+			G: 69,
+			B: 60
+    },
+    {
+			name: 'Caverna Ancestral',
+			code: 'NE096-A',
+			R: 78,
+			G: 67,
+			B: 62
+    },
+    {
+			name: 'Verde Noche',
+			code: 'NE097-A',
+			R: 70,
+			G: 69,
+			B: 67
+    },
+    {
+			name: 'Musgo ',
+			code: 'NE098-A',
+			R: 57,
+			G: 67,
+			B: 67
+    },
+    {
+			name: 'Vestido De Novia',
+			code: 'NE099-P',
+			R: 239,
+			G: 227,
+			B: 206
+    },
+    {
+			name: 'Mañana Cálida',
+			code: 'NE100-P',
+			R: 235,
+			G: 226,
+			B: 207
+    },
+    {
+			name: 'Encaje Delicado',
+			code: 'NE101-P',
+			R: 225,
+			G: 213,
+			B: 187
+    },
+    {
+			name: 'Porcelana China',
+			code: 'NE102-T',
+			R: 217,
+			G: 202,
+			B: 176
+    },
+    {
+			name: 'Beige Pergamino',
+			code: 'NE103-T',
+			R: 200,
+			G: 183,
+			B: 155
+    },
+    {
+			name: 'Colina De La Toscana',
+			code: 'NE104-D',
+			R: 178,
+			G: 157,
+			B: 123
+    },
+    {
+			name: 'Hoja De Roble',
+			code: 'NE105-D',
+			R: 162,
+			G: 140,
+			B: 104
+    },
+    {
+			name: 'Cultivo De Peras',
+			code: 'NE106-P',
+			R: 241,
+			G: 230,
+			B: 211
+    },
+    {
+			name: 'Bruma Primaveral',
+			code: 'NE107-P',
+			R: 228,
+			G: 224,
+			B: 202
+    },
+    {
+			name: 'Luz Floral',
+			code: 'NE108-P',
+			R: 223,
+			G: 214,
+			B: 190
+    },
+    {
+			name: 'Bosque Encantado',
+			code: 'NE109-T',
+			R: 209,
+			G: 202,
+			B: 175
+    },
+    {
+			name: 'Verde Misterioso',
+			code: 'NE110-T',
+			R: 192,
+			G: 180,
+			B: 151
+    },
+    {
+			name: 'Araucaria',
+			code: 'NE111-D',
+			R: 175,
+			G: 157,
+			B: 123
+    },
+    {
+			name: 'Olivo Seco',
+			code: 'NE112-D',
+			R: 157,
+			G: 142,
+			B: 107
+    },
+    {
+			name: 'Blanco Limón',
+			code: 'NE113-P',
+			R: 238,
+			G: 233,
+			B: 211
+    },
+    {
+			name: 'Amanecer En El Campo',
+			code: 'NE114-P',
+			R: 230,
+			G: 224,
+			B: 201
+    },
+    {
+			name: 'Aromático',
+			code: 'NE115-P',
+			R: 220,
+			G: 214,
+			B: 188
+    },
+    {
+			name: 'Cristal Veneciano',
+			code: 'NE116-T',
+			R: 209,
+			G: 202,
+			B: 171
+    },
+    {
+			name: 'Toque De Limón',
+			code: 'NE117-T',
+			R: 193,
+			G: 184,
+			B: 149
+    },
+    {
+			name: 'Florecer Primaveral',
+			code: 'NE118-D',
+			R: 173,
+			G: 163,
+			B: 120
+    },
+    {
+			name: 'Verde Griego',
+			code: 'NE119-D',
+			R: 155,
+			G: 144,
+			B: 102
+    },
+    {
+			name: 'Reflejo En El Lago',
+			code: 'NE120-P',
+			R: 233,
+			G: 232,
+			B: 213
+    },
+    {
+			name: 'Taza De Té',
+			code: 'NE121-P',
+			R: 219,
+			G: 217,
+			B: 194
+    },
+    {
+			name: 'Brote De Hierbabuena',
+			code: 'NE122-P',
+			R: 216,
+			G: 215,
+			B: 188
+    },
+    {
+			name: 'Verde Calma',
+			code: 'NE123-T',
+			R: 198,
+			G: 195,
+			B: 163
+    },
+    {
+			name: 'Picnic De Verano',
+			code: 'NE124-T',
+			R: 178,
+			G: 175,
+			B: 142
+    },
+    {
+			name: 'Hoja De Olivo',
+			code: 'NE125-D',
+			R: 161,
+			G: 156,
+			B: 115
+    },
+    {
+			name: 'Aroma De Pino',
+			code: 'NE126-D',
+			R: 143,
+			G: 138,
+			B: 99
+    },
+    {
+			name: 'Pera Ácida',
+			code: 'NE127-P',
+			R: 233,
+			G: 234,
+			B: 218
+    },
+    {
+			name: 'Horizonte Lejano',
+			code: 'NE128-P',
+			R: 205,
+			G: 210,
+			B: 189
+    },
+    {
+			name: 'Pluma Silvestre',
+			code: 'NE129-P',
+			R: 191,
+			G: 195,
+			B: 171
+    },
+    {
+			name: 'Tauraco Persa',
+			code: 'NE130-T',
+			R: 188,
+			G: 195,
+			B: 171
+    },
+    {
+			name: 'Camuflaje',
+			code: 'NE131-T',
+			R: 171,
+			G: 176,
+			B: 149
+    },
+    {
+			name: 'Césped Nuevo',
+			code: 'NE132-D',
+			R: 152,
+			G: 155,
+			B: 123
+    },
+    {
+			name: 'Corona De Laureles',
+			code: 'NE133-D',
+			R: 128,
+			G: 134,
+			B: 103
+    },
+    {
+			name: 'Confite De Menta',
+			code: 'NE134-P',
+			R: 227,
+			G: 235,
+			B: 223
+    },
+    {
+			name: 'Hojas De Invierno',
+			code: 'NE135-P',
+			R: 209,
+			G: 223,
+			B: 208
+    },
+    {
+			name: 'Estancia Silvestre',
+			code: 'NE136-P',
+			R: 192,
+			G: 208,
+			B: 192
+    },
+    {
+			name: 'Cuarzo Verde',
+			code: 'NE137-T',
+			R: 170,
+			G: 193,
+			B: 176
+    },
+    {
+			name: 'Helada Tropical',
+			code: 'NE138-T',
+			R: 152,
+			G: 175,
+			B: 157
+    },
+    {
+			name: 'Hiedra Inglesa',
+			code: 'NE139-D',
+			R: 127,
+			G: 150,
+			B: 128
+    },
+    {
+			name: 'Follaje',
+			code: 'NE140-D',
+			R: 107,
+			G: 130,
+			B: 108
+    },
+    {
+			name: 'Lago Verde',
+			code: 'NE141-P',
+			R: 225,
+			G: 234,
+			B: 222
+    },
+    {
+			name: 'Agua Helada',
+			code: 'NE142-P',
+			R: 208,
+			G: 222,
+			B: 209
+    },
+    {
+			name: 'Capri',
+			code: 'NE143-P',
+			R: 192,
+			G: 211,
+			B: 195
+    },
+    {
+			name: 'Boda Real',
+			code: 'NE144-T',
+			R: 170,
+			G: 194,
+			B: 179
+    },
+    {
+			name: 'Turmalina Azul',
+			code: 'NE145-T',
+			R: 148,
+			G: 177,
+			B: 162
+    },
+    {
+			name: 'Malaquita',
+			code: 'NE146-D',
+			R: 124,
+			G: 152,
+			B: 132
+    },
+    {
+			name: 'Gotas De Mar',
+			code: 'NE147-D',
+			R: 104,
+			G: 133,
+			B: 114
+    },
+    {
+			name: 'Tribal',
+			code: 'NE148-A',
+			R: 110,
+			G: 97,
+			B: 69
+    },
+    {
+			name: 'Cactus Silvestre',
+			code: 'NE149-A',
+			R: 104,
+			G: 102,
+			B: 73
+    },
+    {
+			name: 'Onix Verde',
+			code: 'NE150-A',
+			R: 80,
+			G: 92,
+			B: 71
+    },
+    {
+			name: 'Ágata Azul',
+			code: 'NE151-A',
+			R: 50,
+			G: 79,
+			B: 76
+    },
+    {
+			name: 'Cuarzo Azul',
+			code: 'NE152-A',
+			R: 40,
+			G: 79,
+			B: 91
+    },
+    {
+			name: 'Noche Ártica',
+			code: 'NE153-A',
+			R: 54,
+			G: 71,
+			B: 75
+    },
+    {
+			name: 'Turmalina Negra',
+			code: 'NE154-A',
+			R: 56,
+			G: 60,
+			B: 61
+    },
+    {
+			name: 'Lino Rústico',
+			code: 'NE155-P',
+			R: 238,
+			G: 233,
+			B: 220
+    },
+    {
+			name: 'Sombra Mística',
+			code: 'NE156-P',
+			R: 231,
+			G: 223,
+			B: 212
+    },
+    {
+			name: 'Al Natural',
+			code: 'NE157-P',
+			R: 219,
+			G: 209,
+			B: 197
+    },
+    {
+			name: 'Paseo En El Parque',
+			code: 'NE158-T',
+			R: 205,
+			G: 193,
+			B: 179
+    },
+    {
+			name: 'Galería Clásica',
+			code: 'NE159-T',
+			R: 194,
+			G: 180,
+			B: 166
+    },
+    {
+			name: 'Camafeo',
+			code: 'NE160-D',
+			R: 165,
+			G: 147,
+			B: 129
+    },
+    {
+			name: 'Sombra Natural',
+			code: 'NE161-D',
+			R: 144,
+			G: 127,
+			B: 109
+    },
+    {
+			name: 'Luna Creciente',
+			code: 'NE162-P',
+			R: 236,
+			G: 228,
+			B: 221
+    },
+    {
+			name: 'Mármol',
+			code: 'NE163-P',
+			R: 225,
+			G: 216,
+			B: 208
+    },
+    {
+			name: 'Vela De Vainilla',
+			code: 'NE164-P',
+			R: 215,
+			G: 206,
+			B: 198
+    },
+    {
+			name: 'Sinfonía Clásica',
+			code: 'NE165-T',
+			R: 197,
+			G: 188,
+			B: 178
+    },
+    {
+			name: 'Faro De Piedra',
+			code: 'NE166-T',
+			R: 185,
+			G: 173,
+			B: 162
+    },
+    {
+			name: 'Espíritu Tranquilo',
+			code: 'NE167-D',
+			R: 158,
+			G: 144,
+			B: 130
+    },
+    {
+			name: 'Vitral Romano',
+			code: 'NE168-D',
+			R: 140,
+			G: 124,
+			B: 110
+    },
+    {
+			name: 'Vapor Cálido',
+			code: 'NE169-P',
+			R: 243,
+			G: 233,
+			B: 216
+    },
+    {
+			name: 'Pétalo De Almendro',
+			code: 'NE170-P',
+			R: 219,
+			G: 214,
+			B: 207
+    },
+    {
+			name: 'Valle Nublado',
+			code: 'NE171-P',
+			R: 213,
+			G: 205,
+			B: 198
+    },
+    {
+			name: 'Campana Antigua',
+			code: 'NE172-T',
+			R: 195,
+			G: 187,
+			B: 179
+    },
+    {
+			name: 'Cenizas',
+			code: 'NE173-T',
+			R: 180,
+			G: 171,
+			B: 161
+    },
+    {
+			name: 'Gris Bismuto',
+			code: 'NE174-D',
+			R: 154,
+			G: 140,
+			B: 127
+    },
+    {
+			name: 'Niebla',
+			code: 'NE175-D',
+			R: 137,
+			G: 123,
+			B: 110
+    },
+    {
+			name: 'Blanco Estrella',
+			code: 'NE176-P',
+			R: 230,
+			G: 227,
+			B: 221
+    },
+    {
+			name: 'Luz De La Pradera',
+			code: 'NE177-P',
+			R: 219,
+			G: 211,
+			B: 204
+    },
+    {
+			name: 'Gris Luminoso',
+			code: 'NE178-P',
+			R: 206,
+			G: 200,
+			B: 194
+    },
+    {
+			name: 'Memorias',
+			code: 'NE179-T',
+			R: 188,
+			G: 181,
+			B: 173
+    },
+    {
+			name: 'Pabellón',
+			code: 'NE180-T',
+			R: 172,
+			G: 164,
+			B: 157
+    },
+    {
+			name: 'Malva Gris',
+			code: 'NE181-D',
+			R: 149,
+			G: 137,
+			B: 127
+    },
+    {
+			name: 'Puerto De Piedra',
+			code: 'NE182-D',
+			R: 129,
+			G: 116,
+			B: 105
+    },
+    {
+			name: 'Brillo Lila',
+			code: 'NE183-P',
+			R: 212,
+			G: 206,
+			B: 205
+    },
+    {
+			name: 'Cerámica Antigua',
+			code: 'NE184-P',
+			R: 213,
+			G: 208,
+			B: 203
+    },
+    {
+			name: 'Pozo De Los Deseos',
+			code: 'NE185-P',
+			R: 198,
+			G: 192,
+			B: 188
+    },
+    {
+			name: 'Muelle Del Norte',
+			code: 'NE186-T',
+			R: 174,
+			G: 167,
+			B: 165
+    },
+    {
+			name: 'Nieve Lila',
+			code: 'NE187-T',
+			R: 161,
+			G: 154,
+			B: 152
+    },
+    {
+			name: 'Castillo De Piedra',
+			code: 'NE188-D',
+			R: 135,
+			G: 124,
+			B: 119
+    },
+    {
+			name: 'Gravilla',
+			code: 'NE189-D',
+			R: 117,
+			G: 107,
+			B: 103
+    },
+    {
+			name: 'Travesura',
+			code: 'NE190-P',
+			R: 222,
+			G: 215,
+			B: 213
+    },
+    {
+			name: 'Valle De Lirios',
+			code: 'NE191-P',
+			R: 211,
+			G: 204,
+			B: 202
+    },
+    {
+			name: 'Poesía Lírica',
+			code: 'NE192-P',
+			R: 198,
+			G: 189,
+			B: 186
+    },
+    {
+			name: 'Seda Ondulada',
+			code: 'NE193-T',
+			R: 178,
+			G: 169,
+			B: 168
+    },
+    {
+			name: 'Gris Parisino',
+			code: 'NE194-T',
+			R: 161,
+			G: 151,
+			B: 150
+    },
+    {
+			name: 'Tierra De Sueños',
+			code: 'NE195-D',
+			R: 136,
+			G: 121,
+			B: 117
+    },
+    {
+			name: 'Anochecer',
+			code: 'NE196-D',
+			R: 116,
+			G: 101,
+			B: 98
+    },
+    {
+			name: 'Colinas De Invierno',
+			code: 'NE197-P',
+			R: 228,
+			G: 224,
+			B: 217
+    },
+    {
+			name: 'Caminata Lunar',
+			code: 'NE198-P',
+			R: 215,
+			G: 209,
+			B: 206
+    },
+    {
+			name: 'Toque Suave',
+			code: 'NE199-P',
+			R: 200,
+			G: 195,
+			B: 194
+    },
+    {
+			name: 'Aroma Del Día',
+			code: 'NE200-T',
+			R: 177,
+			G: 173,
+			B: 171
+    },
+    {
+			name: 'Magnolia',
+			code: 'NE201-T',
+			R: 159,
+			G: 155,
+			B: 153
+    },
+    {
+			name: 'Cenizas Volcánicas',
+			code: 'NE202-D',
+			R: 133,
+			G: 126,
+			B: 122
+    },
+    {
+			name: 'Crepúsculo',
+			code: 'NE203-D',
+			R: 117,
+			G: 109,
+			B: 103
+    },
+    {
+			name: 'Hielo Ártico',
+			code: 'NE204-P',
+			R: 242,
+			G: 237,
+			B: 229
+    },
+    {
+			name: 'Piedra Lunar',
+			code: 'NE205-P',
+			R: 225,
+			G: 221,
+			B: 214
+    },
+    {
+			name: 'Campanillas',
+			code: 'NE206-P',
+			R: 210,
+			G: 204,
+			B: 195
+    },
+    {
+			name: 'Gris Escarcha',
+			code: 'NE207-T',
+			R: 195,
+			G: 190,
+			B: 181
+    },
+    {
+			name: 'Noche De Invierno',
+			code: 'NE208-T',
+			R: 179,
+			G: 172,
+			B: 163
+    },
+    {
+			name: 'Reliquias',
+			code: 'NE209-D',
+			R: 152,
+			G: 143,
+			B: 130
+    },
+    {
+			name: 'Volcán De Lodo',
+			code: 'NE210-D',
+			R: 133,
+			G: 123,
+			B: 110
+    },
+    {
+			name: 'Manantial Lila',
+			code: 'NE211-P',
+			R: 228,
+			G: 229,
+			B: 230
+    },
+    {
+			name: 'Niebla De Montaña',
+			code: 'NE212-P',
+			R: 223,
+			G: 219,
+			B: 213
+    },
+    {
+			name: 'Tapiz Gris',
+			code: 'NE213-P',
+			R: 207,
+			G: 205,
+			B: 199
+    },
+    {
+			name: 'Puente De Cristal',
+			code: 'NE214-T',
+			R: 192,
+			G: 188,
+			B: 181
+    },
+    {
+			name: 'Plata Mate',
+			code: 'NE215-P',
+			R: 174,
+			G: 172,
+			B: 167
+    },
+    {
+			name: 'Vidrio Ahumado',
+			code: 'NE216-D',
+			R: 150,
+			G: 143,
+			B: 133
+    },
+    {
+			name: 'Escollera',
+			code: 'NE217-D',
+			R: 125,
+			G: 118,
+			B: 109
+    },
+    {
+			name: 'Glaciar',
+			code: 'NE218-P',
+			R: 226,
+			G: 225,
+			B: 218
+    },
+    {
+			name: 'Arroyo De Plata',
+			code: 'NE219-P',
+			R: 218,
+			G: 217,
+			B: 213
+    },
+    {
+			name: 'Faro Luminoso',
+			code: 'NE220-P',
+			R: 205,
+			G: 206,
+			B: 202
+    },
+    {
+			name: 'Tormenta De Invierno',
+			code: 'NE221-T',
+			R: 185,
+			G: 185,
+			B: 181
+    },
+    {
+			name: 'Desierto Lunar',
+			code: 'NE222-T',
+			R: 166,
+			G: 165,
+			B: 162
+    },
+    {
+			name: 'Plata Fina',
+			code: 'NE223-D',
+			R: 142,
+			G: 140,
+			B: 134
+    },
+    {
+			name: 'Fortaleza',
+			code: 'NE224-D',
+			R: 121,
+			G: 118,
+			B: 112
+    },
+    {
+			name: 'Blanco Laguna',
+			code: 'NE225-P',
+			R: 225,
+			G: 224,
+			B: 219
+    },
+    {
+			name: 'Estrella De Plata',
+			code: 'NE226-P',
+			R: 213,
+			G: 212,
+			B: 208
+    },
+    {
+			name: 'Estela Lunar',
+			code: 'NE227-P',
+			R: 200,
+			G: 201,
+			B: 198
+    },
+    {
+			name: 'Plata ',
+			code: 'NE228-T',
+			R: 177,
+			G: 179,
+			B: 177
+    },
+    {
+			name: 'Templo De Paz',
+			code: 'NE229-T',
+			R: 160,
+			G: 163,
+			B: 160
+    },
+    {
+			name: 'Onix Profundo',
+			code: 'NE230-D',
+			R: 133,
+			G: 133,
+			B: 130
+    },
+    {
+			name: 'Niebla Espesa',
+			code: 'NE231-D',
+			R: 112,
+			G: 111,
+			B: 107
+    },
+    {
+			name: 'Azul Celestial',
+			code: 'NE232-P',
+			R: 220,
+			G: 227,
+			B: 223
+    },
+    {
+			name: 'Escarcha Ártica',
+			code: 'NE233-P',
+			R: 208,
+			G: 214,
+			B: 213
+    },
+    {
+			name: 'Polar',
+			code: 'NE234-P',
+			R: 195,
+			G: 201,
+			B: 201
+    },
+    {
+			name: 'Muralla China',
+			code: 'NE235-T',
+			R: 175,
+			G: 181,
+			B: 182
+    },
+    {
+			name: 'Metrópolis',
+			code: 'NE236-T',
+			R: 151,
+			G: 161,
+			B: 162
+    },
+    {
+			name: 'Gris Espacial',
+			code: 'NE237-D',
+			R: 127,
+			G: 134,
+			B: 133
+    },
+    {
+			name: 'Gris Ratón',
+			code: 'NE238-D',
+			R: 105,
+			G: 113,
+			B: 111
+    },
+    {
+			name: 'Alaska',
+			code: 'NE239-P',
+			R: 216,
+			G: 228,
+			B: 227
+    },
+    {
+			name: 'Sombra Lunar',
+			code: 'NE240-P',
+			R: 200,
+			G: 210,
+			B: 210
+    },
+    {
+			name: 'Témpano De Hielo',
+			code: 'NE241-P',
+			R: 192,
+			G: 204,
+			B: 204
+    },
+    {
+			name: 'Gris Oxford',
+			code: 'NE242-T',
+			R: 170,
+			G: 184,
+			B: 186
+    },
+    {
+			name: 'Realidad Virtual',
+			code: 'NE243-T',
+			R: 145,
+			G: 161,
+			B: 164
+    },
+    {
+			name: 'Eclipse',
+			code: 'NE244-D',
+			R: 123,
+			G: 136,
+			B: 136
+    },
+    {
+			name: 'Gris Nórdico',
+			code: 'NE245-D',
+			R: 99,
+			G: 113,
+			B: 112
+    },
+    {
+			name: 'Destello Boreal',
+			code: 'NE246-P',
+			R: 218,
+			G: 226,
+			B: 227
+    },
+    {
+			name: 'Perla Azulada',
+			code: 'NE247-P',
+			R: 202,
+			G: 213,
+			B: 218
+    },
+    {
+			name: 'Regata En Invierno',
+			code: 'NE248-P',
+			R: 183,
+			G: 197,
+			B: 205
+    },
+    {
+			name: 'Himalaya',
+			code: 'NE249-T',
+			R: 160,
+			G: 178,
+			B: 186
+    },
+    {
+			name: 'Tarde De Invierno',
+			code: 'NE250-T',
+			R: 140,
+			G: 159,
+			B: 170
+    },
+    {
+			name: 'Azul Bajo Cero',
+			code: 'NE251-D',
+			R: 115,
+			G: 132,
+			B: 141
+    },
+    {
+			name: 'Noche Estrellada',
+			code: 'NE252-D',
+			R: 92,
+			G: 109,
+			B: 119
+    },
+    {
+			name: 'Velo Azul',
+			code: 'NE253-P',
+			R: 216,
+			G: 225,
+			B: 228
+    },
+    {
+			name: 'Cristal De Hielo',
+			code: 'NE254-P',
+			R: 201,
+			G: 211,
+			B: 213
+    },
+    {
+			name: 'Claro De Luna',
+			code: 'NE255-P',
+			R: 189,
+			G: 199,
+			B: 204
+    },
+    {
+			name: 'Marea Baja',
+			code: 'NE256-T',
+			R: 166,
+			G: 178,
+			B: 185
+    },
+    {
+			name: 'Tempestad',
+			code: 'NE257-T',
+			R: 145,
+			G: 160,
+			B: 169
+    },
+    {
+			name: 'Marea Alta',
+			code: 'NE258-D',
+			R: 116,
+			G: 128,
+			B: 135
+    },
+    {
+			name: 'Gris Tibetano',
+			code: 'NE259-D',
+			R: 100,
+			G: 112,
+			B: 120
+    },
+    {
+			name: 'Mar Cósmico',
+			code: 'NE260-P',
+			R: 217,
+			G: 222,
+			B: 225
+    },
+    {
+			name: 'Polvo De Diamantes',
+			code: 'NE261-P',
+			R: 206,
+			G: 211,
+			B: 214
+    },
+    {
+			name: 'Brisa De Invierno',
+			code: 'NE262-P',
+			R: 190,
+			G: 195,
+			B: 200
+    },
+    {
+			name: 'Melodía Dulce',
+			code: 'NE263-T',
+			R: 164,
+			G: 172,
+			B: 178
+    },
+    {
+			name: 'Juego De Sombras',
+			code: 'NE264-T',
+			R: 142,
+			G: 152,
+			B: 159
+    },
+    {
+			name: 'Noche Plateada',
+			code: 'NE265-D',
+			R: 116,
+			G: 124,
+			B: 129
+    },
+    {
+			name: 'Gris Místico',
+			code: 'NE266-D',
+			R: 104,
+			G: 111,
+			B: 116
+    },
+    {
+			name: 'Castillo En El Aire',
+			code: 'NE267-P',
+			R: 228,
+			G: 230,
+			B: 232
+    },
+    {
+			name: 'Frío Atardecer',
+			code: 'NE268-P',
+			R: 203,
+			G: 209,
+			B: 212
+    },
+    {
+			name: 'Cometa',
+			code: 'NE269-P',
+			R: 188,
+			G: 195,
+			B: 202
+    },
+    {
+			name: 'Cosmos',
+			code: 'NE270-T',
+			R: 165,
+			G: 175,
+			B: 184
+    },
+    {
+			name: 'Bajo Cero',
+			code: 'NE271-T',
+			R: 145,
+			G: 156,
+			B: 166
+    },
+    {
+			name: 'Cataratas',
+			code: 'NE272-D',
+			R: 116,
+			G: 125,
+			B: 134
+    },
+    {
+			name: 'Noche De Tempestad',
+			code: 'NE273-D',
+			R: 102,
+			G: 112,
+			B: 122
+    },
+    {
+			name: 'Sierra nevada ',
+			code: 'NE274-P',
+			R: 215,
+			G: 214,
+			B: 211
+    },
+    {
+			name: 'Gris palido ',
+			code: 'NE275-P',
+			R: 199,
+			G: 199,
+			B: 200
+    },
+    {
+			name: 'Lluvia glacial ',
+			code: 'NE276-P',
+			R: 187,
+			G: 189,
+			B: 190
+    },
+    {
+			name: 'Astro lunar ',
+			code: 'NE277-P',
+			R: 170,
+			G: 171,
+			B: 173
+    },
+    {
+			name: 'Bosque de invierno ',
+			code: 'NE278-T',
+			R: 142,
+			G: 144,
+			B: 148
+    },
+    {
+			name: 'Caverna mediterranea ',
+			code: 'NE279-D',
+			R: 108,
+			G: 111,
+			B: 113
+    },
+    {
+			name: 'Mar infinito ',
+			code: 'NE280-A',
+			R: 86,
+			G: 87,
+			B: 86
+    },
+    {
+			name: 'Cristal de diamantes',
+			code: 'NE281-P',
+			R: 218,
+			G: 215,
+			B: 214
+    },
+    {
+			name: 'Monta de granito',
+			code: 'NE282-P',
+			R: 203,
+			G: 202,
+			B: 201
+    },
+    {
+			name: 'Niebla industrial ',
+			code: 'NE283-T',
+			R: 157,
+			G: 155,
+			B: 157
+    },
+    {
+			name: 'Callejon urbano ',
+			code: 'NE284-D',
+			R: 124,
+			G: 123,
+			B: 124
+    },
+    {
+			name: 'Piedra de molino ',
+			code: 'NE285-D',
+			R: 120,
+			G: 117,
+			B: 120
+    },
+    {
+			name: 'Noche clara ',
+			code: 'NE286-A',
+			R: 107,
+			G: 106,
+			B: 106
+    },
+    {
+			name: 'Paisaje nocturno ',
+			code: 'NE287-A',
+			R: 64,
+			G: 66,
+			B: 70
+    },
+    {
+			name: 'Lapiz plata ',
+			code: 'NE288-P',
+			R: 216,
+			G: 215,
+			B: 213
+    },
+    {
+			name: 'Camino en la montaña ',
+			code: 'NE289-P',
+			R: 183,
+			G: 182,
+			B: 182
+    },
+    {
+			name: 'Via lactea ',
+			code: 'NE290-D',
+			R: 145,
+			G: 145,
+			B: 145
+    },
+    {
+			name: 'Campaña clara ',
+			code: 'NE291-D',
+			R: 129,
+			G: 128,
+			B: 128
+    },
+    {
+			name: 'Noche misteriosa ',
+			code: 'NE292-A',
+			R: 94,
+			G: 93,
+			B: 93
+    },
+    {
+			name: 'Noche oscura ',
+			code: 'NE293-A',
+			R: 70,
+			G: 69,
+			B: 70
+    },
+    {
+			name: 'Niebla nocturna ',
+			code: 'NE294-A',
+			R: 63,
+			G: 63,
+			B: 64
+    },
+    {
+			name: 'Paisaje de invierno ',
+			code: 'NE295-T',
+			R: 142,
+			G: 147,
+			B: 148
+    },
+    {
+			name: 'Humo mistico ',
+			code: 'NE296-A',
+			R: 97,
+			G: 104,
+			B: 107
+    },
+    {
+			name: 'Bosque mistico ',
+			code: 'NE297-D',
+			R: 121,
+			G: 121,
+			B: 119
+    },
+    {
+			name: 'Bajo la luna ',
+			code: 'NE298-D',
+			R: 127,
+			G: 123,
+			B: 119
+    },
+    {
+			name: 'Oso salvaje ',
+			code: 'NE299-A',
+			R: 89,
+			G: 85,
+			B: 81
+    },
+    {
+			name: 'Volcan de chocolate ',
+			code: 'NE300-A',
+			R: 72,
+			G: 66,
+			B: 64
+    },
+    {
+			name: 'Cima de la montaña',
+			code: 'NE301-A',
+			R: 98,
+			G: 94,
+			B: 88
+    },
+]

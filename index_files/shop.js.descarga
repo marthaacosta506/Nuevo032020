@@ -1,0 +1,64 @@
+
+function initValidateShop() {
+    let el = document.querySelector('#validateShop');
+    el.addEventListener("change", validateShop);
+}
+
+function validateShop(el) {
+    let json = {}
+    json.shop = el.srcElement.value
+    json = JSON.stringify(json)
+    const url = '../services/abanicodecolores/php/validateShop.php';
+    const token = ''
+    fetchApi(url, json, 'POST', token).then(response => {
+        requestValidateShop(response);
+    }).catch(error => {
+        console.error(error);
+    });
+}
+
+function requestValidateShop(res) {
+    let validateShop = document.querySelector('#validateShop');
+    let validateCity = document.querySelector('#validateCity');
+    let hiddenShopName = document.querySelector('#hiddenShopName');
+    let hiddenShopEmail = document.querySelector('#hiddenShopEmail');
+    let hiddenShopAddress = document.querySelector('#hiddenShopAddress');
+    let hiddenShopMobile = document.querySelector('#hiddenShopMobile');
+    let hiddenShopPhone = document.querySelector('#hiddenShopPhone');
+
+    console.log('validateShop.value:', validateShop.value)
+
+    shops.forEach(shop => {
+        if (validateShop.value == shop.department) {
+           
+            hiddenShopName.value = shop.shop;
+            hiddenShopEmail.value = shop.email;
+            hiddenShopAddress.value = shop.address;
+            hiddenShopMobile.value = shop.mobile;
+            hiddenShopPhone.value = shop.phone;
+            removeOptions(document.getElementById('validateCity'));
+            shop.cities.forEach(city => {
+                let option = document.createElement('option')
+                option.value = city
+                option.innerText = city
+                validateCity.appendChild(option);
+            });
+        }
+    });
+
+    if (res != 0) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Lo sentimos ya hemos llegado al tope de las muestras',
+            icon: 'error',
+            confirmButtonText: 'Cerrar'
+        })
+    }
+}
+
+function removeOptions(selectElement) {
+    var i, L = selectElement.options.length - 1;
+    for(i = L; i >= 0; i--) {
+       selectElement.remove(i);
+    }
+ }

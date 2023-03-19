@@ -1,0 +1,35 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+    initColors()
+    initValidateEmail()
+    initValidateShop()
+    initMessage()
+    initValidatePattern()
+});
+
+function initValidatePattern(){
+    let el = document.querySelector('#wpcf7-f31125-o1 .wpcf7-form')
+    if(el){
+        el.address.addEventListener("change", validateEmail2);
+        el.privacy.addEventListener("change", validateEmail2);
+        el.terms.addEventListener("change", validateEmail2);
+
+        
+        // el.address.addEventListener("onkeyup", validateAddress);
+        //el.username.setAttribute('pattern', "[A-Za-záéíóú]");
+        //el.lastname.setAttribute('pattern', "[A-Za-záéíóú]");
+        //el.address.setAttribute('pattern', "[A-Za-z]{2-254}");
+    }   
+}
+
+function validateAddress(el) {
+    console.log('Address: ', el.srcElement.value)
+    let address = el.srcElement.value
+    let input = document.querySelector('#payloadURL')
+    input.value = encodeURIComponent(address)
+    console.log('encodeURIComponent: ', input.value)
+}
+
+// id:
+// id:
+// id: 711457ac8fe26757d8b192e23d92fe38-adf6de59-062e3b58

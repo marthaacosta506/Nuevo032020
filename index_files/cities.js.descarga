@@ -1,0 +1,91 @@
+let shops = [
+    {
+        id: 1,
+        shop: 'Tienda pintuco Niza',
+        department: 'Cundinamarca',
+        cities: [
+            "Bogotá",
+            "Cajicá",
+            "Chía",
+            "Cota",
+            "Facatativá",
+            "Funza",
+            "La calera",
+            "Madrid",
+            "Mosquera",
+            "Sibaté",
+            "Soacha",
+            "Sopó",
+            "Tabio",
+            "Tenjo",
+            "Zipaquira"
+        ],
+        address: 'Calle 125 #60-03 esquina',
+        mobile: '3113436036',
+        phone: '2262046',
+        email: 'tienda.niza@pintuco.com'
+    },
+    {
+        id: 2,
+        shop: 'Tienda pintuco Calle 42',
+        department: 'Santander',
+        cities: [
+            "Bucaramanga",
+            "Floriblanca"
+        ],
+        address: 'Calle 42 #29-99, barrio mejoras publicas',
+        mobile: '3117300127',
+        phone: '6972032',
+        email: 'tienda.calle42@pintuco.com'
+    },
+    {
+        id: 3,
+        shop: 'Tienda pintuco AV Sexta',
+        department: 'Valle del cauca',
+        cities: [
+            "Cali",
+            "Jamundí",
+            "Palmira",
+            "Yumbo"
+        ],
+        address: 'Avenida 6 #28N 83',
+        mobile: '3104406178',
+        phone: '4859596',
+        email: 'tienda.avsexta@pintuco.com'
+    },
+    {
+        id: 4,
+        shop: 'Tienda pintuco Ideo',
+        department: 'Antioquia',
+        cities: [
+            "Bello",
+            "Caldas",
+            "Copacabana",
+            "Envigado",
+            "Girardota",
+            "Itagüí",
+            "La Estrella",
+            "Medellín",
+            "Sabaneta",
+        ],
+        address: 'Carrera 42 #75-83 local 110',
+        mobile: '3113429724',
+        phone: '3726992',
+        email: 'tienda.ideo@pintuco.com'
+    },
+    {
+        id: 5,
+        shop: 'Tienda Pintuco Soledad',
+        department: 'Atlántico',
+        cities: [
+            "Barranquilla",
+            "Soledad",
+            "Puerto Colombia",
+            "Malambo"
+        ],
+        address: 'Calle 26 #18-26 Local 7B, CC Sol Real',
+        mobile: '3104408325',
+        phone: '',
+        email: 'tienda.soledad@pintuco.com'
+    }
+]

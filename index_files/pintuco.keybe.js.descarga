@@ -1,0 +1,73 @@
+/** Keybe INIT **/
+var config = {apiKey: '720b5200d346422b83c31bd8d80d973f'}
+keybe.uiLoad(config)
+
+/** Acceder Click Event **/
+let keybeObj = document.getElementsByClassName('keybe-nav')
+for (var k = 0; k < keybeObj.length; k++) {
+  keybeObj[k].style.cursor = 'pointer'
+  keybeObj[k].addEventListener('click', function (event) {
+    event.preventDefault()
+    event.stopPropagation()
+    keybe.uiOpenModal(config)
+  })
+}
+/** Keybe Events **/
+keybe.onLoginSuccess(function (user) {
+  setJivoUser(user)
+})
+
+keybe.onRegisterSuccess(function (user) {
+  setJivoUser(user)
+})
+
+/** Jivo Events **/
+function jivo_onIntroduction(res) {
+  sendInvitation()
+}
+
+function jivo_onMessageSent(res) {
+  sendInvitation()
+}
+
+function jivo_onChangeState(state) {
+  sendInvitation()
+  keybe.getUserInfo().then((user) => {
+    setJivoUser(user)
+  }).catch(() => {})
+}
+
+/** Custom Events **/
+function setJivoUser(user) {
+  if (window.jivo_api !== undefined) {
+    jivo_api.setContactInfo({
+      "name": user.name,
+      "phone": user.phone
+    });
+  } else {
+    setTimeout(function(){
+      setJivoUser(user)
+    }, 2000);
+  }
+}
+
+function sendInvitation() {
+  var info = jivo_api.getContactInfo()
+  if (info && info.phone) {
+    const url='https://admin.keybe.bio/companies/bisovsm6cjq84z5bg/apps/bisovs2z1jq89drph/invite';
+    var XHR = new XMLHttpRequest();
+    var data = {
+      "invitations":{
+        "user": info.phone,
+        "name": info.client_name
+      }
+    }
+    XHR.addEventListener('load', function(event) {
+      console.log(event)
+    });
+    XHR.open("POST", url);
+    XHR.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    XHR.setRequestHeader("Authorization", "Bearer bisovsbj9jog057j0");
+    XHR.send(JSON.stringify(data));
+  }
+}

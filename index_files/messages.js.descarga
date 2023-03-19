@@ -1,0 +1,88 @@
+function initMessage(){
+    let el = document.querySelector('#wpcf7-f31125-o1 .wpcf7-form')
+    if(el){
+        el.addEventListener("submit", newMessage); 
+    }
+}
+
+function newMessage(ev){
+    console.log('newmessage:', ev)
+    
+    let el = document.querySelector('#wpcf7-f31125-o1 .wpcf7-response-output')
+    let submit = document.querySelector('.wpcf7-submit')
+    submit.style.display = 'none'
+    if(!el){
+        responseSuccess()
+    }
+    else if(el){
+        console.log('Error: ', )
+        if(el.innerText != ""){
+            setTimeout(function(){
+                Swal.fire({
+                    title: 'Mensaje',
+                    text: el.innerText,
+                    icon: 'info',
+                    confirmButtonText: 'Cerrar'
+                })
+                submit.style.display = 'block'
+            }, 1000);
+        }
+        else{
+            responseSuccess()
+        }
+        
+    }   
+}
+
+
+function getData() {
+    pattern="[A-Za-z]{2-254}"
+    getDataJson('#wpcf7-f31125-o1 .wpcf7-form')
+    .then (data => {
+        let params = new URLSearchParams(JSON.parse(data)).toString();
+        console.log(params)
+        let result = encodeURIComponent(params)
+        console.log('result:', result)
+        document.querySelector('#payloadURL').value = result
+        
+    })
+    .catch (error => {
+      console.error (error);
+    });
+}
+
+
+function responseSuccess(){
+    window.location.href = 'https://pintuco.com.co/gracias-por-pedir-tu-muestra/'
+    /* Swal.fire(
+        'Gracias por solicitar tu muestra',
+        'Te enviaremos un correo de confirmación con la información del envío.',
+        'success'
+      ) 
+      .then((result) => {
+        /* Read more about isConfirmed, isDenied below 
+        window.location.reload()
+      }) */
+}
+
+
+
+function getDataJson (div) {
+    return new Promise (function (resolve, reject) {
+        try {
+            const form = document.querySelector (div);
+            const formData = new FormData (form);
+            let object = {};
+            formData.forEach (function (value, key) {
+                if (typeof value != 'object') {
+                    object[key] = value;
+                }
+            });
+            resolve (JSON.stringify (object));
+        } catch (error) {
+            console.log('Error:', error)
+            reject(Error('Request failed', error))
+        }
+    });
+}
+  

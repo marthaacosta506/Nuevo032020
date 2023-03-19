@@ -1,0 +1,75 @@
+function initColors(){
+    let el = document.querySelector('#collectColors');
+    // el.setAttribute('list', 'ListColors')
+    //setEvents(el)
+
+    let el2 = document.querySelector('#dataListColors');
+    let datalist = document.createElement('datalist')
+    datalist.id = 'ListColors'
+    jsonColors.forEach(element => {
+        let item = document.createElement('option')
+        item.value = element.code
+        item.innerText = '<span style="width: 20px;height: 20px;background-color: rgb('+element.R+','+element.G+','+element.B+');float: left;margin-right: 10px;"></span>'+'  '+element.code +' - '+ element.name
+        el.appendChild(item)
+    });
+    el2.appendChild(datalist)
+    $('#collectColors').select2({
+        placeholder: "Seleccione un color",
+        allowClear: true,
+        templateResult: format,
+        templateSelection: function (option) {
+            if (option.id.length > 0 ) {
+                return "<i class='fa fa-dot-circle-o'></i>"+option.text;
+            } else {
+                return option.text;
+            }
+        },
+        escapeMarkup: function (m) {
+            return m;
+        }
+      }
+    );
+
+    
+    console.log('color:'+ColorGetPHP)
+    //$('#collectColors').select2(ColorGetPHP, null); //a lil' bit more :)
+    $('#collectColors').val(ColorGetPHP); // Select the option with a value of 'US'
+    $('#collectColors').trigger('change'); // Notify any JS components that the value changed
+
+    $('#collectColors').on('select2:select', function (e) {
+        // Do something
+        console.log('test:', e.target.value)
+        setValues(e.target.value)
+    });
+    // [text* colors id:collectColors placeholder "Escribe el color que deseas"]
+}
+
+// 'rgb('+element.R+','+element.G+','+element.B+')'
+
+function format (option) {
+    console.log(option);
+    if (!option.id) { return option.text; }
+    var ob = option.text;	// replace image source with option.img (available in JSON)
+    return ob;
+};
+
+function setValues(ev){
+    //console.log('ev', ev.srcElement.value)
+    let colorName = document.querySelector('#hiddenColorName');
+    let colorCode = document.querySelector('#hiddenColorCode');
+    let colorRGB = document.querySelector('#hiddenColorRGB');
+    
+    jsonColors.forEach(element => {
+        if(element.code == ev){
+            colorName.value = element.name
+            colorCode.value = ev
+            colorRGB.value = 'rgb('+element.R+','+element.G+','+element.B+')'
+        }
+    });
+}
+
+function setEvents(el){
+    el.addEventListener("click", setValues, false);
+    el.addEventListener("change", setValues);
+    el.addEventListener("keyup", setValues);
+}

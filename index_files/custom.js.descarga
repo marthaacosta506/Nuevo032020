@@ -1,0 +1,981 @@
+
+function getParameterByName(name) { //product archive
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function quitarAcentos(cadena){
+  const acentos = {'á':'a','é':'e','í':'i','ó':'o','ú':'u','Á':'A','É':'E','Í':'I','Ó':'O','Ú':'U'};
+  var word = cadena.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  // var arreglado = cadena.split('').map( function (letra) {acentos[letra] || letra}).join('').toString();
+  return word;
+}
+
+function printcartacolor(el){
+
+  jQuery('.select-pintuco-filter').removeClass('menu-hover-active');
+  
+  jQuery('.reset-filter.container-filter-reset').removeClass('disable');
+  jQuery(el).siblings('.option-title').html(jQuery(el).text());
+
+  if(jQuery(el).hasClass('option-color-pintuco')){
+      jQuery('.text-color-gama').text(jQuery(el).data('value'));
+  }
+  
+  jQuery('.container-search-color input').val('');
+  jQuery('#gridcartacolor, .barra-carta-color').empty();
+
+  if(jQuery(el).data('filtro') == 'grupobrillo') { 
+      jQuery('.section-carta-colores #color-filter-pintuco').data('brillo', jQuery(el).data('value'));
+      // console.log(jQuery(el).val());
+      jQuery('.section-carta-colores #color-filter-pintuco').data('linea', 'Todos');
+  }
+  if(jQuery(el).data('filtro') == 'grupocolor') { 
+      jQuery('.section-carta-colores #color-filter-pintuco').data('color', jQuery(el).data('value'));
+      jQuery('.section-carta-colores #color-filter-pintuco').data('linea', 'Todos');
+      jQuery('.option-color-pintuco').removeClass('active-color');
+  }
+  if(jQuery(el).data('filtro') == 'linea') {
+      jQuery('.section-carta-colores #color-filter-pintuco').data('linea', jQuery(el).data('value'));
+      jQuery('.section-carta-colores #color-filter-pintuco').data('brillo', 'Todos');
+      jQuery('.section-carta-colores #color-filter-pintuco').data('color', 'Todos');
+      jQuery('.option-color-pintuco').removeClass('active-color');
+  }
+  if(jQuery(el).data('filtro') == 'entorno') { 
+  
+      jQuery('.section-carta-colores #color-filter-pintuco').data('entorno', jQuery(el).data('value'));
+      // console.log(jQuery(el).val());
+  }
+  if(jQuery(el).data('filtro') == 'grupoespacio') { 
+      jQuery('.section-carta-colores #color-filter-pintuco').data('espacio', jQuery(el).data('value'));
+      // console.log(jQuery(el).val());
+  }
+  if(jQuery(el).data('filtro') == 'grupoproducto') { 
+      jQuery('.section-carta-colores #color-filter-pintuco').data('producto', jQuery(el).data('value'));
+      // console.log(jQuery(el).val());
+  }
+  if(jQuery(el).data('filtro') == 'gruposuperficie') { 
+      jQuery('.section-carta-colores #color-filter-pintuco').data('superficie', jQuery(el).data('value'));
+      // console.log(jQuery(el).val());
+  }
+
+  var selectEntorno = jQuery('.section-carta-colores #color-filter-pintuco').data('entorno');
+  var selectLinea = jQuery('.section-carta-colores #color-filter-pintuco').data('linea');
+  var selectgrupoColor = jQuery('.section-carta-colores #color-filter-pintuco').data('color');
+  var selectgrupoEspacio = jQuery('.section-carta-colores #color-filter-pintuco').data('espacio');
+  var selectgrupoBrillo = jQuery('.section-carta-colores #color-filter-pintuco').data('brillo');
+  var selectgrupoProducto = jQuery('.section-carta-colores #color-filter-pintuco').data('producto');
+  var selectgrupoSuperficie = jQuery('.section-carta-colores #color-filter-pintuco').data('superficie');
+
+  jQuery('#grupoproducto div').each(function(){
+      if(jQuery(this).data('value') == selectgrupoProducto && jQuery(this).data('value') != 'Todos'){
+        selectgrupoProducto = jQuery(this).data('name');
+        console.log(selectgrupoProducto);
+        jQuery('.select-pintuco-filter[name=grupoproducto] .option-title').text(selectgrupoProducto);
+      }
+  });
+  jQuery('#gruposuperficie div').each(function(){
+    if(jQuery(this).data('value') == selectgrupoSuperficie && jQuery(this).data('value') != 'Todos'){
+      selectgrupoSuperficie = jQuery(this).data('name');
+      console.log(selectgrupoSuperficie);
+      jQuery('.select-pintuco-filter[name=gruposuperficie] .option-title').text(selectgrupoSuperficie);
+    }
+  });
+
+  var resultTotal = [];
+  var colorMayor = '';
+  var colorMenor = '';
+
+  if(selectgrupoColor == "Todos"){
+      jQuery('.container-filtros-bar-carta-colores').addClass('d-none');
+  }else{
+      jQuery('.container-filtros-bar-carta-colores').removeClass('d-none');
+  }
+
+  if(selectEntorno == 'exterior'){
+      var selectEntornoCon = true;
+  } else if(selectEntorno == 'interior'){
+      var selectEntornoCon = "Todos";
+  }else if(selectEntorno == 'Todos'){
+      var selectEntornoCon = "Todos"
+  }
+
+  if(selectLinea == 'colorLinea'){
+      var selectLineaCon = true;
+  } else if(selectLinea == 'sinLinea'){
+      var selectLineaCon = false;
+  }else if(selectLinea == 'Todos'){
+      var selectLineaCon = "Todos"
+  }
+  
+  allColors.forEach((color,index) => {
+      // if (index > 50) {
+      //   jQuery('.result-complete').css('opacity','1');
+      // }
+      if((color.exterior == selectEntornoCon || selectEntornoCon == "Todos") && (color.colorLinea == selectLineaCon || selectLineaCon == "Todos") && (color.grupofamilia == selectgrupoColor || selectgrupoColor == "Todos") && (color.brillo === selectgrupoBrillo || selectgrupoBrillo == "Todos") ){
+
+          var conteoEspacios = false;
+          var conteoProductos = false;
+          var conteoSuperficies = false;
+          conteoEspacios = color.espacios.includes( selectgrupoEspacio );
+          conteoProductos = color.productos.includes( selectgrupoProducto );
+          conteoSuperficies = color.tipoespacios.includes( selectgrupoSuperficie );
+          
+
+          if('OW001-P' == color.codigoColor){
+            
+          }
+          if('OW043-P' == color.codigoColor){
+            resultTotal.push(color);
+          }
+          
+          if((conteoEspacios || selectgrupoEspacio == "Todos") && (conteoProductos || selectgrupoProducto == "Todos" ) && (conteoSuperficies || selectgrupoSuperficie == "Todos")){
+              resultTotal.push(color);
+          }
+          else{
+            // console.log('no entra')
+          }
+      }
+  
+  });
+
+  if(resultTotal.length > 0){
+      var widthContainer = Math.ceil(resultTotal.length/7) * 80;
+      var itemFinal = "";
+
+      itemFinal += `<div class="container-result-colors" style="width:${widthContainer}px;">`;
+      console.log('selectEntorno', selectEntorno)
+      resultTotal.forEach(resultColor => {
+          itemFinal += `<div class="single-color-grid" onclick="clickpopupcolor('${ resultColor.codigoColor ? resultColor.codigoColor : ''}')" style="background:rgb(${parseInt(resultColor.R ? resultColor.R : '')},${parseInt(resultColor.G ? resultColor.G : '')},${parseInt(resultColor.B ? resultColor.B : '')});">`;
+              itemFinal += `<div class="content-hover-color">`;
+                  itemFinal += `<h5>${resultColor.codigoColor}</h5>`;
+                  itemFinal += `<p>${resultColor.nombre}</p>`;
+                  itemFinal += `<div class="d-none">
+                              </div>`;
+              itemFinal += `</div>`;
+              if(selectEntorno == 'exterior'){
+                itemFinal += `<div class="icon-sol">${sol}</div>`;
+              }
+          itemFinal += `</div>`;
+      });
+      itemFinal += `</div>`;
+  }else{
+      var itemFinal = "";
+      itemFinal += `<div class="msj-not-found-colors"><h2>Sin Resultados...</h2></div>`;
+  }
+  jQuery('#gridcartacolor').append(itemFinal);
+
+  var sortedRgbArr = resultTotal;
+
+  sortedRgbArr = arraymultidmensional(sortedRgbArr, 'lumen');
+
+  resultbar = sortedRgbArr;
+
+  jQuery('#myPicker').attr('max',sortedRgbArr.length);
+
+
+  if(sortedRgbArr.length > 1 && Math.ceil(sortedRgbArr.length * (2 / 5)) > 5){
+      sortedRgbArr.forEach((ordercolor, key) =>{
+          var prevColor = sortedRgbArr[key - 1] ? 'rgb('+parseInt(sortedRgbArr[key - 1].R)+','+parseInt(sortedRgbArr[key - 1].G)+','+parseInt(sortedRgbArr[key - 1].B)+')' : 'rgb(0, 0, 0,0)';
+          // var nextColor = sortedRgbArr[key + 1] ? 'rgb('+parseInt(sortedRgbArr[key + 1].R)+','+parseInt(sortedRgbArr[key + 1].G)+','+parseInt(sortedRgbArr[key + 1].B)+')' : 'rgb(0, 0, 0)';
+          jQuery('.barra-carta-color').append('<div class="color-bar-option" value="'+ordercolor.codigoColor+'" style="background: linear-gradient(to right, ' + prevColor + ' 0%, rgb('+parseInt(ordercolor.R)+','+parseInt(ordercolor.G)+','+parseInt(ordercolor.B)+') 100% );"></div>')
+      });
+      var first_color = `rgb(${sortedRgbArr[0].R},${sortedRgbArr[0].G},${sortedRgbArr[0].B})`;
+      var mid_down_color = `rgb(${sortedRgbArr[Math.ceil(sortedRgbArr.length * (2 / 5)) ].R},${sortedRgbArr[Math.ceil(sortedRgbArr.length * (2 / 5))].G},${sortedRgbArr[Math.ceil(sortedRgbArr.length * (2 / 5))].B})`;
+      var mid_color = `rgb(${sortedRgbArr[Math.ceil(sortedRgbArr.length / 2) ].R},${sortedRgbArr[Math.ceil(sortedRgbArr.length / 2)].G},${sortedRgbArr[Math.ceil(sortedRgbArr.length / 2)].B})`;
+      var mid_up_color = `rgb(${sortedRgbArr[Math.ceil(sortedRgbArr.length * (4 / 5)) ].R},${sortedRgbArr[Math.ceil(sortedRgbArr.length * (4 / 5))].G},${sortedRgbArr[Math.ceil(sortedRgbArr.length * (4 / 5))].B})`;
+      var last_color = `rgb(${sortedRgbArr[sortedRgbArr.length - 1].R},${sortedRgbArr[sortedRgbArr.length - 1].G},${sortedRgbArr[sortedRgbArr.length - 1].B})`;
+      jQuery('.filter-color-family span').css('background',`linear-gradient(90deg, ${first_color} 0%, ${mid_down_color} 25%, ${mid_color} 50%, ${mid_up_color} 75%, ${last_color} 100%)`);
+  }
+
+  let url = urlconstructorcolorFilter(el);
+  if(url){
+      history.pushState(null, "", urlconstructorcolorFilter(el));
+  } else{
+      history.pushState(null, "", window.location.pathname);
+  }
+  //style filter final
+  var changeColor = "";
+  var changeEntorno = "";
+  var changeSuperficie = "";
+  var changeProducto = "";
+  var changeFiltros = "";
+
+  changeEntorno = jQuery('.section-carta-colores #color-filter-pintuco').data('entorno');
+  if(changeEntorno){
+    jQuery('.select-pintuco-filter[name=entorno] .option-title').text(changeEntorno);
+  }
+  // changeSuperficie = jQuery('.section-carta-colores #color-filter-pintuco').data('superficie');
+  // if(changeSuperficie){
+  //   jQuery('.select-pintuco-filter[name=gruposuperficie] .option-title').text(changeSuperficie);
+  // }
+  // changeProducto = jQuery('.section-carta-colores #color-filter-pintuco').data('producto');
+  // if(changeProducto){
+  //   jQuery('.select-pintuco-filter[name=grupoproducto] .option-title').text(changeProducto);
+  // }
+  changeFiltros = jQuery('.section-carta-colores #color-filter-pintuco').data('linea');
+  if(changeFiltros && changeFiltros != "Todos"){
+    jQuery('.select-pintuco-filter[name=grupobrillo] .option-title').text(changeFiltros);
+  }else{
+    changeFiltros = jQuery('.section-carta-colores #color-filter-pintuco').data('brillo');
+    if(changeFiltros && changeFiltros != "Todos"){
+      jQuery('.select-pintuco-filter[name=grupobrillo] .option-title').text(changeFiltros);
+    }
+  }
+  changeColor = jQuery('.section-carta-colores #color-filter-pintuco').data('color');
+  if(changeColor){
+    jQuery('.option-color-pintuco[data-value='+changeColor+']').addClass('active-color');
+  }
+  // console.log(changeFiltros);
+
+/*   const elements = document.querySelectorAll('.single-color-grid .icon-sol')
+    if(jQuery(el).data('value') == 'exterior'){
+      console.log('Exterior: ', elements)
+      if(elements){
+          for (let index = 0; index < elements.length; index++) {
+              const element = elements[index];
+              element.style.display = 'inline !important'
+          }
+      }
+    }
+    else{
+      console.log('interior: ', elements)
+      if(elements){
+        for (let index = 0; index < elements.length; index++) {
+            elements[index].style.display = 'none !important'
+        }
+      }
+    } */
+}
+
+function printCalculate(es){ // calculadora
+  var itemCalcDeco = "";
+  var itemCalcSilicona = "";
+  var rendim = "";
+
+  jQuery('#operacion-calculadora').empty();
+
+  if(jQuery(es).val() != 0){
+
+      jQuery('#calculator-section').data('rendimiento', jQuery("#select-product option[value="+jQuery(es).val()+"]").data('rendimiento'));
+      jQuery('#img-ditto-product img').attr('src',jQuery("#select-product option[value="+jQuery(es).val()+"]").data('img'));
+      jQuery('#img-ditto-product h5').text(jQuery("#select-product option[value="+jQuery(es).val()+"]").text());
+      jQuery('#img-ditto-product p').text('rendimiento: '+jQuery("#select-product option[value="+jQuery(es).val()+"]").data('rendimiento'));
+
+      jQuery('#img-ditto-product').css('display','flex');
+
+      if(jQuery('#calculator-section').data('calc') != 'siliconas'){
+
+          rendim =  jQuery('#calculator-section').data('rendimiento');
+
+          itemCalcDeco = `
+          <div class="form-container">
+              <ul class="nav nav-tabs d-none">
+                  <li class="active"><a data-toggle="tab" href="#single">Por pared</a></li>
+                  <li><a data-toggle="tab" href="#total">Total medida</a></li>                                
+              </ul>
+
+              <div class="tab-content">
+                  <input type="hidden" value="${rendim}" id="inputPerformance" name="performance_value"> 
+                  <!-- <input id="calculatorType" type="hidden" value="" name="calculator_type" > -->
+
+                  <div id="single" class="tab-pane fade in active show">
+                      <form id="formCalculatorSingles">                            
+                          <div class="form-group row">                                    
+                              <div class="content-step-two">
+                                  <div class="title-step-two">
+                                      <h2 class="pretitle-calculator">DIMENSIONES y medidas
+                                      </h2>
+                                  </div> 
+                                  
+                                  <div class="form-group d-none">
+                                      <label for="windows">Elige un número de ventanas</label>
+                                      <input value="0" type="number" min="0" class="form-control" id="windows" placeholder="Ninguno">                                            
+                                  </div>
+                                  <div class="form-group d-none">
+                                      <label for="doors">Elige un número de puertas</label>
+                                      <input value="0" type="number" min="0" class="form-control" id="doors" placeholder="Ninguno">                                            
+                                  </div>
+
+                                  <div class="form-subtitle-dimensions"><i><?= Icons::Cintametrica(); ?></i><p>ÁREA TOTAL</p><hr class="line-dimensions"></div>
+
+                                  <div class="form-check form-check-inline centimeters-btn d-none">
+                                      <input class="form-check-input" type="radio" name="mesure" id="centimeters" value="centimeters">
+                                      <label class="form-check-label" for="centimeters">Centímetros</label>
+                                  </div>
+                                  <div class="form-check form-check-inline d-none">
+                                      <input class="form-check-input" type="radio" name="mesure" id="meters" value="meters" checked="">
+                                      <label class="form-check-label" for="meters">Metros</label>
+                                  </div>                                        
+                                  <div class="form-row area-inputs">
+                                      <div class="form-group col-md-6">                                                
+                                          <input type="number" class="form-control" id="area" placeholder="Area" step="0.01">
+                                      </div>                                                    
+                                  </div>
+                                  <div style="display: inline-grid;">
+                                      <small>* Debes poner el área total en M² </small>
+                                      <small>* El campo permite agregar puntos y comas.</small>
+                                  </div>
+                                  <button type="submit" class="btn btn-calculator-black">Calcular</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>                           
+              </div>
+          </div>
+          <div id="formCalculated">
+              <div class="row">                                
+                  <div class="calculate">                                    
+                      <h1><span id="valueFromCalculated">0</span><span> Galones</span></h1>
+                      <div class="w-100 float-left">
+                          <span><b>Rendimiento:</b></span>
+                          <p id="qtyRendimiento"></p><span id="calcdescproduct"></span>
+                      </div>
+
+                      <div class="w-100">
+                          <span><b>Área:</b></span>
+                          <p id="qtyArea"></p>
+                      </div>
+
+                      <div class="alert-blue">
+                          Este resultado es una cantidad aproximada, de igual forma te recomendamos que vayas a una de nuestras Tiendas Pintuco, haz clic y encuentra la más cercana <a href="https://pintuco.com.co/tiendas/">aqui</a>. Si deseas más información contáctanos por el chat o escríbenos <a href="https://pintuco.com.co/contacto/">contacto</a>
+                      </div>
+
+                  </div>
+                  <div id="buttons-after-calculate">
+                      <div class="back-calculator" onclick="backCalculator()">
+                          Volver a calcular
+                  </div>
+              </div>
+          </div>
+          `;
+
+          jQuery('#operacion-calculadora').append(itemCalcDeco);
+          decoSingle();
+      }else{
+          rendim =  jQuery('#calculator-section').data('rendimiento');
+
+          itemCalcSilicona = `
+          <div class="form-container">
+              <div class="tab-content">
+              <input type="hidden" value="${rendim}" id="inputPerformance" name="performance_value"> 
+                  <div id="single" class="tab-pane fade in active show">
+                      <form id="formCalculatorSiliconas">                            
+                          <div class="form-group row">                                    
+                              <div class="content-step-two">
+                                  <div class="title-step-two">
+                                      <h2 class="pretitle-calculator">DIMENSIONES y medidas
+                                      </h2>
+                                  </div> 
+                                  
+                                  <div class="form-group d-none">
+                                      <label for="windows">Elige un número de ventanas</label>
+                                      <input value="0" type="number" min="0" class="form-control" id="windows" placeholder="Ninguno">                                            
+                                  </div>
+                                  <div class="form-group d-none">
+                                      <label for="doors">Elige un número de puertas</label>
+                                      <input value="0" type="number" min="0" class="form-control" id="doors" placeholder="Ninguno">                                            
+                                  </div>
+
+                                  <div class="form-subtitle-dimensions"><i><?= Icons::Cintametrica(); ?></i><p></p><hr class="line-dimensions"></div>
+                    
+                                  <div class="form-row area-inputs">
+                                      
+                                      <div class="form-group col-md-6">                                                
+                                          <input type="number" class="form-control" id="anchomm" placeholder="Ancho de la junta en mm" step="0.01">
+                                      </div>  
+                                      <div class="form-group col-md-6">                                                
+                                          <input type="number" class="form-control" id="profundidadmm" placeholder="Profundidad de la junta en mm" step="0.01">
+                                      </div>                                                      
+                                  </div>
+                                  <div><small>* El campo permite agregar puntos y comas.</small></div>
+                                  <button type="submit" class="btn btn-calculator-black">Calcular</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>                           
+              </div>
+          </div>
+          <div id="formCalculated">
+              <div class="row">                                
+                  <div class="calculate">                                    
+                      <h1><span>Necesitas </span><span id="valueFromCalculated">0</span><span> metros lineales por cartucho</span></h1>
+                      
+                      <div class="w-100 float-left">
+                          <span><b>Contenido en mililitros:</b></span>
+                          <p id="qtyConteindoml"></p>
+                          <p id="calcdescproduct"></p>
+                      </div>
+
+                      <div class="w-100 float-left">
+                          <span><b>Ancho de la junta mm:</b></span>
+                          <p id="qtyAnchomm"></p>
+                      </div>
+
+                      <div class="w-100">
+                          <span><b>Profundidad de la junta mm:</b></span>
+                          <p id="qtyProfundidadmm"></p>
+                      </div>
+
+                      <div class="alert-blue">
+                          Este resultado es una cantidad aproximada, de igual forma te recomendanos que vayas a una de nuestras Tiendas Pintuco  para mayor información. Si deseas más información contáctanos
+                      </div>
+
+                  </div>
+                  <div id="buttons-after-calculate">
+                      <div class="back-calculator" onclick="backCalculator()">
+                          Volver a calcular
+                  </div>
+              </div>
+          </div>
+          `;
+
+          jQuery('#operacion-calculadora').append(itemCalcSilicona);
+          siliconaCalc();
+      }
+
+      jQuery('#calcdescproduct').text(jQuery("#select-product option[value="+jQuery(es).val()+"]").data('desc'));
+      
+  }else{
+      jQuery('#img-ditto-product').css('display','none');
+      jQuery('#operacion-calculadora').empty();
+  }
+}
+
+function filterpintucoArray(array){//carta colores, initiatives home
+  var uniqueNames = [];
+  $.each(array, function(i, el){
+      if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+  });
+  return uniqueNames.sort();
+}
+
+function mapOrder (array, order, key) {
+  
+  array.sort( function (a, b) {
+    var A = a[key], B = b[key];
+    
+    if (order.indexOf(A) > order.indexOf(B)) {
+      return 1;
+    } else {
+      return -1;
+    }
+    
+  });
+  
+  return array;
+};
+
+function rgbToHsl(c) { // partial carta de colores
+  var r = c[0]/255, g = c[1]/255, b = c[2]/255;
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+
+  if(max == min) {
+    h = s = 0; // achromatic
+  } else {
+    var d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch(max){
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return new Array(h * 360, s * 100, l * 100);
+}
+function componentToHex(c) { //carta de colores
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+function rgbToHex(r, g, b) { //carta de colores
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function arraymultidmensional( array, parameter){ //partial cartade colores lumen
+
+  array.sort(sortFunction);
+
+  function sortFunction(a, b) {
+      if (a[parameter] === b[parameter]) {
+          return 0;
+      }
+      else {
+          return (a[parameter] < b[parameter]) ? -1 : 1;
+      }
+  }
+  return array;
+}
+
+function isMobile(){
+    return (
+        (navigator.userAgent.match(/Android/i)) || 
+        (navigator.userAgent.match(/webOS/i)) || 
+        (navigator.userAgent.match(/iPhone/i)) || 
+        (navigator.userAgent.match(/iPod/i)) || 
+        (navigator.userAgent.match(/iPad/i)) || 
+        (navigator.userAgent.match(/BlackBerry/i))
+    );
+}
+function SetCookie(cookieName, cookieValue, Days){// crear la cookie
+	var today = new Date();
+	var expire = new Date();
+	if(Days == null || Days == 0){
+		Days=1;
+	}
+	expire.setTime(today.getTime() + 3600000*24*Days);
+	document.cookie = cookieName+"="+escape(cookieValue)+";expires="+expire.toGMTString()+"; path=/";
+}
+function leerCookieArray(nombre) {//leer cookie array
+  var lista = document.cookie.split(";");
+
+  for (i in lista) {
+      var busca = lista[i].search(nombre);
+      if (busca > -1) {
+        var micookie=lista[i]}
+      }
+
+      if(typeof micookie !== 'undefined'){
+        var igual = micookie.indexOf("=");
+        var valor = micookie.substring(igual+1);
+        var finalNuevo = valor.split('%');
+        return finalNuevo;
+      }
+
+}
+function leerCookie(nombre) {// leer cookie normal
+  var lista = document.cookie.split(";");
+  for (i in lista) {
+      var busca = lista[i].search(nombre);
+      if (busca > -1) {var micookie=lista[i]}
+      }
+
+      if(typeof micookie !== 'undefined'){
+        var igual = micookie.indexOf("=");
+        var valor = micookie.substring(igual+1);
+        return valor;
+      }
+}
+
+function productsSeen(listado, punto, nuevoID){//funcion con nombre de la cookie listado, cookie punto de partida y ID de producto a aagregar 
+  var url = window.location.href;
+  var n = url.search("/productos");
+  if(n >= 0){
+      validVista = true;
+    }else{
+  }
+
+  if(typeof listado !== 'undefined' && typeof punto !== 'undefined'){//Cuando se ejecuta la cookie y tienen algo
+    var productNewAdd = leerCookieArray(listado); 
+    var ciclo = parseInt(leerCookie(punto));
+
+    if(!productNewAdd && !ciclo){ //Cuando se ejecuta la cookie pero no tienen nada
+      var productNewAdd = new Array(10); 
+      var ciclo = 0;
+    }
+  }
+  else{// Cuando se entra por primera vez a un producto
+    var productNewAdd = new Array(10); 
+    var ciclo = 0;
+  }
+
+    var condition = jQuery('body').hasClass('single-productos'); 
+
+    if(condition){//Si estamos en un producto, lo guardamos en la cookie
+      var productValue = nuevoID;
+      switch (ciclo) {
+        case 0:
+          if(!productNewAdd[0]){
+            productNewAdd[0] = productValue;
+            ciclo = 1;
+          }else if(productNewAdd[0] && productNewAdd[9]){
+            productNewAdd[0] = productValue;
+            ciclo = 1;
+          }
+          break;
+        case 1:
+          if(!productNewAdd[1] || productNewAdd[1]){
+            productNewAdd[1] = productValue;
+            ciclo = 2;
+          }
+          break;
+        case 2:
+          if(!productNewAdd[2] || productNewAdd[2]){
+            productNewAdd[2] = productValue;
+            ciclo = 3;
+          }
+          break;
+        case 3:
+          if(!productNewAdd[3] || productNewAdd[3]){
+            productNewAdd[3] = productValue;
+            ciclo = 4;
+          }
+          break;
+        case 4:
+          if(!productNewAdd[4] || productNewAdd[4]){
+            productNewAdd[4] = productValue;
+            ciclo = 5;
+          }
+          break;
+        case 5:
+          if(!productNewAdd[5] || productNewAdd[5]){
+            productNewAdd[5] = productValue;
+            ciclo = 6;
+          }
+          break;
+        case 6:
+          if(!productNewAdd[6] || productNewAdd[6]){
+            productNewAdd[6] = productValue;
+            ciclo = 7;
+          }
+          break;
+        case 7:
+          if(!productNewAdd[7] || productNewAdd[7]){
+            productNewAdd[7] = productValue;
+            ciclo = 8;
+          }
+          break;
+        case 8:
+          if(!productNewAdd[8] || productNewAdd[8]){
+            productNewAdd[8] = productValue;
+            ciclo = 9;
+          }
+          break;
+        case 9:
+          if(!productNewAdd[9] || productNewAdd[9]){
+            productNewAdd[9] = productValue;
+            ciclo = 0;
+          }
+          break;
+        default:
+          // console.log('No sirvio ningun case');
+          break;
+        }
+      for (let i = 0; i < productNewAdd.length; i++) {//Hacemos ciclo para quitar caracteres de la url y guardar
+        val = String(productNewAdd[i]);
+        if(val.includes('2C')){
+          val = val.replace(/2C/gi,'');
+          val = parseInt(val);
+          productNewAdd[i] = val;
+        }
+      }
+      SetCookie(listado, productNewAdd, 1); //push a la cookie
+      SetCookie(punto, ciclo, 1);
+    } else if(validVista){  //Aqui se imprimen los datos para /productos
+      var productNewAdd = leerCookieArray(listado);
+      if(typeof productNewAdd != "undefined" || productNewAdd != null ){
+        for (let i = 0; i < productNewAdd.length; i++) {
+          val = String(productNewAdd[i]);
+            val = val.replace(/2C/gi,'');
+            val = parseInt(val);
+            productNewAdd[i] = val;
+        }
+      } else{
+
+      }
+    }
+
+    return productNewAdd;
+}
+
+function colorSeen(listadoC, puntoC, nuevoID){//funcion con nombre de la cookie listado, cookie puntoC de partida y ID de producto a aagregar 
+  var url = window.location.href;
+  var n = url.search("/paleta-de-colores/");
+  var validVistaC = false;
+
+  if(n >= 0){
+      validVistaC = true;
+    }else{
+  }
+  // console.log("vista = "+ validVistaC);
+
+    if(typeof listadoC !== 'undefined' && typeof puntoC !== 'undefined'){//Cuando se ejecuta la cookie y tienen algo
+      var colorNewAdd = leerCookieArray(listadoC); 
+      var cicloC = parseInt(leerCookie(puntoC));
+
+      if(!colorNewAdd && !cicloC){ //Cuando se ejecuta la cookie pero no tienen nada
+        var colorNewAdd = new Array(10); 
+        var cicloC = 0;
+      }
+    }
+    else{// Cuando se entra por primera vez a un producto
+      var colorNewAdd = new Array(10); 
+      var cicloC = 0;
+    }
+
+    var condition = jQuery('body').hasClass('target-color'); 
+
+    if(condition){//Si estamos en un producto, lo guardamos en la cookie
+      var colorValue = nuevoID;
+      // console.log(colorNewAdd);
+      switch (cicloC) {
+        case 0:
+          if(!colorNewAdd[0]){
+            colorNewAdd[0] = colorValue;
+            cicloC = 1;
+            }else if(colorNewAdd[0] && colorNewAdd[9]){
+              colorNewAdd[0] = colorValue;
+              cicloC = 1;
+            }
+          break;
+        case 1:
+          if(!colorNewAdd[1] || colorNewAdd[1]){
+            colorNewAdd[1] = colorValue;
+            cicloC = 2;
+          }
+          break;
+        case 2:
+          if(!colorNewAdd[2] || colorNewAdd[2]){
+            colorNewAdd[2] = colorValue;
+            cicloC = 3;
+          }
+          break;
+        case 3:
+          if(!colorNewAdd[3] || colorNewAdd[3]){
+            colorNewAdd[3] = colorValue;
+            cicloC = 4;
+          }
+          break;
+        case 4:
+          if(!colorNewAdd[4] || colorNewAdd[4]){
+            colorNewAdd[4] = colorValue;
+            cicloC = 5;
+          }
+          break;
+        case 5:
+          if(!colorNewAdd[5] || colorNewAdd[5]){
+            colorNewAdd[5] = colorValue;
+            cicloC = 6;
+          }
+          break;
+        case 6:
+          if(!colorNewAdd[6] || colorNewAdd[6]){
+            colorNewAdd[6] = colorValue;
+            cicloC = 7;
+          }
+          break;
+        case 7:
+          if(!colorNewAdd[7] || colorNewAdd[7]){
+            colorNewAdd[7] = colorValue;
+            cicloC = 8;
+          }
+          break;
+        case 8:
+          if(!colorNewAdd[8] || colorNewAdd[8]){
+            colorNewAdd[8] = colorValue;
+            cicloC = 9;
+          }
+          break;
+        case 9:
+          if(!colorNewAdd[9] || colorNewAdd[9]){
+            colorNewAdd[9] = colorValue;
+            cicloC = 0;
+          }
+          break;
+        default:
+          // console.log('No sirvio ningun case');
+          break;
+        }
+      for (let i = 0; i < colorNewAdd.length; i++) {//Hacemos ciclo para quitar caracteres de la url y guardar
+        valc = String(colorNewAdd[i]);
+        if(valc.includes('2C')){
+          valc = valc.replace(/2C/gi,'');
+          // valc = parseInt(valc);
+          colorNewAdd[i] = valc;
+        }
+      }
+      // console.log(colorNewAdd);
+      SetCookie(listadoC, colorNewAdd, 1); //push a la cookie
+      SetCookie(puntoC, cicloC, 1);
+    } else if(validVistaC){  //Aqui se imprimen los datos para /colores colores-seen.js
+      var colorNewAdd = leerCookie(listadoC);
+      if(typeof colorNewAdd != "undefined" || colorNewAdd != null ){
+        colorNewAdd = colorNewAdd.split('%');
+        for (let i = 0; i < colorNewAdd.length; i++) {
+          valc = String(colorNewAdd[i]);
+          if(valc.includes('2C')){
+            valc = valc.replace(/2C/g,'');
+            // val = parseInt(val);
+            colorNewAdd[i] = valc;
+          }
+        }
+      } else{
+
+      }
+    }
+
+    return colorNewAdd;
+}
+
+function convertToSlug(Text)
+{
+    return Text
+        .toLowerCase()
+        .replace(/ /g,'-')
+        .replace(/[^\w-]+/g,'')
+        ;
+}
+
+function scrollTo(hash){
+  if(hash){
+    var suanfanson = 500;
+    jQuery('html, body').animate({
+      scrollTop: jQuery(`section[data-menu="${hash}"]`).offset().top 
+    }, suanfanson);
+  }
+}
+
+(function($) {
+  //
+  // i new worlds
+  jQuery(window).ready(function(){
+    jQuery( '.cart-ecommerce a' ).addClass('gtm-store-ecommerce');
+    jQuery( '.cart-ecommerce-event a' ).addClass('gtm-store-ecommerce-movil');
+
+    $( '.cart-ecommerce' ).on( 'click', function() {
+      gtag('event', 'click tienda virtual menu gris', {'event_category': 'general', 'event_label': 'header'});
+    } );
+
+    $( '.cart-ecommerce-event' ).on( 'click', function() {
+      gtag('event', 'click tienda virtual menu movil', {'event_category': 'general', 'event_label': 'header'});
+    } );
+
+  var hash = window.location.hash;
+    
+  if(window.location.pathname.indexOf("/productos")== 0){
+  }else{
+    if(hash){
+      setTimeout(function(){
+        scrollTo(hash.replace('#', ''));
+        //  $('html, body').animate({
+        //   scrollTop: $(`section[data-menu="${$(this).attr(`${hash}`)}"]`).offset().top
+        // }, 5000);
+
+      }, 3000);
+    }
+  }
+
+    jQuery('#my-menu .mm-panels').prepend('<span class="closex-menu-movil"></span>');
+    jQuery('.closex-menu-movil').click( function(){
+        jQuery('.mm-wrapper__blocker.mm-slideout span').click();
+    });
+
+    jQuery('#my-menu-desktop').mouseleave(function(){
+        jQuery('.overlay-menu-desktop').click();
+    });
+
+    jQuery('#my-menu-desktop p').click(function(event){
+      event.preventDefault();
+      jQuery('.overlay-menu-desktop').show();
+      if(jQuery('#menu-movil-global-desktop, a#my-menu-desktop').hasClass('active-menu')){
+        jQuery('#menu-movil-global-desktop, a#my-menu-desktop').removeClass('active-menu');
+        jQuery('.overlay-menu-desktop').click();
+        jQuery('html').removeClass('calm');
+      }else{
+        jQuery('#menu-movil-global-desktop, a#my-menu-desktop').addClass('active-menu');
+        jQuery('html').addClass('calm');
+      }
+	
+		/* Animate nav-toggel */
+		
+		
+    });
+
+    // Editado PLM
+    jQuery('.menu-new-movil').click(function(event){
+      event.preventDefault();
+      jQuery('.overlay-menu-desktop').show();
+      if(jQuery('#menu-movil-global-desktop').hasClass('active-menu')){
+        jQuery('#menu-movil-global-desktop').removeClass('active-menu');
+        jQuery('.overlay-menu-desktop').click();
+        jQuery('html').removeClass('calm');
+      }else{
+        jQuery('#menu-movil-global-desktop').addClass('active-menu');
+        jQuery('html').addClass('calm');
+      }
+    });
+	  
+    jQuery('.overlay-menu-desktop').click(function(){
+        jQuery('#menu-movil-global-desktop').fadeOut();
+        jQuery('#menu-movil-global-desktop').removeClass('active-menu');
+        jQuery('.overlay-menu-desktop').hide();
+        jQuery('html').removeClass('calm');
+    });
+
+    jQuery('.icono-lupa-desk a').click(function(e){
+        e.preventDefault();
+        jQuery('.search-form-desktop').addClass('active');
+        jQuery(this).css('opacity','0');
+    });
+
+    jQuery('.icono-lupa-movil img').click(function(e){
+      e.preventDefault();
+      jQuery('.overlay-search-movil').show();
+      jQuery('#new-search-movil').show();
+      jQuery('html').addClass('calm');
+    });
+    jQuery('.closex-search-movil').click(function(){
+      jQuery('.overlay-search-movil').hide();
+      jQuery('#new-search-movil').fadeOut();
+      jQuery('html').removeClass('calm');
+    });
+    jQuery('.overlay-search-movil').click(function(){
+      jQuery('.closex-search-movil').click();
+    });
+
+    // f new worlds
+
+    //footer
+     jQuery('.NombreCompleto').on('change',function(){
+        jQuery('#boletin-list-footer').show('slow');
+      });
+
+	jQuery('.most-views-option').click (function(e){
+    e.preventDefault(); 
+    jQuery('.most-views-option').addClass('active');
+    jQuery('.most-popular').addClass('d-none');
+    jQuery('.most-popular-option').removeClass('active');
+    jQuery('.most-views').removeClass('d-none');
+    });
+    jQuery('.most-popular-option').on('click', function(e){
+    e.preventDefault(); 
+    jQuery('.most-popular-option').addClass('active');
+    jQuery('.most-views-option').removeClass('active');
+    jQuery('.most-views').addClass('d-none');
+    jQuery('.most-popular').removeClass('d-none');
+    });
+
+  })  
+})( jQuery );
+
+$( function() {
+  var settings = {
+    "url": `${directory_site}/wp-json/contentpintuco/filter`,
+    "method": "GET",
+    "timeout": 0,
+    "headers": {
+      "Cookie": "PHPSESSID=4kp0jug3gtl6crnet26svp904p"
+    },
+  };
+  var availableTags = [];
+  var contTags = 0;
+  $.ajax(settings).done(function (response) {
+    if(response){
+      response.forEach(content => {
+        availableTags[contTags] = content.title;
+        contTags ++;
+      });
+    }
+    // console.log(availableTags);
+  });
+
+  jQuery(".searchauto").each(function(){
+    jQuery(this).autocomplete({
+      source: availableTags
+    });
+  });
+
+} );

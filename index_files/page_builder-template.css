@@ -1,0 +1,35 @@
+/* Estilos extras para los page builder
+ * 
+ *
+ * 
+ * 
+ *  */
+
+
+
+
+/* Estilos para página de https://pintuco.com.co/pintucoat */
+
+.page-id-29484 section#slider-perfil-global {
+    margin-bottom: 94px;
+}
+
+
+section#itt-contenedor-formulario {
+    background-color: rgb(207 207 207 / 54%);
+    padding-top: 37px;
+    padding-bottom: 44px;
+}
+
+p.titulo-formulario-coat {
+    position: relative;
+    top: 25px;
+}
+
+section.section-editor-de-texto {
+    padding-top: 38px;
+}
+
+.page-id-29484 #itt-videos-pintucoat {
+    margin-top: -45px !important;
+}

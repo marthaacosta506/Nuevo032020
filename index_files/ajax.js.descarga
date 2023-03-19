@@ -1,0 +1,47 @@
+function fetchApi(url, data, typeMethod, token = '') {
+    return new Promise(function (resolve, reject) {
+        if (self.fetch) {
+            let headers
+            if (typeMethod === 'POST') {
+                headers = {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/json',
+                }
+            } else if (typeMethod === 'PUT') {
+                headers = {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/json',
+                }
+            } else {
+                headers = {
+                    'Authorization': 'Bearer ' + token,
+                }
+            }
+
+            let params = {
+                method: typeMethod,
+                cache: 'default',
+                mode: 'cors'
+            }
+
+            params.headers = headers
+
+            if (data !== '') {
+                params.body = data
+            }
+
+            var request = new Request(url, params)
+            fetch(request)
+                .then(status)
+                .then(res => res.json())
+                .then(data => {
+                    resolve(data)
+                }).catch(error => {
+                    console.log('Request failed', error)
+                    reject(Error('Request failed', error))
+                })
+        } else {
+            // ¿hacer algo con XMLHttpRequest?
+        }
+    })
+}

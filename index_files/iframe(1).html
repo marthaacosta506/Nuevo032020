@@ -1,0 +1,59 @@
+
+<!-- saved from url=(0072)https://widget01.wolkvox.com/chat/iframe.php?prodId=d2ItcGludHVjby4yMjA= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="./jquery.min.js.descarga"></script>
+		<link rel="stylesheet prefetch" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<script src="./bootstrap.bundle.min.js.descarga" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+		<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.min.css">
+		<script src="./intlTelInput.min.js.descarga"></script>
+		<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<link rel="stylesheet prefetch" href="https://widget01.wolkvox.com/chat/css/material-components-web-pdn.min.css">
+		
+		<link rel="stylesheet" href="./bootstrap-icons.css">
+		<!-- Bootstrap para iconos -->
+		<link href="./bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		<script src="./bootstrap.bundle.min.js(1).descarga" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+		<!-- fin Bootstrap para iconos -->
+		<script src="./material-components-web.min.js.descarga"></script>
+		<script type="text/javascript">
+			
+
+			
+			// console.error = console.debug = console.info =  console.log = function(){};
+			var WolkvoxChat = "";
+			var eventMethod2 = window.addEventListener ? "addEventListener" : "attachEvent";
+			var eventer2 = window[eventMethod2];
+			var messageEvent2 = eventMethod2 == "attachEvent" ? "onmessage" : "message";
+			eventer2(messageEvent2, function(e) {
+				WolkvoxChat = e.data;
+			}, false);
+			var x = 0;
+
+			var emptyCheckInterval = setInterval(function() {
+				if (WolkvoxChat != "" || x == 10) {
+					clearInterval(emptyCheckInterval);
+					var scriptBuild = document.createElement('SCRIPT');
+					scriptBuild.setAttribute('id', 'prodId');
+					scriptBuild.setAttribute('type', 'text/javascript');
+					scriptBuild.setAttribute('src', "https://widget01.wolkvox.com/chat/buildchat.php?prodId=d2ItcGludHVjby4yMjA=");
+					scriptBuild.setAttribute('async', '');
+					document.head.appendChild(scriptBuild);
+				}
+				else
+				{
+					parent.postMessage("start","*");
+				}
+				x++;
+			}, 10);
+
+			function iframeResize(height,width) {
+				parent.postMessage("resize::"+height+"||"+width,"*");
+			}
+		</script>
+	<script id="prodId" type="text/javascript" src="./buildchat.php" async=""></script><link rel="stylesheet prefetch" href="https://widget01.wolkvox.com/chat/css/styles.php?dt=eyJjb2RpZ29jb2xvciI6IjI1NSwgMjIxLCAwIiwiY29sb3J0ZXh0byI6IjMsIDMsIDMiLCJmdWxsc2NyZWVuIjoiMCIsInNpemVib3RvbiI6ImwiLCJzaXplY2hhdCI6ImwiLCJzaXplQnRuV2dodCI6ImZhbHNlIiwiZm9uZG9ib3RvbiI6IjAiLCJzaXplSW1nQnRuVyI6MTIwLCJzaXplSW1nQnRuSCI6MTIwLCJsaW5rRm9uZG8iOiJidXNpbmVzcyJ9&amp;dv=n"><script src="./clicktocall.php"></script><script src="./js.php"></script><script src="./callback.php"></script></head>
+	<body style="background-color: unset !important;">
+
+	
+	<div id="container_chat"><div id="chat-circle"><i class="material-icons">supervisor_account</i></div><div class="chat-box" id="chat-box" style="display:none"><div id="popUpChatDiv_chat_micro" class="popup_chat_micro"><span class="popuptext_chat_micro_finalizar p-3" id="popUpChat_chat_micro_finalizar"><div class="popuptext_chat_micro_finalizar_text m-3">¿Está seguro que desea finalizar el chat?</div><button id="finalizarChat" class="finalizar__chat my-2 mdc-button mdc-button--raised" style="border: solid #061A40;color: #ffffff;background-color: #061A40 !important;">Si</button><button id="noFinalizarChat" class="finalizar__chat mdc-button mdc-button--raised" style="border: solid rgb(144, 144, 144);color: rgb(144, 144, 144);">No</button></span></div><div id="popUpChatDiv_chat_micro" class="popup_chat_micro" style="left: 10% !important;"><span class="popuptext_chat_micro_finalizar" id="popUpChat_chat_micro_alert" style="padding-top: 20px;width: 250px !important;"><div style="margin-bottom: 10px" class="popuptext_chat_micro_finalizar_text m-3" id="popUpChat_chat_micro_alert_txt"></div><button id="okAlertPopup" type="submit" class="finalizar__chat mdc-button mdc-button--raised" style="border: solid #061A40;color: #ffffff;background-color: #061A40 !important;">OK</button></span></div><header class="chat-box-header row row-cols-3 w-auto pt-2" id="chat-box-header"><div class="col-2"><img src="./4xqa20ok9eklw87.svg" height="42" width="42" class="imgHeader"></div><div class="col-6 col-md-6 mt-2 pl-4 text-nowrap" style="font-size: 14px;"><span class="align-middle"> Pintuco</span></div><div class="col-4 col-md-4 mt-1" id="actionsHeader"><span class="chat-box-toggle" id="minimizeChat"><i class="material-icons">remove</i></span><span class="chat-box-close" id="close" style="display: none;"><i class="material-icons">clear</i></span></div></header><div id="container-options" class="container-options" name="container-options" style="display:none; text-align: center; padding-top: 17%; height: 100%;"></div><div class="container" id="containerChatForm"><div class="row"><div class="col-1"></div><div class="col-10"><p class="text-center pt-3" style="color: rgba(0, 0, 0, 0.6) !important;letter-spacing: 0.0025em;">Por favor completa la siguiente información para ser atendido</p></div><div class="col-1"></div></div><div class="row mb-3"><input id="idsession" type="hidden" name="idsession" value="aHUxOTFlcG1hZ2FoZW4wNWowbG9kN2xoZjYud2ItcGludHVjby4yMjA="><input id="idcliente" type="hidden" name="idcliente" value="wb-pintuco"><input id="skill" type="hidden" name="skill" value="6128"><div id="inputsFormChat"><label class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField" data-mdc-auto-init-state="initialized"><span class="mdc-notched-outline mdc-notched-outline--upgraded"><span class="mdc-notched-outline__leading"></span><span class="mdc-notched-outline__notch textNombre_w"><span class="mdc-floating-label mdc-floating-label--required" id="textNombre" style="">*Nombre: Jhon Doe</span></span><span class="mdc-notched-outline__trailing"></span></span><input id="text1" type="text" name="text1" maxlength="99" class="mdc-text-field__input" aria-labelledby="textNombre" required="true"></label><label class="mdc-text-field mdc-text-field--outlined" id="test" data-mdc-auto-init="MDCTextField" data-mdc-auto-init-state="initialized"><span class="mdc-notched-outline mdc-notched-outline--upgraded"><span class="mdc-notched-outline__leading"></span><span class="mdc-notched-outline__notch textPhone_w"><span class="mdc-floating-label mdc-floating-label--required" id="textPhone" style="">Teléfono: 300 123 45 67</span></span><span class="mdc-notched-outline__trailing"></span></span><input id="text2" type="tel" name="text2" required="true" class="mdc-text-field__input" aria-labelledby="textPhone"></label><label class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField" data-mdc-auto-init-state="initialized"><span class="mdc-notched-outline mdc-notched-outline--upgraded"><span class="mdc-notched-outline__leading"></span><span class="mdc-notched-outline__notch textEmail_w"><span class="mdc-floating-label mdc-floating-label--required" id="textEmail" style="">*Email: jhondoe@domain.com</span></span><span class="mdc-notched-outline__trailing"></span></span><input id="text3" type="email" name="text3" class="mdc-text-field__input" aria-labelledby="textEmail" required="true"></label><label class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField" data-mdc-auto-init-state="initialized"><span class="mdc-notched-outline mdc-notched-outline--upgraded"><span class="mdc-notched-outline__leading"></span><span class="mdc-notched-outline__notch extraField_two_w"><span class="mdc-floating-label mdc-floating-label--required" id="extraField" style="">Ciudad: Medellín</span></span><span class="mdc-notched-outline__trailing"></span></span><input id="text5" type="text" name="text5" required="" class="mdc-text-field__input" aria-labelledby="extraField"></label><label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea" data-mdc-auto-init="MDCTextField" style="display:none" data-mdc-auto-init-state="initialized"><span class="mdc-notched-outline mdc-notched-outline--upgraded"><span class="mdc-notched-outline__leading"></span><span class="mdc-notched-outline__notch"><span class="mdc-floating-label" id="textComment" style="">Pregunta</span></span><span class="mdc-notched-outline__trailing"></span></span><textarea id="text6" name="text6" class="mdc-text-field__input" aria-labelledby="textComment" maxlength="240" style="display:none"></textarea></label></div></div><div class="row mb-3"><div class="col-1"><input id="habeasData" type="checkbox" name="habeasdata" required=""></div><div class="col-10"><label for="habeasData" style="margin-left: 1%;color: rgba(0, 0, 0, 0.38);"> Estoy de acuerdo con la politica de manejo de datos.<a id="linkhabeas" target="_blank" style="margin-left: 1%; text-decoration:none" href="https://pintuco.com.co/politica-de-proteccion-de-datos-personales/">Politica Datos</a></label></div></div><div class="row"><div class="col-1"></div><div class="col-12"><button id="enviar_form_chat" class="mdc-button mdc-button--raised" style="width: 100%;"><span class="mdc-button__label">enviar</span></button></div></div></div><div class="container" id="containerChatLogs" style="display:none;"><row class="row h-76 justify-content-md-center"><div id="chat-logs" class="chat-logs h-100 w-100 px-2 py-3 overflow-auto chat-logs-body" style="display: inline-grid; z-index:0;"></div><span id="alerta" style="display:none"></span></row><row class="row justify-content-md-center align-items-center" style="height: 40px !important;"><div class="col-1 pl-2"><label class="custom-file-upload"><i class="material-icons">image</i><input id="chat_input_attach" type="file" accept=".jpg,.jpeg,.png,.pdf,.csv"></label></div><div class="col-11"><form id="inputchatview"><input type="text" id="chat-input" class="h-100 pl-3" name="msg" autocomplete="off" placeholder="Escribe tu mensaje..."><button id="chat-submit" class="chat-submit"><i class="material-icons">send</i></button></form></div></row></div><footer class="footer text-center mt-auto py-3 fixed-bottom"><container class="col-1"><img src="./powered.svg"></container></footer></div></div><style>:root {--mdc-theme-primary: rgba(255, 221, 0);--mdc-theme-secondary: #feeae6;--mdc-theme-on-primary: rgba(3, 3, 3);--mdc-theme-on-secondary: #fff;}</style></body></html>

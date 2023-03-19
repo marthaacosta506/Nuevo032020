@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://resources-rt.idx.lat/relytopics.html?siteUrl=https://pintuco.com.co -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="origin-trial" content="AqzlOLk20vBsbsPOZkQPKZTSggG8/BueDmyCsjuf4jXW2pPswmXbjjHJnhas/3MXPZ++j1mFt3tkGlaMnhNwYQEAAABpeyJvcmlnaW4iOiJodHRwczovL2lkeC5sYXQ6NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY4MDY1Mjc5OSwiaXNTdWJkb21haW4iOnRydWV9">
+</head>
+<body>
+    <script>(async function ejecutame() {
+        try {
+            if ('browsingTopics' in document && document.featurePolicy.allowsFeature('browsing-topics')) {
+                const start = Date.now();
+                const topics = await document.browsingTopics();
+                const topicsNumber = topics.map((t) => t.topic)
+                const response_time_topics = String(Date.now() - start);
+                const params = new URLSearchParams(window.location.search);
+                parent.postMessage({type:"@rely_topics", topics: topicsNumber.join(',') , response_time_topics}, params.get("siteUrl"));
+            }
+        } catch (e) {
+        }
+    })()
+</script>
+
+</body></html>

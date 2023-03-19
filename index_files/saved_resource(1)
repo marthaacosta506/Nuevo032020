@@ -1,0 +1,132 @@
+
+
+var urlOrigen            = btoa(document.location.host);
+var base_url_wolkvox     = "https://widget01.wolkvox.com/chat/";
+var oriChatwolkvox       = "https://widget01.wolkvox.com/";
+var operation            = "d2ItcGludHVjby4yMjA=";
+var sizeboton            = "l";
+var sizechat             = "l";
+var fullscreen           = "0";
+var icoboton             = "supervisor_account";
+var fondoboton           = "0";
+var idConfig             = "220";
+var txt1                 = "";
+var txt2                 = "";
+var txt3                 = "";
+var txt4                 = "";
+var txt5                 = "";
+var txt6                 = "";
+var context              = "";
+var title                = document.title;
+var titleFlasher         = "";
+
+//console.log("test",test);
+
+var heightIniChatWolkvox = '';
+var widthIniChatWolkvox  = '';
+
+switch(sizeboton){
+  case "l":
+  heightIniChatWolkvox = '73px';
+  widthIniChatWolkvox  = '75px';
+  break;
+  case "m":
+  heightIniChatWolkvox = '55px';
+  widthIniChatWolkvox  = '60px';
+  break;
+  case "s":
+  heightIniChatWolkvox = '45px';
+  widthIniChatWolkvox  = '50px';
+  break;
+  case "custom":
+  heightIniChatWolkvox = "120px";
+  widthIniChatWolkvox  = "120px";
+  break;
+}
+
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+eventer(messageEvent, function(e) {
+  try
+  {
+    if (e.data.indexOf('resize::') != -1) {
+      var height = e.data.replace('resize::', '');
+      height = height.split("||");
+      document.getElementById('frameChatWolkvox').style.height = height[0].indexOf("%") != -1 ? height[0] : height[0] + 'px';
+      document.getElementById('frameChatWolkvox').style.width = height[1].indexOf("%") != -1 ? height[1] : height[1] + 'px';
+      document.getElementById('frameChatWolkvox').style.right = height[0].indexOf("%") != -1 ? "0%" : height[2] + ' !important';
+      document.getElementById('frameChatWolkvox').style.bottom = height[3] + ' !important';
+    }
+
+    if (e.data.indexOf('start') != -1) {
+      init();
+    }
+
+    if (e.data.indexOf('title') != -1) {
+      var newTitle = e.data.replace('title', '');
+      // document.title = newTitle != " " ? newTitle+title : title;
+      clearInterval(titleFlasher);
+      if (newTitle.indexOf('(') !== -1)
+      {
+        titleFlasher = setInterval(function(){ 
+          document.title = newTitle+" New Messages";
+          setTimeout(function(){
+            document.title = title;
+          },2000);
+        }, 4000);
+      }
+      else
+      {
+        clearInterval(titleFlasher);
+        document.title = title;
+      }
+    }
+  }
+  catch(excep)
+  {
+    // console.log("excep",excep);
+  }
+}, false);
+
+var urlFrame  = base_url_wolkvox+'iframe.php?prodId='+operation
+
+var iframe = document.createElement('IFRAME');
+iframe.setAttribute('id', 'frameChatWolkvox');
+iframe.setAttribute('name', 'frameChatWolkvox');
+iframe.setAttribute('name', 'frameChatWolkvox');
+iframe.setAttribute('allow', 'geolocation; microphone; camera; midi; encrypted-media;');
+iframe.setAttribute('allowtransparency', 'true');
+iframe.setAttribute('draggable', 'true');
+iframe.setAttribute('frameBorder', '0');
+iframe.setAttribute('src', urlFrame);
+iframe.setAttribute('style', 'height: '+heightIniChatWolkvox+'!important ;width:'+widthIniChatWolkvox+'!important; position: fixed !important; right: 1% !important; bottom: 1% !important; z-index: 99999 !important; overflow: hidden !important;');
+document.children[0].appendChild(iframe); /* create in page original */
+/*document.children[0].children[1].appendChild(iframe);*/
+
+    function init(){
+      var data = {
+        "urlOrigen":  urlOrigen,
+        "sizeboton":  sizeboton,
+        "sizechat":   "l",
+        /*"sizechat":   sizechat,*/
+        "fullscreen": fullscreen,
+        "idConfig":   idConfig,
+        "txt1":       txt1,
+        "txt2":       txt2,
+        "txt3":       txt3,
+        "txt4":       txt4,
+        "txt5":       txt5,
+        "txt6":       txt6,
+        "context":    context,
+      };    
+      if (navigator.vendor != "")
+      {
+        document.frameChatWolkvox.postMessage(btoa(JSON.stringify(data)),"*");
+      }
+      else
+      {
+        window.frameChatWolkvox.postMessage(btoa(JSON.stringify(data)),"*");
+      }
+  }
+    

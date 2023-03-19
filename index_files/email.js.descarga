@@ -1,0 +1,66 @@
+function initValidateEmail() {
+    let el = document.querySelector('#validateEmail');
+    el.addEventListener("change", validateEmail);
+
+    let el1 = document.querySelector('#validatePrivacy');
+    el1.addEventListener("click", validateColor);
+
+    let el2 = document.querySelector('#validateTerms');
+    el2.addEventListener("click", validateColor);
+
+    let el3 = document.querySelector('#validateComments');
+    el3.addEventListener("change", validateColor);
+    
+}
+
+function validateColor(el) {
+    let color = document.querySelector('#collectColors');
+    if(color.value == "Escribe el color que deseas"){
+        Swal.fire({
+            title: 'Aviso',
+            text: 'Selecciona un color',
+            icon: 'warning',
+            confirmButtonText: 'Cerrar'
+        })
+    } 
+    console.log('validateColor:', color.value)
+}
+
+function validateEmail(el) {
+    let json = {}
+    json.email = el.srcElement.value
+    json = JSON.stringify(json)
+    validateEmailSend(json)
+}
+
+function validateEmail2() {
+    let el = document.querySelector('#validateEmail');
+    let json = {}
+    json.email = el.value
+    json = JSON.stringify(json)
+    validateEmailSend(json)
+}
+
+function validateEmailSend(json){
+    const url = '../services/abanicodecolores/php/validateEmail.php';
+    const token = ''
+    fetchApi(url, json, 'POST', token).then(response => {
+        requestValidate(response);
+    }).catch(error => {
+        console.error(error);
+    });
+}
+
+function requestValidate(res) {
+    console.log(res)
+    if (res) {
+        let el = document.querySelector('#validateEmail');
+        el.value = '';
+        Swal.fire({
+            title: 'Aviso',
+            text: 'El email ya se encuentra registrado',
+            icon: 'warning',
+            confirmButtonText: 'Cerrar'
+        })
+    }
+}

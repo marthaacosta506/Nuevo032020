@@ -1,0 +1,406 @@
+@media (min-width: 1441px) {
+    .container {
+        max-width: 1440px!important;
+    }
+}
+@media (min-width: 768px){
+    body .d-md-none {
+        display: none!important;
+    }    
+}
+#menu-home .dropdown-toggle::after {
+    border: none;
+}
+.menu-header-producto a::after {
+    content: "S";
+}
+.wp-container{
+        max-width: 1220px;
+        margin-right: auto;
+        margin-left: auto;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+html h1{
+    font-size: 50px;
+}
+html h2{
+    font-size: 36px;
+}
+html h3{
+    font-size: 28px;
+}
+html h4{
+    font-size: 22px;
+}
+html h5{
+    font-size: 18px;
+    font-weight: 300;
+}
+html h6{
+    font-size: 14px;
+}
+html p{
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url("../fonts/glyphicons-halflings-regular.eot");
+    src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), 
+    url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), 
+    url("../fonts/glyphicons-halflings-regular.woff") format("woff"), 
+    url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), 
+    url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  }
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#menu-movil-global ~ .col-md-2 {
+    padding-left: 0px;
+}
+.glyphicon-menu-right:before {
+    content: "\e258";
+}
+ul {
+    font-weight: 300;
+}
+.footer-social-links {
+    position: relative;
+    width: 100%;
+}
+
+.footer-social-links li {
+    display: inline;
+}
+
+.footer-social-links a {
+    display: inline-block;
+    width: 36px;
+    margin-right: 6%;
+}
+
+.footer-social-links a::after {
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: '';    
+    display: inline-block;
+}
+
+#footer-url-facebook::after {    
+    background-image: url(../images/facebook.png);
+}
+
+#footer-url-twitter::after {    
+    background-image: url(../images/twitter.png);
+}
+
+#footer-url-youtube::after {    
+    background-image: url(../images/youtube.png);
+}
+
+#footer-url-instagram::after {    
+    background-image: url(../images/instagram.png);
+}
+
+#contacto-footer-link,
+#telefono-footer-link,
+#horario-footer-link {
+    position: relative;
+}
+
+#contacto-footer-link::before {
+    background-image: url(../images/sobre.png);
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: '';    
+    display: inline-block;
+    top: 0px;
+    left: -30px;
+}
+
+#telefono-footer-link::before {
+    background-image: url(../images/phone.png);
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: '';    
+    display: inline-block;
+    top: 0px;
+    left: -30px;
+}
+
+#horario-footer-link::before {
+    background-image: url(../images/reloj.png);
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: '';    
+    display: inline-block;
+    top: 0px;
+    left: -30px;
+}
+
+#container-menu-business {
+    margin-top: 1em;
+}
+#container-menu-business ul#menu-business {
+    width: 860px;
+}
+#menu-business li {
+    position: relative;   
+}
+
+#menu-business li a {
+    display: block;
+    position: relative;
+    max-width: 170px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    color: #1b2d64;
+    font-weight: 700;
+    padding: 10px 0px 10px 25px;
+}
+
+#menu-business li a:hover {
+    color: #1b2d64;
+    text-decoration: none;
+}
+
+#menu-business li:first-child a::before {
+    display: none;
+}
+
+#menu-business li a::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #009cde;
+    left: 8px;
+    position: absolute;
+    top: 15px;
+}
+
+.star {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 11px;
+    top: 12px;
+    background: url(../images/starmilista.png) no-repeat center center/cover;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+}
+
+.search-form-container {
+    position: absolute;
+    right: 0;
+    padding-right: 15px;
+    width: 260px;
+    margin-bottom: .5em;
+}
+
+.search-form-container #searchform #s, 
+.search-form-home #searchform #s {
+    border-right: 1px solid #ccc;
+    height: 30px;
+    display: initial;
+    width: 82%;
+    padding: 0px 0px;
+    font-size: 12px;
+    line-height: 1.42857;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    border-radius: 0;
+}
+
+/*.search-form-container #searchform #s,
+.search-form-home #searchform #s {
+    border-right: none;
+    height: 39px;
+    display: block;
+    width: 85%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    border-radius: 0;
+}*/
+
+.search-form-home form {
+    margin-left: 60px;
+    display: inline-flex;
+}
+
+.search-form-container #searchsubmit,
+.search-form-home #searchsubmit {
+    margin-top: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    font: 0/0 a;
+    border-left: none;
+    height: 39px;
+    width: 15%;
+    border-color: silver;
+    background: white url(../images/lupa.png) no-repeat center center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#menu-home .sub-menu {
+    list-style: none;
+    background-color: #fff;
+}
+
+#menu-home li a:hover {
+    color: #1b2d64;
+    text-decoration: none;
+}
+
+#menu-home ul.dropdown-menu {
+    padding: 20px;
+}
+
+/*#menu-home .sub-menu a {    
+    display: block;
+    clear: both;
+    line-height: 1.42857;
+    white-space: nowrap;
+}*/
+.navbar .show>a {
+    background-color: #eeeeee;
+}
+
+
+/* Estilos de  Oriana */
+
+  .mm-navbar, .mm-navbar a, .mm-navbar a:hover, .mm-navbar__btn:not(.mm-hidden)+.mm-navbar__title{
+      color: #fff !important;
+      border-color: #fff !important;
+  }
+  .mm-menu a, .mm-menu a:active, .mm-menu a:hover, .mm-menu a:link, .mm-menu a:visited{
+    color: #fff !important;
+    font-size: 16px;
+  }
+
+
+@media screen and (max-width: 782px){
+    html h1{
+        font-size: 35px;
+    }
+    html h2{
+        font-size: 30px;
+    }
+    html h3{
+        font-size: 25px;
+    }
+    html h4{
+        font-size: 20px;
+    }
+    html h5{
+        font-size: 14px;
+        font-weight: 300;
+    }
+    html h6{
+        font-size: 12px;
+    }
+   .search-form-home{
+       display: none;
+   }
+
+   form#searchform {
+        display: inline-flex;
+        width: auto;
+    }
+
+    .custom-logo{
+        width: 73px;
+        height: 50px;
+    }
+
+    .menu-block{
+        margin: 15px 0;
+    }
+
+    #header-wrapper{
+        position:-webkit-sticky;
+        position:sticky;
+        top:0;
+        z-index:1020;
+        background-color: #fff;
+        padding: 5px 0;
+    }
+    #page{
+        width: 100%;
+        overflow: hidden;
+    }
+    .contenedor__slider-business{
+	padding:0px;	
+    }
+    
+    
+
+
+}
+@media (max-width: 750px){
+    .lf-3{
+        margin: 0 30px;
+    }
+ }
+ 
+ div#menu-movil-global {
+    display: none;
+}
+
+.search-form-container {
+    display: none;
+}
